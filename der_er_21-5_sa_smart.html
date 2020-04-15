@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test page</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
+</head>
+
+<body>
+  <main>
+    <header>
+      <nav>
+        <div>
+          <img src="assets/img/21-5_logo.svg" alt="21-5 logo" id="logo">
+          <img src="assets/img/burger2.svg" alt="burger menu" id="burger">
+        </div>
+        <div>
+          <a href="">
+            <h3>Forside</h3>
+          </a>
+          <a href="">
+            <h3>Køb din andel</h3>
+          </a>
+          <a href="">
+            <h3>Om 21-5</h3>
+          </a>
+          <a href="">
+            <h3>Destinationerne</h3>
+          </a>
+          <a href="">
+            <h3>Boligerne</h3>
+          </a>
+        </div>
+        <div>
+          <p>Danmark <br>Norge <br>Sverige <br>USA <br>Canada</p>
+          <p>Login</p>
+        </div>
+        <div>
+          <a href="">
+            <h3>Om destinationerne</h3>
+          </a>
+          <a href="">
+            <h3>Barcelona</h3>
+          </a>
+          <a href="">
+            <h3>Charmonix</h3>
+          </a>
+          <a href="">
+            <h3>Sydspanien</h3>
+          </a>
+          <a href="">
+            <h3>Paris</h3>
+          </a>
+        </div>
+      </nav>
+    </header>
+    <div class="space3"></div>
+    <div id="test_div"></div>
+  </main>
+  <script src="menu.js"></script>
+
+  <script>
+    let URLend = "pages?slug=derfor-er-21-5-sa-smart";
+    let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
+    let retter = [];
+
+    document.addEventListener("DOMContentLoaded", start);
+
+    function start() {
+      console.log("start");
+      hentJSON();
+    }
+
+    async function hentJSON() {
+      console.log("hent json");
+
+      const response = await fetch(endpoint);
+      retter = await response.json();
+      visRetter();
+    }
+
+    function visRetter() {
+      console.log(retter);
+
+      retter.forEach(element => {
+        document.querySelector("#test_div").innerHTML = `${element.content.rendered}`;
+      });
+    }
+
+  </script>
+</body>
+
+</html>
