@@ -85,9 +85,9 @@ header {
   right: 0;
   margin: 0 auto;
   height: 100vh;
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
   background: rgb(59, 142, 155);
   background: linear-gradient(135deg, rgba(59, 142, 155, 1) 0%, rgba(0, 112, 124, 1) 100%);
-  transition: transform .6s cubic-bezier(.5, .3, .25, 1);
 }
 
 nav {
@@ -95,20 +95,20 @@ nav {
   height: 100%;
 }
 
-nav div:nth-child(1) {
+#logo_container {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   visibility: hidden;
   padding: 0 30px;
   left: 0;
 }
 
-nav div:nth-child(1) #logo {
+#logo_container #logo {
   visibility: visible;
   height: 53px;
   width: 53px;
@@ -116,12 +116,17 @@ nav div:nth-child(1) #logo {
   padding: 10px;
 }
 
-nav div:nth-child(1) #burger {
+#logo_container #burger {
   visibility: visible;
   height: 40px;
   width: 45px;
   margin: 0 -10px 10px 0;
   padding: 10px;
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
+}
+
+#login {
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
 }
 
 nav div:nth-child(2) {
@@ -134,7 +139,12 @@ nav div:nth-child(2) {
   position: absolute;
   left: 0;
   padding: 0 30px;
-  z-index: 1;
+  z-index: 2;
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
+}
+
+nav article {
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
 }
 
 nav h3 {
@@ -142,7 +152,14 @@ nav h3 {
   margin: 10px 0;
   color: #fff;
   line-height: 3rem;
-  width: 200px;
+  font-size: 2rem;
+  width: 300px;
+  cursor: pointer;
+  transition: .6s cubic-bezier(.25, 1, .5, 1);
+}
+
+nav h3:hover {
+  color: #E48B65;
 }
 
 nav div:nth-child(3) {
@@ -155,7 +172,7 @@ nav div:nth-child(3) {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   visibility: hidden;
 }
 
@@ -163,24 +180,63 @@ nav div:nth-child(3) p {
   line-height: 2rem;
   color: #fff;
   visibility: visible;
+  font-family: motiva-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-nav div:nth-child(4) {
+.underkategori {
   width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0 30px;
+  z-index: 2;
+  display: flex;
+  justify-items: flex-end;
+  visibility: hidden;
+  overflow: hidden;
+  background-color: red;
+}
+
+.underkategori div {
+  transform: translateX(1200px);
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  visibility: visible;
+  background: #86BEC4;
   padding: 30px;
+  right: 0;
+  width: 300px;
   height: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-nav div:nth-child(3) h3 {
-  line-height: 2rem;
+.underkategori p {
+  font-family: motiva-sans, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 3rem;
+  font-size: 1.3rem;
   color: #fff;
   visibility: visible;
+  padding: 0 30px 0 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .underkategori div {
+    transform: translateX(100vw);
+    width: 100vw;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0);
+    margin: 0 -60px 0 0;
+  }
+
+  .back:after {
+    content: "⬅";
+    font-size: 2rem;
+    transform: rotate(180deg) translateX(30px);
+  }
 }
