@@ -16,7 +16,7 @@
   <script src="assets/js/menu.js"></script>
 
   <script>
-    let URLend = "pages?slug=forside";
+    let URLend = "pages?slug=istandsaettelse";
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
 
@@ -40,11 +40,13 @@
       retter.forEach(element => {
         console.log(element.content.rendered);
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
+        let h1 = document.createElement("h1");
+        let h1_i = document.createTextNode(element.title.rendered);
+        let main_ = document.querySelector("main");
+        h1.appendChild(h1_i);
+        main.insertBefore(h1, main.childNodes[0]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }
-
   </script>
-</body>
-
-</html>
+</body></html>

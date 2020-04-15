@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forside</title>
-  <link rel="stylesheet" href="style.css">
+  <title></title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
 </head>
 
@@ -13,7 +13,7 @@
   <main>
     <div id="fill"></div>
   </main>
-  <script src="menu.js"></script>
+  <script src="assets/js/menu.js"></script>
 
   <script>
     let URLend = "pages?slug=forside";
@@ -39,6 +39,7 @@
 
       retter.forEach(element => {
         console.log(element.content.rendered);
+        document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }

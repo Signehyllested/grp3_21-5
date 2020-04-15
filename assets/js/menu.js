@@ -277,9 +277,6 @@ om_21_5_wrap.appendChild(back_bolig);
 
 
 
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   burger.addEventListener("click", menuDown);
   burger.addEventListener("click", menuCollapse);
