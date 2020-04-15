@@ -40,6 +40,11 @@
       retter.forEach(element => {
         console.log(element.content.rendered);
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
+        let h1 = document.createElement("h1");
+        let h1_i = document.createTextNode(element.title.rendered);
+        let main_ = document.querySelector("main");
+        h1.appendChild(h1_i);
+        main_.insertBefore(h1, main_.childNodes[0]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }

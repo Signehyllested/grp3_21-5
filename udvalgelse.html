@@ -16,7 +16,7 @@
   <script src="assets/js/menu.js"></script>
 
   <script>
-    let URLend = "pages?slug=istandsaettelse";
+    let URLend = "pages?slug=udvaelgelse";
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
 
@@ -46,6 +46,22 @@
         h1.appendChild(h1_i);
         main_.insertBefore(h1, main_.childNodes[0]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
+
+        let fill = document.querySelector("#fill")
+        let col_wrap1 = document.createElement("div");
+        col_wrap1.classList.add("col_wrap");
+        fill.appendChild(col_wrap1);
+        document.querySelectorAll(".col1").forEach((col1) => {
+          col_wrap1.appendChild(col1);
+        })
+        fill.insertBefore(col_wrap1, fill.childNodes[2]);
+        let col_wrap2 = document.createElement("div");
+        col_wrap2.classList.add("col_wrap");
+        fill.appendChild(col_wrap2);
+        document.querySelectorAll(".col2").forEach((col2) => {
+          col_wrap2.appendChild(col2);
+        })
+        fill.insertBefore(col_wrap2, fill.childNodes[7]);
       });
     }
   </script>

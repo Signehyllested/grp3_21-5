@@ -308,7 +308,7 @@ function menuExpand() {
   })
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(870px)";
+      div.style.transform = "translateX(880px)";
       burger.style.transform = "translateX(-300px)";
       login.style.transform = "translateX(-300px)";
       nav_wrap.style.transform = "translateX(-300px)";
