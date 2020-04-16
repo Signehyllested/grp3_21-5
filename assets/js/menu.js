@@ -31,7 +31,14 @@ function visRetter_om_21_5() {
 
   retter_om_21_5.forEach(ompkt => {
     let om_ua = document.createElement("a");
-    om_ua.href = `template.html?slug=${ompkt.slug}`
+    om_ua.addEventListener("click", () => {
+      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#pre").style.width = "100vw";
+      document.querySelector("#pre").style.left = "0";
+      setTimeout(function () {
+        location.href = `template.html?slug=${ompkt.slug}`
+      }, 700)
+    })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(ompkt.title.rendered);
     om_21_5_wrap.appendChild(om_ua);
@@ -61,7 +68,14 @@ function visRetter_destinationerne() {
 
   retter_destinationerne.forEach(destpkt => {
     let om_ua = document.createElement("a");
-    om_ua.href = `template.html?slug=${destpkt.slug}`
+    om_ua.addEventListener("click", () => {
+      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#pre").style.width = "100vw";
+      document.querySelector("#pre").style.left = "0";
+      setTimeout(function () {
+        location.href = `template.html?slug=${destpkt.slug}`
+      }, 700)
+    })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(destpkt.title.rendered);
     destinationerne_wrap.appendChild(om_ua);
@@ -91,7 +105,14 @@ function visRetter_boligerne() {
 
   retter_boligerne.forEach(boligpkt => {
     let om_ua = document.createElement("a");
-    om_ua.href = `template.html?slug=${boligpkt.slug}`
+    om_ua.addEventListener("click", () => {
+      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#pre").style.width = "100vw";
+      document.querySelector("#pre").style.left = "0";
+      setTimeout(function () {
+        location.href = `template.html?slug=${boligpkt.slug}`
+      }, 700)
+    })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(boligpkt.title.rendered);
     boligerne_wrap.appendChild(om_ua);

@@ -278,3 +278,27 @@ nav div:nth-child(3) p {
 .col_wrap p {
   padding-right: 20px;
 }
+
+#anim {
+  width: 25vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
+}
+
+#pre {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(59, 142, 155);
+  background: linear-gradient(135deg, rgba(59, 142, 155, 1) 0%, rgba(0, 112, 124, 1) 100%);
+  z-index: 9;
+  transition: .7s cubic-bezier(.5, .3, .25, 1);
+}

@@ -10,9 +10,12 @@
 </head>
 
 <body>
+  <div id="pre"></div>
+  <div id="anim"></div>
   <main>
     <div id="fill"></div>
   </main>
+  <script src="assets/img/lottie.js"></script>
   <script src="../../assets/js/menu.js"></script>
 
   <script>
@@ -27,6 +30,8 @@
     function start() {
       console.log("start");
       hentJSON();
+
+
     }
 
     async function hentJSON() {
@@ -35,6 +40,12 @@
       const response = await fetch(endpoint);
       retter = await response.json();
       visRetter();
+
+      setTimeout(function() {
+        document.querySelector("#anim").style.width = "0";
+        document.querySelector("#pre").style.width = "0";
+        document.querySelector("#pre").style.left = "50%";
+      }, 1000)
     }
 
     function visRetter() {
@@ -50,5 +61,14 @@
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }
+
+
+    var animation = bodymovin.loadAnimation({
+      container: document.querySelector("#anim"),
+      rederer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/img/preload_ani.json"
+    })
   </script>
 </body></html>
