@@ -33,21 +33,23 @@ function visRetter_om_21_5() {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
       document.querySelector("#anim").style.width = "25vw";
-      document.querySelector("#pre").style.width = "100vw";
-      document.querySelector("#pre").style.left = "0";
+      document.querySelector("#pre").style.width = "100vh";
+      document.querySelector("#pre").style.height = "100vh";
+      document.querySelector("#pre").style.transform = "scale(2.5)";
+
       setTimeout(function () {
         location.href = `template.html?slug=${ompkt.slug}`
-      }, 700)
+      }, 500)
     })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(ompkt.title.rendered);
     om_21_5_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
-    let back_om = document.createElement("p");
-    back_om.classList.add("back");
-    om_21_5_wrap.appendChild(back_om);
   });
+  let back_om = document.createElement("p");
+  back_om.classList.add("back");
+  om_21_5_wrap.appendChild(back_om);
 }
 
 //hent alle posts med categorien destinationerne
@@ -70,21 +72,22 @@ function visRetter_destinationerne() {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
       document.querySelector("#anim").style.width = "25vw";
-      document.querySelector("#pre").style.width = "100vw";
-      document.querySelector("#pre").style.left = "0";
+      document.querySelector("#pre").style.width = "100vh";
+      document.querySelector("#pre").style.height = "100vh";
+      document.querySelector("#pre").style.transform = "scale(2.5)";
       setTimeout(function () {
         location.href = `template.html?slug=${destpkt.slug}`
-      }, 700)
+      }, 500)
     })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(destpkt.title.rendered);
     destinationerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
-    let back_om = document.createElement("p");
-    back_om.classList.add("back");
-    destinationerne_wrap.appendChild(back_om);
   });
+  let back_om = document.createElement("p");
+  back_om.classList.add("back");
+  destinationerne_wrap.appendChild(back_om);
 }
 
 //hent alle posts med categorien boligerne
@@ -107,21 +110,22 @@ function visRetter_boligerne() {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
       document.querySelector("#anim").style.width = "25vw";
-      document.querySelector("#pre").style.width = "100vw";
-      document.querySelector("#pre").style.left = "0";
+      document.querySelector("#pre").style.width = "100vh";
+      document.querySelector("#pre").style.height = "100vh";
+      document.querySelector("#pre").style.transform = "scale(2.5)";
       setTimeout(function () {
         location.href = `template.html?slug=${boligpkt.slug}`
-      }, 700)
+      }, 500)
     })
     let om_up = document.createElement("p");
     let om_up_i = document.createTextNode(boligpkt.title.rendered);
     boligerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
-    let back_om = document.createElement("p");
-    back_om.classList.add("back");
-    boligerne_wrap.appendChild(back_om);
   });
+  let back_om = document.createElement("p");
+  back_om.classList.add("back");
+  boligerne_wrap.appendChild(back_om);
 }
 
 let header = document.createElement("header");

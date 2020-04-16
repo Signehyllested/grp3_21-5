@@ -44,8 +44,9 @@
       setTimeout(function() {
         document.querySelector("#anim").style.width = "0";
         document.querySelector("#pre").style.width = "0";
-        document.querySelector("#pre").style.left = "50%";
-      }, 1000)
+        document.querySelector("#pre").style.height = "0";
+        document.querySelector("#pre").style.transform = "scale(1)";
+      }, 500)
     }
 
     function visRetter() {
@@ -71,4 +72,5 @@
       path: "assets/img/preload_ani.json"
     })
   </script>
+  <script src="template.js"></script>
 </body></html>
