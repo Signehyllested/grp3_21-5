@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
 </head>
 
@@ -13,10 +13,14 @@
   <main>
     <div id="fill"></div>
   </main>
-  <script src="assets/js/menu.js"></script>
+  <script src="../../assets/js/menu.js"></script>
 
   <script>
-    let URLend = "pages?slug=forside";
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    var pagename = page.split(".", 1).pop();
+    console.log(pagename);
+    let URLend = `posts?slug=${pagename}`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
 
@@ -40,6 +44,8 @@
       retter.forEach(element => {
         console.log(element.content.rendered);
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
+
+
         let h1 = document.createElement("h1");
         let h1_i = document.createTextNode(element.title.rendered);
         let main_ = document.querySelector("main");

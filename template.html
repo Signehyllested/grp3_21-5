@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
 </head>
 
@@ -13,10 +13,12 @@
   <main>
     <div id="fill"></div>
   </main>
-  <script src="assets/js/menu.js"></script>
+  <script src="../../assets/js/menu.js"></script>
 
   <script>
-    let URLend = "pages?slug=forside";
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+    let URLend = `posts?slug=${slug}`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
 
@@ -48,8 +50,5 @@
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }
-
   </script>
-</body>
-
-</html>
+</body></html>

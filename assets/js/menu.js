@@ -1,40 +1,107 @@
 console.log("menu.js");
 
 
-let URLend_menu = "pages?slug=om-21-5";
-let endpoint_menu = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_menu}`;
-let retter_menu = [];
+
 
 document.addEventListener("DOMContentLoaded", start_menu);
 
 function start_menu() {
-  console.log("start");
-  hentJSON_menu();
+  console.log("start_menu");
+  hentJSON_om_21_5();
+  hentJSON_destinationerne();
+  hentJSON_boligerne();
 }
 
-async function hentJSON_menu() {
+
+//hent alle posts med categorien om 21 5
+let URLend_om_21_5 = "posts?categories=6";
+let endpoint_om_21_5 = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_om_21_5}`;
+let retter_om_21_5 = [];
+
+async function hentJSON_om_21_5() {
   console.log("hent json");
 
-  const response_menu = await fetch(endpoint_menu);
-  retter_menu = await response_menu.json();
-  visRetter_menu();
+  const response_om_21_5 = await fetch(endpoint_om_21_5);
+  retter_om_21_5 = await response_om_21_5.json();
+  visRetter_om_21_5();
 }
 
-function visRetter_menu() {
-  console.log(retter_menu);
+function visRetter_om_21_5() {
+  console.log(retter_om_21_5);
 
-  retter_menu.forEach(element => {
-    console.log(element.title.rendered);
+  retter_om_21_5.forEach(ompkt => {
+    let om_ua = document.createElement("a");
+    om_ua.href = `template.html?slug=${ompkt.slug}`
+    let om_up = document.createElement("p");
+    let om_up_i = document.createTextNode(ompkt.title.rendered);
+    om_21_5_wrap.appendChild(om_ua);
+    om_ua.appendChild(om_up);
+    om_up.appendChild(om_up_i);
+    let back_om = document.createElement("p");
+    back_om.classList.add("back");
+    om_21_5_wrap.appendChild(back_om);
   });
 }
 
+//hent alle posts med categorien destinationerne
+let URLend_destinationerne = "posts?categories=5";
+let endpoint_destinationerne = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_destinationerne}`;
+let retter_destinationerne = [];
 
+async function hentJSON_destinationerne() {
+  console.log("hent json");
 
+  const response_destinationerne = await fetch(endpoint_destinationerne);
+  retter_destinationerne = await response_destinationerne.json();
+  visRetter_destinationerne();
+}
 
+function visRetter_destinationerne() {
+  console.log(retter_destinationerne);
 
+  retter_destinationerne.forEach(destpkt => {
+    let om_ua = document.createElement("a");
+    om_ua.href = `template.html?slug=${destpkt.slug}`
+    let om_up = document.createElement("p");
+    let om_up_i = document.createTextNode(destpkt.title.rendered);
+    destinationerne_wrap.appendChild(om_ua);
+    om_ua.appendChild(om_up);
+    om_up.appendChild(om_up_i);
+    let back_om = document.createElement("p");
+    back_om.classList.add("back");
+    destinationerne_wrap.appendChild(back_om);
+  });
+}
 
+//hent alle posts med categorien boligerne
+let URLend_boligerne = "posts?categories=4";
+let endpoint_boligerne = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_boligerne}`;
+let retter_boligerne = [];
 
+async function hentJSON_boligerne() {
+  console.log("hent json");
 
+  const response_boligerne = await fetch(endpoint_boligerne);
+  retter_boligerne = await response_boligerne.json();
+  visRetter_boligerne();
+}
+
+function visRetter_boligerne() {
+  console.log(retter_boligerne);
+
+  retter_boligerne.forEach(boligpkt => {
+    let om_ua = document.createElement("a");
+    om_ua.href = `template.html?slug=${boligpkt.slug}`
+    let om_up = document.createElement("p");
+    let om_up_i = document.createTextNode(boligpkt.title.rendered);
+    boligerne_wrap.appendChild(om_ua);
+    om_ua.appendChild(om_up);
+    om_up.appendChild(om_up_i);
+    let back_om = document.createElement("p");
+    back_om.classList.add("back");
+    boligerne_wrap.appendChild(back_om);
+  });
+}
 
 let header = document.createElement("header");
 let nav = document.createElement("nav");
@@ -48,11 +115,11 @@ logoContainer.id = "logo_container";
 nav.appendChild(logoContainer);
 
 let logo = document.createElement("img");
-logo.src = "assets/img/21-5_logo.svg";
+logo.src = "../../assets/img/21-5_logo.svg";
 logo.alt = "21-5 logo";
 logo.id = "logo";
 let burger = document.createElement("img");
-burger.src = "assets/img/burger2.svg";
+burger.src = "../../assets/img/burger2.svg";
 burger.alt = "burger menu";
 burger.id = "burger";
 logoContainer.appendChild(logo);
@@ -122,44 +189,6 @@ om_21_5.classList.add("underkategori");
 nav.appendChild(om_21_5);
 let om_21_5_wrap = document.createElement("div");
 om_21_5.appendChild(om_21_5_wrap);
-let om_ua_1 = document.createElement("a");
-om_ua_1.href = ""
-let om_up_1 = document.createElement("p");
-let om_up_1_i = document.createTextNode("Bag om 21-5");
-om_21_5_wrap.appendChild(om_ua_1);
-om_ua_1.appendChild(om_up_1);
-om_up_1.appendChild(om_up_1_i);
-let om_ua_2 = document.createElement("a");
-om_ua_2.href = ""
-let om_up_2 = document.createElement("p");
-let om_up_2_i = document.createTextNode("Derfor er 21-5 så smart");
-om_21_5_wrap.appendChild(om_ua_2);
-om_ua_2.appendChild(om_up_2);
-om_up_2.appendChild(om_up_2_i);
-let om_ua_3 = document.createElement("a");
-om_ua_3.href = ""
-let om_up_3 = document.createElement("p");
-let om_up_3_i = document.createTextNode("Kontakt os");
-om_21_5_wrap.appendChild(om_ua_3);
-om_ua_3.appendChild(om_up_3);
-om_up_3.appendChild(om_up_3_i);
-let om_ua_4 = document.createElement("a");
-om_ua_4.href = ""
-let om_up_4 = document.createElement("p");
-let om_up_4_i = document.createTextNode("Økonomi, jura og skat");
-om_21_5_wrap.appendChild(om_ua_4);
-om_ua_4.appendChild(om_up_4);
-om_up_4.appendChild(om_up_4_i);
-let om_ua_5 = document.createElement("a");
-om_ua_5.href = ""
-let om_up_5 = document.createElement("p");
-let om_up_5_i = document.createTextNode("Svar på dine spørgsmål");
-om_21_5_wrap.appendChild(om_ua_5);
-om_ua_5.appendChild(om_up_5);
-om_up_5.appendChild(om_up_5_i);
-let back_om = document.createElement("p");
-back_om.classList.add("back");
-om_21_5_wrap.appendChild(back_om);
 
 let destinationerne = document.createElement("div");
 destinationerne.classList.add("underkategori");
@@ -167,79 +196,6 @@ destinationerne.id = "destinationerne";
 nav.appendChild(destinationerne);
 let destinationerne_wrap = document.createElement("div");
 destinationerne.appendChild(destinationerne_wrap);
-let dest_ua_1 = document.createElement("a");
-dest_ua_1.href = ""
-let dest_up_1 = document.createElement("p");
-let dest_up_1_i = document.createTextNode("Mallorca");
-destinationerne_wrap.appendChild(dest_ua_1);
-dest_ua_1.appendChild(dest_up_1);
-dest_up_1.appendChild(dest_up_1_i);
-let dest_ua_2 = document.createElement("a");
-dest_ua_2.href = ""
-let dest_up_2 = document.createElement("p");
-let dest_up_2_i = document.createTextNode("Sydspanien");
-destinationerne_wrap.appendChild(dest_ua_2);
-dest_ua_2.appendChild(dest_up_2);
-dest_up_2.appendChild(dest_up_2_i);
-let dest_ua_3 = document.createElement("a");
-dest_ua_3.href = ""
-let dest_up_3 = document.createElement("p");
-let dest_up_3_i = document.createTextNode("Toscana");
-destinationerne_wrap.appendChild(dest_ua_3);
-dest_ua_3.appendChild(dest_up_3);
-dest_up_3.appendChild(dest_up_3_i);
-let dest_ua_4 = document.createElement("a");
-dest_ua_4.href = ""
-let dest_up_4 = document.createElement("p");
-let dest_up_4_i = document.createTextNode("Sydfrankrig");
-destinationerne_wrap.appendChild(dest_ua_4);
-dest_ua_4.appendChild(dest_up_4);
-dest_up_4.appendChild(dest_up_4_i);
-let dest_ua_5 = document.createElement("a");
-dest_ua_5.href = ""
-let dest_up_5 = document.createElement("p");
-let dest_up_5_i = document.createTextNode("Charmonix");
-destinationerne_wrap.appendChild(dest_ua_5);
-dest_ua_5.appendChild(dest_up_5);
-dest_up_5.appendChild(dest_up_5_i);
-let dest_ua_6 = document.createElement("a");
-dest_ua_6.href = ""
-let dest_up_6 = document.createElement("p");
-let dest_up_6_i = document.createTextNode("New York");
-destinationerne_wrap.appendChild(dest_ua_6);
-dest_ua_6.appendChild(dest_up_6);
-dest_up_6.appendChild(dest_up_6_i);
-let dest_ua_7 = document.createElement("a");
-dest_ua_7.href = ""
-let dest_up_7 = document.createElement("p");
-let dest_up_7_i = document.createTextNode("Barcelona");
-destinationerne_wrap.appendChild(dest_ua_7);
-dest_ua_7.appendChild(dest_up_7);
-dest_up_7.appendChild(dest_up_7_i);
-let dest_ua_8 = document.createElement("a");
-dest_ua_8.href = ""
-let dest_up_8 = document.createElement("p");
-let dest_up_8_i = document.createTextNode("Paris");
-destinationerne_wrap.appendChild(dest_ua_8);
-dest_ua_8.appendChild(dest_up_8);
-dest_up_8.appendChild(dest_up_8_i);
-let dest_ua_9 = document.createElement("a");
-dest_ua_9.href = ""
-let dest_up_9 = document.createElement("p");
-let dest_up_9_i = document.createTextNode("Rom");
-destinationerne_wrap.appendChild(dest_ua_9);
-dest_ua_9.appendChild(dest_up_9);
-dest_up_9.appendChild(dest_up_9_i);
-let dest_ua_10 = document.createElement("a");
-dest_ua_10.href = ""
-let dest_up_10 = document.createElement("p");
-let dest_up_10_i = document.createTextNode("Om destinationerne");
-destinationerne_wrap.appendChild(dest_ua_10);
-dest_ua_10.appendChild(dest_up_10);
-dest_up_10.appendChild(dest_up_10_i);
-let back_dest = document.createElement("p");
-back_dest.classList.add("back");
-om_21_5_wrap.appendChild(back_dest);
 
 let boligerne = document.createElement("div");
 boligerne.id = "boligerne";
@@ -247,30 +203,9 @@ boligerne.classList.add("underkategori");
 nav.appendChild(boligerne);
 let boligerne_wrap = document.createElement("div");
 boligerne.appendChild(boligerne_wrap);
-let bolig_ua_1 = document.createElement("a");
-bolig_ua_1.href = ""
-let bolig_up_1 = document.createElement("p");
-let bolig_up_1_i = document.createTextNode("Om boligerne");
-boligerne_wrap.appendChild(bolig_ua_1);
-bolig_ua_1.appendChild(bolig_up_1);
-bolig_up_1.appendChild(bolig_up_1_i);
-let bolig_ua_2 = document.createElement("a");
-bolig_ua_2.href = ""
-let bolig_up_2 = document.createElement("p");
-let bolig_up_2_i = document.createTextNode("Istandsættelse");
-boligerne_wrap.appendChild(bolig_ua_2);
-bolig_ua_2.appendChild(bolig_up_2);
-bolig_up_2.appendChild(bolig_up_2_i);
-let bolig_ua_3 = document.createElement("a");
-bolig_ua_3.href = ""
-let bolig_up_3 = document.createElement("p");
-let bolig_up_3_i = document.createTextNode("Udvælgelse");
-boligerne_wrap.appendChild(bolig_ua_3);
-bolig_ua_3.appendChild(bolig_up_3);
-bolig_up_3.appendChild(bolig_up_3_i);
-let back_bolig = document.createElement("p");
-back_bolig.classList.add("back");
-om_21_5_wrap.appendChild(back_bolig);
+
+
+
 
 
 
