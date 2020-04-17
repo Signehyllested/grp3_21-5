@@ -1,9 +1,9 @@
 const urlParams_getcat = new URLSearchParams(window.location.search);
-const slug_getcat = urlParams.get("slug");
+const slug_getcat = urlParams_getcat.get("slug");
 let URLend_getcat = `posts?slug=${slug_getcat}`;
 let endpoint_getcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_getcat}`;
 let retter_getcat = [];
-let category;
+let category = 0;
 
 document.addEventListener("DOMContentLoaded", start);
 
@@ -63,7 +63,7 @@ function visRetter_showuk() {
     let om_ua = document.createElement("button");
     om_ua.textContent = uk.title.rendered;
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#anim").style.width = "50vw";
       document.querySelector("#pre").style.width = "100vh";
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";

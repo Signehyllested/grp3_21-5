@@ -13,6 +13,8 @@ function start_menu() {
 }
 
 
+const urlParams_menu = new URLSearchParams(window.location.search);
+const slug_menu = urlParams_menu.get("slug");
 
 //hent alle posts med categorien køb din andel
 let URLend_kob_din_andel = "posts?categories=7";
@@ -30,7 +32,7 @@ function visRetter_kob_din_andel() {
   retter_kob_din_andel.forEach(kobpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#anim").style.width = "50vw";
       document.querySelector("#pre").style.width = "100vh";
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
@@ -44,6 +46,15 @@ function visRetter_kob_din_andel() {
     kob_din_andel_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    if (slug_menu == kobpkt.slug && slug_menu != "forside") {
+      menuExpand();
+      om_up.classList.add("on_this");
+      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
+        article.style.opacity = ".5";
+      })
+      document.querySelector("#kob_din_andel").style.zIndex = zIndex;
+      document.querySelector("#kob_click").parentElement.style.opacity = "1";
+    }
   });
   let back_om = document.createElement("p");
   back_om.classList.add("back");
@@ -67,7 +78,7 @@ function visRetter_om_21_5() {
   retter_om_21_5.forEach(ompkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#anim").style.width = "50vw";
       document.querySelector("#pre").style.width = "100vh";
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
@@ -81,6 +92,15 @@ function visRetter_om_21_5() {
     om_21_5_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    if (slug_menu == ompkt.slug && slug_menu != "forside") {
+      menuExpand();
+      om_up.classList.add("on_this");
+      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
+        article.style.opacity = ".5";
+      })
+      document.querySelector("#om_21-5").style.zIndex = zIndex;
+      document.querySelector("#om_click").parentElement.style.opacity = "1";
+    }
   });
   let back_om = document.createElement("p");
   back_om.classList.add("back");
@@ -104,7 +124,7 @@ function visRetter_destinationerne() {
   retter_destinationerne.forEach(destpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#anim").style.width = "50vw";
       document.querySelector("#pre").style.width = "100vh";
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
@@ -117,6 +137,15 @@ function visRetter_destinationerne() {
     destinationerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    if (slug_menu == destpkt.slug && slug_menu != "forside") {
+      menuExpand();
+      om_up.classList.add("on_this");
+      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
+        article.style.opacity = ".5";
+      })
+      document.querySelector("#destinationerne").style.zIndex = zIndex;
+      document.querySelector("#dest_click").parentElement.style.opacity = "1";
+    }
   });
   let back_om = document.createElement("p");
   back_om.classList.add("back");
@@ -140,7 +169,7 @@ function visRetter_boligerne() {
   retter_boligerne.forEach(boligpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#anim").style.width = "50vw";
       document.querySelector("#pre").style.width = "100vh";
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
@@ -153,6 +182,15 @@ function visRetter_boligerne() {
     boligerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    if (slug_menu == boligpkt.slug && slug_menu != "forside") {
+      menuExpand();
+      om_up.classList.add("on_this");
+      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
+        article.style.opacity = ".5";
+      })
+      document.querySelector("#boligerne").style.zIndex = zIndex;
+      document.querySelector("#bolig_click").parentElement.style.opacity = "1";
+    }
   });
   let back_om = document.createElement("p");
   back_om.classList.add("back");
@@ -174,6 +212,15 @@ let logo = document.createElement("img");
 logo.src = "../../assets/img/21-5_logo.svg";
 logo.alt = "21-5 logo";
 logo.id = "logo";
+logo.addEventListener("click", () => {
+  document.querySelector("#anim").style.width = "50vw";
+  document.querySelector("#pre").style.width = "100vh";
+  document.querySelector("#pre").style.height = "100vh";
+  document.querySelector("#pre").style.transform = "scale(2.5)";
+  setTimeout(function () {
+    location.href = `index.html`;
+  }, 500)
+})
 let burger = document.createElement("img");
 burger.src = "../../assets/img/burger2.svg";
 burger.alt = "burger menu";
@@ -213,10 +260,9 @@ h3_3.appendChild(page3);
 let article4 = document.createElement("article");
 let h3_4 = document.createElement("h3");
 h3_4.id = "dest_click"
-let page4 = document.createTextNode("Destinationerne");
 nav_wrap.appendChild(article4);
 article4.appendChild(h3_4);
-h3_4.appendChild(page4);
+h3_4.innerHTML = "Destina&shytionerne";
 
 let article5 = document.createElement("article");
 let h3_5 = document.createElement("h3");
@@ -230,7 +276,7 @@ let top_wrap = document.createElement("div");
 nav.appendChild(top_wrap);
 let lande = document.createElement("p");
 top_wrap.appendChild(lande);
-lande.innerHTML = "Danmark <br>Norge <br>Sverige <br>USA <br>Canada";
+lande.innerHTML = "Danmark";
 let login = document.createElement("p");
 login.id = "login";
 let login_i = document.createTextNode("Login");
@@ -238,7 +284,7 @@ top_wrap.appendChild(login);
 login.appendChild(login_i);
 
 let kob_din_andel = document.createElement("div");
-kob_din_andel.id = "om_21-5";
+kob_din_andel.id = "kob_din_andel";
 kob_din_andel.classList.add("underkategori");
 nav.appendChild(kob_din_andel);
 let kob_din_andel_wrap = document.createElement("div");
@@ -275,7 +321,7 @@ boligerne.appendChild(boligerne_wrap);
 
 document.addEventListener("DOMContentLoaded", () => {
   burger.addEventListener("click", menuDown);
-  burger.addEventListener("click", menuCollapse);
+  /*burger.addEventListener("click", menuCollapse);*/
   h3_2.addEventListener("click", kobClick);
   h3_2.addEventListener("click", menuExpand);
   h3_3.addEventListener("click", omClick);
@@ -291,6 +337,11 @@ function menuDown() {
   burger.removeEventListener("click", menuDown);
   header.style.transform = "translateY(calc(100vh - 60px)";
   burger.addEventListener("click", menuUp);
+
+
+  document.querySelectorAll(".back").forEach((back) => {
+    back.addEventListener("click", menuCollapse);
+  })
 }
 
 function menuUp() {
@@ -301,30 +352,26 @@ function menuUp() {
 }
 
 function menuExpand() {
-  document.querySelectorAll(".back").forEach((back) => {
-    back.addEventListener("click", menuCollapse);
-  })
+  console.log("expand");
+  console.log(zIndex);
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(880px)";
-      burger.style.transform = "translateX(-300px)";
-      login.style.transform = "translateX(-300px)";
       nav_wrap.style.transform = "translateX(-300px)";
     })
   } else {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(0)";
+      div.style.transform = "translateX(-20px)";
     })
-    nav_wrap.style.transform = "translateX(-100vw)";
+    nav_wrap.style.transform = "translateX(calc(-100vw - 20px))";
   }
 }
 
 function menuCollapse() {
+  console.log("collapse");
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(1200px)";
-      burger.style.transform = "translateX(0)";
-      login.style.transform = "translateX(0)";
       nav_wrap.style.transform = "translateX(0)";
     })
   } else {
@@ -338,11 +385,12 @@ function menuCollapse() {
   })
 }
 
+let zIndex = 5;
+
 function kobClick() {
-  kob_din_andel_wrap.style.visibility = "visible";
-  om_21_5_wrap.style.visibility = "hidden";
-  destinationerne_wrap.style.visibility = "hidden";
-  boligerne_wrap.style.visibility = "hidden";
+  console.log("kob click");
+  zIndex++;
+  document.querySelector("#kob_din_andel").style.zIndex = zIndex;
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
@@ -350,10 +398,9 @@ function kobClick() {
 }
 
 function omClick() {
-  kob_din_andel_wrap.style.visibility = "hidden";
-  om_21_5_wrap.style.visibility = "visible";
-  destinationerne_wrap.style.visibility = "hidden";
-  boligerne_wrap.style.visibility = "hidden";
+  console.log("om click")
+  zIndex++;
+  document.querySelector("#om_21-5").style.zIndex = zIndex;
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
@@ -361,10 +408,9 @@ function omClick() {
 }
 
 function destClick() {
-  kob_din_andel_wrap.style.visibility = "hidden";
-  om_21_5_wrap.style.visibility = "hidden";
-  destinationerne_wrap.style.visibility = "visible";
-  boligerne_wrap.style.visibility = "hidden";
+  console.log("dest click")
+  zIndex++;
+  document.querySelector("#destinationerne").style.zIndex = zIndex;
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
@@ -372,10 +418,9 @@ function destClick() {
 }
 
 function boligClick() {
-  kob_din_andel_wrap.style.visibility = "hidden";
-  om_21_5_wrap.style.visibility = "hidden";
-  destinationerne_wrap.style.visibility = "hidden";
-  boligerne_wrap.style.visibility = "visible";
+  console.log("bolig click")
+  zIndex++;
+  document.querySelector("#boligerne").style.zIndex = zIndex;
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })

@@ -18,6 +18,7 @@
   <script src="assets/img/lottie.js"></script>
   <script src="../../assets/js/menu.js"></script>
   <script src="../../assets/js/footer.js"></script>
+  <script src="../../assets/js/uk.js"></script>
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
@@ -33,17 +34,14 @@
     }
 
     async function hentJSON() {
-
+      console.log("page loaded");
       const response = await fetch(endpoint);
       retter = await response.json();
       visRetter();
-
-      setTimeout(function() {
-        document.querySelector("#anim").style.width = "0";
-        document.querySelector("#pre").style.width = "0";
-        document.querySelector("#pre").style.height = "0";
-        document.querySelector("#pre").style.transform = "scale(1)";
-      }, 500)
+      document.querySelector("#anim").style.width = "0";
+      document.querySelector("#pre").style.width = "0";
+      document.querySelector("#pre").style.height = "0";
+      document.querySelector("#pre").style.transform = "scale(1)";
     }
 
     function visRetter() {
@@ -68,5 +66,4 @@
       path: "assets/img/preload_ani.json"
     })
   </script>
-  <script src="../../assets/js/uk.js"></script>
 </body></html>

@@ -10,43 +10,58 @@
 </head>
 
 <body>
+  <div id="pre"></div>
+  <div id="anim"></div>
   <main>
     <div id="fill"></div>
   </main>
+  <script src="assets/img/lottie.js"></script>
   <script src="../../assets/js/menu.js"></script>
+  <script src="../../assets/js/footer.js"></script>
+  <script src="../../assets/js/uk.js"></script>
 
   <script>
-    let URLend = "pages?slug=forside";
+    let URLend = `pages?slug=forside`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
 
     document.addEventListener("DOMContentLoaded", start);
 
     function start() {
-      console.log("start");
       hentJSON();
     }
 
     async function hentJSON() {
-      console.log("hent json");
-
+      console.log("page loaded");
       const response = await fetch(endpoint);
       retter = await response.json();
       visRetter();
+      document.querySelector("#anim").style.width = "0";
+      document.querySelector("#pre").style.width = "0";
+      document.querySelector("#pre").style.height = "0";
+      document.querySelector("#pre").style.transform = "scale(1)";
     }
 
     function visRetter() {
 
       retter.forEach(element => {
-        console.log(element.content.rendered);
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
         let h1 = document.createElement("h1");
         let h1_i = document.createTextNode(element.title.rendered);
         let main_ = document.querySelector("main");
         h1.appendChild(h1_i);
-        main_.insertBefore(h1, main_.childNodes[0]);
+        main_.insertBefore(h1, main_.childNodes[1]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }
+
+
+    var animation = bodymovin.loadAnimation({
+      container: document.querySelector("#anim"),
+      rederer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "assets/img/preload_ani.json"
+    })
   </script>
 </body></html>

@@ -17,10 +17,13 @@ insta_img.alt = "instagram icon";
 insta.appendChild(insta_img);
 let input_wrap = document.createElement("div");
 input_wrap.id = "input_wrap"
+let nyhed = document.createElement("h3");
+nyhed.textContent = "Tilmeld dig vores nyhedsbrev!";
 let input = document.createElement("input");
 input.setAttribute("type", "text");
 let tilmeld = document.createElement("button");
 tilmeld.textContent = "Tilmeld";
+input_wrap.appendChild(nyhed);
 input_wrap.appendChild(input);
 input_wrap.appendChild(tilmeld);
 let AS_21_5 = document.createElement("p");
