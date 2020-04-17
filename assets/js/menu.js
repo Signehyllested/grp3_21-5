@@ -6,12 +6,49 @@ console.log("menu.js");
 document.addEventListener("DOMContentLoaded", start_menu);
 
 function start_menu() {
-  console.log("start_menu");
+  hentJSON_kob_din_andel();
   hentJSON_om_21_5();
   hentJSON_destinationerne();
   hentJSON_boligerne();
 }
 
+
+
+//hent alle posts med categorien køb din andel
+let URLend_kob_din_andel = "posts?categories=7";
+let endpoint_kob_din_andel = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_kob_din_andel}`;
+let retter_kob_din_andel = [];
+
+async function hentJSON_kob_din_andel() {
+
+  const response_kob_din_andel = await fetch(endpoint_kob_din_andel);
+  retter_kob_din_andel = await response_kob_din_andel.json();
+  visRetter_kob_din_andel();
+}
+
+function visRetter_kob_din_andel() {
+  retter_kob_din_andel.forEach(kobpkt => {
+    let om_ua = document.createElement("a");
+    om_ua.addEventListener("click", () => {
+      document.querySelector("#anim").style.width = "25vw";
+      document.querySelector("#pre").style.width = "100vh";
+      document.querySelector("#pre").style.height = "100vh";
+      document.querySelector("#pre").style.transform = "scale(2.5)";
+
+      setTimeout(function () {
+        location.href = `template.html?slug=${kobpkt.slug}`
+      }, 500)
+    })
+    let om_up = document.createElement("p");
+    let om_up_i = document.createTextNode(kobpkt.title.rendered);
+    kob_din_andel_wrap.appendChild(om_ua);
+    om_ua.appendChild(om_up);
+    om_up.appendChild(om_up_i);
+  });
+  let back_om = document.createElement("p");
+  back_om.classList.add("back");
+  kob_din_andel_wrap.appendChild(back_om);
+}
 
 //hent alle posts med categorien om 21 5
 let URLend_om_21_5 = "posts?categories=6";
@@ -19,7 +56,6 @@ let endpoint_om_21_5 = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpr
 let retter_om_21_5 = [];
 
 async function hentJSON_om_21_5() {
-  console.log("hent json");
 
   const response_om_21_5 = await fetch(endpoint_om_21_5);
   retter_om_21_5 = await response_om_21_5.json();
@@ -27,7 +63,6 @@ async function hentJSON_om_21_5() {
 }
 
 function visRetter_om_21_5() {
-  console.log(retter_om_21_5);
 
   retter_om_21_5.forEach(ompkt => {
     let om_ua = document.createElement("a");
@@ -58,7 +93,6 @@ let endpoint_destinationerne = `http://signehyllested.dk/kea/2_semester/grp3_21-
 let retter_destinationerne = [];
 
 async function hentJSON_destinationerne() {
-  console.log("hent json");
 
   const response_destinationerne = await fetch(endpoint_destinationerne);
   retter_destinationerne = await response_destinationerne.json();
@@ -66,7 +100,6 @@ async function hentJSON_destinationerne() {
 }
 
 function visRetter_destinationerne() {
-  console.log(retter_destinationerne);
 
   retter_destinationerne.forEach(destpkt => {
     let om_ua = document.createElement("a");
@@ -96,7 +129,6 @@ let endpoint_boligerne = `http://signehyllested.dk/kea/2_semester/grp3_21-5/word
 let retter_boligerne = [];
 
 async function hentJSON_boligerne() {
-  console.log("hent json");
 
   const response_boligerne = await fetch(endpoint_boligerne);
   retter_boligerne = await response_boligerne.json();
@@ -104,7 +136,6 @@ async function hentJSON_boligerne() {
 }
 
 function visRetter_boligerne() {
-  console.log(retter_boligerne);
 
   retter_boligerne.forEach(boligpkt => {
     let om_ua = document.createElement("a");
@@ -155,7 +186,7 @@ nav.appendChild(nav_wrap);
 
 let article1 = document.createElement("article");
 let a1 = document.createElement("a");
-a1.href = ""
+a1.href = "index.html"
 let h3_1 = document.createElement("h3");
 let page1 = document.createTextNode("Forside");
 nav_wrap.appendChild(article1);
@@ -164,13 +195,11 @@ a1.appendChild(h3_1);
 h3_1.appendChild(page1);
 
 let article2 = document.createElement("article");
-let a2 = document.createElement("a");
-a2.href = ""
 let h3_2 = document.createElement("h3");
+h3_2.id = "kob_click"
 let page2 = document.createTextNode("Køb din andel");
 nav_wrap.appendChild(article2);
-article2.appendChild(a2);
-a2.appendChild(h3_2);
+article2.appendChild(h3_2);
 h3_2.appendChild(page2);
 
 let article3 = document.createElement("article");
@@ -208,6 +237,13 @@ let login_i = document.createTextNode("Login");
 top_wrap.appendChild(login);
 login.appendChild(login_i);
 
+let kob_din_andel = document.createElement("div");
+kob_din_andel.id = "om_21-5";
+kob_din_andel.classList.add("underkategori");
+nav.appendChild(kob_din_andel);
+let kob_din_andel_wrap = document.createElement("div");
+kob_din_andel.appendChild(kob_din_andel_wrap);
+
 let om_21_5 = document.createElement("div");
 om_21_5.id = "om_21-5";
 om_21_5.classList.add("underkategori");
@@ -240,10 +276,12 @@ boligerne.appendChild(boligerne_wrap);
 document.addEventListener("DOMContentLoaded", () => {
   burger.addEventListener("click", menuDown);
   burger.addEventListener("click", menuCollapse);
-  h3_4.addEventListener("click", destClick);
-  h3_4.addEventListener("click", menuExpand);
+  h3_2.addEventListener("click", kobClick);
+  h3_2.addEventListener("click", menuExpand);
   h3_3.addEventListener("click", omClick);
   h3_3.addEventListener("click", menuExpand);
+  h3_4.addEventListener("click", destClick);
+  h3_4.addEventListener("click", menuExpand);
   h3_5.addEventListener("click", boligClick);
   h3_5.addEventListener("click", menuExpand);
 })
@@ -300,30 +338,44 @@ function menuCollapse() {
   })
 }
 
-function destClick() {
-  destinationerne_wrap.style.visibility = "visible";
-  boligerne_wrap.style.visibility = "hidden";
+function kobClick() {
+  kob_din_andel_wrap.style.visibility = "visible";
   om_21_5_wrap.style.visibility = "hidden";
+  destinationerne_wrap.style.visibility = "hidden";
+  boligerne_wrap.style.visibility = "hidden";
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
-  article4.style.opacity = "1";
+  article2.style.opacity = "1";
 }
 
 function omClick() {
+  kob_din_andel_wrap.style.visibility = "hidden";
+  om_21_5_wrap.style.visibility = "visible";
   destinationerne_wrap.style.visibility = "hidden";
   boligerne_wrap.style.visibility = "hidden";
-  om_21_5_wrap.style.visibility = "visible";
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
   article3.style.opacity = "1";
 }
 
+function destClick() {
+  kob_din_andel_wrap.style.visibility = "hidden";
+  om_21_5_wrap.style.visibility = "hidden";
+  destinationerne_wrap.style.visibility = "visible";
+  boligerne_wrap.style.visibility = "hidden";
+  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
+    div.style.opacity = ".5";
+  })
+  article4.style.opacity = "1";
+}
+
 function boligClick() {
+  kob_din_andel_wrap.style.visibility = "hidden";
+  om_21_5_wrap.style.visibility = "hidden";
   destinationerne_wrap.style.visibility = "hidden";
   boligerne_wrap.style.visibility = "visible";
-  om_21_5_wrap.style.visibility = "hidden";
   document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
     div.style.opacity = ".5";
   })
