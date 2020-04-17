@@ -19,11 +19,17 @@ async function hentJSON_getcat() {
 
 function visRetter_getcat() {
   retter_getcat.forEach(cat => {
-    category = cat.categories.pop();
-    if (category == 8) {
-      category = 1;
+    var last = function (array, n) {
+      if (array == null)
+        return void 0;
+      if (n == null)
+        return array[array.length - 1];
+      return array.slice(Math.max(array.length - n, 0));
     }
-    console.log(category);
+    category = last(cat.categories);
+    if (category < 8) {
+      category = 0;
+    }
   });
   hentJSON_showuk();
 }

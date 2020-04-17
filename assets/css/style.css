@@ -88,6 +88,10 @@ button {
   color: #454C4C;
 }
 
+a {
+  cursor: pointer;
+}
+
 strong {
   font-weight: 700;
 }
@@ -163,21 +167,42 @@ nav {
   left: 0;
 }
 
-#logo_container #logo {
+#logo {
   visibility: visible;
   height: 53px;
   width: 53px;
   margin: 0 0 5px -10px;
   padding: 10px;
+  cursor: pointer;
+  transition: .4s cubic-bezier(.25, 1, .5, 1);
 }
 
-#logo_container #burger {
+#logo:hover {
+  transform: scale(1.1);
+}
+
+#logo:active {
+  transform: scale(.9);
+}
+
+#burger {
   visibility: visible;
   height: 40px;
   width: 45px;
   margin: 0 -10px 10px 0;
   padding: 10px;
   transition: .6s cubic-bezier(.5, .3, .25, 1);
+  cursor: pointer;
+}
+
+#burger:hover {
+  transform: scale(1.1);
+  transition: .4s cubic-bezier(.25, 1, .5, 1);
+}
+
+#burger:active {
+  transform: scale(.9);
+  transition: .4s cubic-bezier(.25, 1, .5, 1);
 }
 
 #login {
@@ -208,13 +233,21 @@ nav h3 {
   color: #fff;
   line-height: 3rem;
   font-size: 2rem;
-  width: 300px;
   cursor: pointer;
-  transition: .6s cubic-bezier(.25, 1, .5, 1);
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
 }
 
 nav h3:hover {
+  transform: scale(1.05);
   color: #E48B65;
+  filter: brightness(1.2);
+}
+
+nav h3:active {
+  transform: scale(.9);
+  color: #E48B65;
+  filter: brightness(.7);
+  transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
 nav div:nth-child(3) {
@@ -257,7 +290,7 @@ nav div:nth-child(3) p {
   transform: translateX(1200px);
   transition: .7s cubic-bezier(.5, .3, .25, 1);
   visibility: hidden;
-  background-color: #86BEC4;
+  background-color: #3B8E9B;
   padding: 20px;
   right: 0;
   width: 300px;
@@ -280,7 +313,16 @@ nav div:nth-child(3) p {
 }
 
 .underkategori p:hover {
-  color: #E48B65;
+  transform: scale(1.05);
+  color: #EF9F6A;
+  filter: brightness(1.2);
+}
+
+.underkategori p:active {
+  transform: scale(.9);
+  color: #EF9F6A;
+  filter: brightness(.7);
+  transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
 @media screen and (max-width: 1200px) {
@@ -387,13 +429,27 @@ button {
   font-family: motiva-sans, sans-serif;
   font-weight: 400;
   font-style: normal;
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
 }
 
-.this_site {
+button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+button:active {
+  transform: scale(.9);
+  filter: brightness(.7);
+  transition: .2s cubic-bezier(.25, 1, .5, 1);
+}
+
+.this_site,
+.this_site:hover {
   background: rgb(255, 255, 255);
   background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(238, 239, 234, 1) 100%);
   color: #2B3333;
   border: 1px solid #2B3333;
+  transform: scale(1);
 }
 
 #input_wrap {
