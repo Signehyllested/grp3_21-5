@@ -232,7 +232,15 @@ nav.appendChild(nav_wrap);
 
 let article1 = document.createElement("article");
 let a1 = document.createElement("a");
-a1.href = "index.html"
+a1.addEventListener("click", () => {
+  document.querySelector("#anim").style.width = "50vw";
+  document.querySelector("#pre").style.width = "100vh";
+  document.querySelector("#pre").style.height = "100vh";
+  document.querySelector("#pre").style.transform = "scale(2.5)";
+  setTimeout(function () {
+    location.href = `index.html`;
+  }, 500)
+})
 let h3_1 = document.createElement("h3");
 let page1 = document.createTextNode("Forside");
 nav_wrap.appendChild(article1);

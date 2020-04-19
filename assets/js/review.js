@@ -75,7 +75,7 @@ function autoplayReviewForward() {
         arrow_f.classList.add("grayscale_f");
       }
     }
-  }, 2000)
+  }, 3000)
 }
 
 function autoplayReviewBackward() {
@@ -101,7 +101,7 @@ function autoplayReviewBackward() {
         arrow_f.classList.add("grayscale_f");
       }
     }
-  }, 2000)
+  }, 3000)
 }
 
 let main_review = document.querySelector("main");
