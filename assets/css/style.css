@@ -6,6 +6,13 @@ body {
   color: #2B3333;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -179,8 +186,10 @@ nav {
   z-index: 100;
 }
 
-#logo:hover {
-  transform: scale(1.1);
+@media screen and (min-width: 800px) {
+  #logo:hover {
+    transform: scale(1.1);
+  }
 }
 
 #logo:active {
@@ -199,9 +208,11 @@ nav {
   z-index: 100;
 }
 
-#burger:hover {
-  transform: scale(1.1);
-  transition: .4s cubic-bezier(.25, 1, .5, 1);
+@media screen and (min-width: 800px) {
+  #burger:hover {
+    transform: scale(1.1);
+    transition: .4s cubic-bezier(.25, 1, .5, 1);
+  }
 }
 
 #burger:active {
@@ -232,6 +243,7 @@ nav article {
 }
 
 nav h3 {
+  font-style: italic;
   text-align: end;
   margin: 20px 0;
   color: #fff;
@@ -241,10 +253,12 @@ nav h3 {
   transition: .5s cubic-bezier(.25, 1, .5, 1);
 }
 
-nav h3:hover {
-  transform: scale(1.05);
-  color: #E48B65;
-  filter: brightness(1.2);
+@media screen and (min-width: 800px) {
+  nav h3:hover {
+    transform: scale(1.05);
+    color: #E48B65;
+    filter: brightness(1.2);
+  }
 }
 
 nav h3:active {
@@ -321,10 +335,12 @@ nav div:nth-child(3) p {
   text-align: end;
 }
 
-.underkategori p:hover {
-  transform: scale(1.05);
-  color: #EF9F6A;
-  filter: brightness(1.2);
+@media screen and (min-width: 800px) {
+  .underkategori p:hover {
+    transform: scale(1.05);
+    color: #EF9F6A;
+    filter: brightness(1.2);
+  }
 }
 
 .underkategori p:active {
@@ -454,9 +470,11 @@ button {
   transition: .5s cubic-bezier(.25, 1, .5, 1);
 }
 
-button:hover {
-  transform: scale(1.05);
-  filter: brightness(1.2);
+@media screen and (min-width: 800px) {
+  button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
 }
 
 button:active {
@@ -465,13 +483,22 @@ button:active {
   transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
-.this_site,
-.this_site:hover {
+.this_site {
   background: rgb(255, 255, 255);
   background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(238, 239, 234, 1) 100%);
   color: #2B3333;
   border: 1px solid #2B3333;
   transform: scale(1);
+}
+
+@media screen and (min-width: 800px) {
+  .this_site:hover {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(238, 239, 234, 1) 100%);
+    color: #2B3333;
+    border: 1px solid #2B3333;
+    transform: scale(1);
+  }
 }
 
 header nav .on_this {
@@ -542,8 +569,10 @@ vp-center {
   align-self: end;
 }
 
-.review_wrap:hover {
-  transform: translateX(-200px);
+@media screen and (min-width: 800px) {
+  .review_wrap:hover {
+    transform: translateX(-200px);
+  }
 }
 
 .review_img {
@@ -597,9 +626,11 @@ vp-center {
   margin-left: 10px;
 }
 
-.arrow_f:hover {
-  transform: scale(1.1);
-  filter: brightness(1.2);
+@media screen and (min-width: 800px) {
+  .arrow_f:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
 }
 
 .arrow_f:active {
@@ -608,9 +639,11 @@ vp-center {
   transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
-.arrow_b:hover {
-  transform: scale(1.1) rotate(180deg);
-  filter: brightness(1.2);
+@media screen and (min-width: 800px) {
+  .arrow_b:hover {
+    transform: scale(1.1) rotate(180deg);
+    filter: brightness(1.2);
+  }
 }
 
 .arrow_b:active {
@@ -625,14 +658,28 @@ vp-center {
   cursor: auto;
 }
 
-.grayscale_f:hover,
+@media screen and (min-width: 800px) {
+  .grayscale_f:hover {
+    filter: grayscale(1);
+    transform: scale(1);
+    cursor: auto;
+  }
+}
+
 .grayscale_f:active {
   filter: grayscale(1);
   transform: scale(1);
   cursor: auto;
 }
 
-.grayscale_b:hover,
+@media screen and (min-width: 800px) {
+  .grayscale_b:hover {
+    filter: grayscale(1);
+    transform: scale(1) rotate(180deg);
+    cursor: auto;
+  }
+}
+
 .grayscale_b:active {
   filter: grayscale(1);
   transform: scale(1) rotate(180deg);

@@ -68,7 +68,7 @@ function visRetter_showuk() {
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
       setTimeout(function () {
-        location.href = `template.html?slug=${uk.slug}`
+        location.href = `21-5.html?slug=${uk.slug}`
       }, 500)
     })
     if (uk.slug == slug_getcat) {

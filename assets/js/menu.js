@@ -38,7 +38,7 @@ function visRetter_kob_din_andel() {
       document.querySelector("#pre").style.transform = "scale(2.5)";
 
       setTimeout(function () {
-        location.href = `template.html?slug=${kobpkt.slug}`
+        location.href = `21-5.html?slug=${kobpkt.slug}`
       }, 500)
     })
     let om_up = document.createElement("p");
@@ -83,7 +83,7 @@ function visRetter_om_21_5() {
       document.querySelector("#pre").style.transform = "scale(2.5)";
 
       setTimeout(function () {
-        location.href = `template.html?slug=${ompkt.slug}`
+        location.href = `21-5.html?slug=${ompkt.slug}`
       }, 500)
     })
     let om_up = document.createElement("p");
@@ -128,7 +128,7 @@ function visRetter_destinationerne() {
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
       setTimeout(function () {
-        location.href = `template.html?slug=${destpkt.slug}`
+        location.href = `21-5.html?slug=${destpkt.slug}`
       }, 500)
     })
     let om_up = document.createElement("p");
@@ -173,7 +173,7 @@ function visRetter_boligerne() {
       document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
       setTimeout(function () {
-        location.href = `template.html?slug=${boligpkt.slug}`
+        location.href = `21-5.html?slug=${boligpkt.slug}`
       }, 500)
     })
     let om_up = document.createElement("p");
@@ -208,7 +208,7 @@ logoContainer.id = "logo_container";
 nav.appendChild(logoContainer);
 
 let logo = document.createElement("img");
-logo.src = "../../assets/img/21-5_logo.svg";
+logo.src = "assets/img/21-5_logo.svg";
 logo.alt = "21-5 logo";
 logo.id = "logo";
 logo.addEventListener("click", () => {
@@ -221,7 +221,7 @@ logo.addEventListener("click", () => {
   }, 500)
 })
 let burger = document.createElement("img");
-burger.src = "../../assets/img/burger2.svg";
+burger.src = "assets/img/burger2.svg";
 burger.alt = "burger menu";
 burger.id = "burger";
 logoContainer.appendChild(logo);
