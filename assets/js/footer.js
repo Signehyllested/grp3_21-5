@@ -21,6 +21,7 @@ let nyhed = document.createElement("h3");
 nyhed.textContent = "Tilmeld dig vores nyhedsbrev!";
 let input = document.createElement("input");
 input.setAttribute("type", "text");
+input.setAttribute("placeholder", "Din mail...");
 let tilmeld = document.createElement("button");
 tilmeld.textContent = "Tilmeld";
 input_wrap.appendChild(nyhed);

@@ -74,7 +74,6 @@ async function hentJSON_om_21_5() {
 }
 
 function visRetter_om_21_5() {
-
   retter_om_21_5.forEach(ompkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {

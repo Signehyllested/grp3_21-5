@@ -7,6 +7,10 @@
   <title></title>
   <link rel="stylesheet" href="../../assets/css/style.css">
   <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -17,6 +21,7 @@
   </main>
   <script src="assets/img/lottie.js"></script>
   <script src="../../assets/js/menu.js"></script>
+  <script src="../../assets/js/review.js"></script>
   <script src="../../assets/js/footer.js"></script>
   <script src="../../assets/js/uk.js"></script>
 
@@ -45,12 +50,6 @@
     function visRetter() {
 
       retter.forEach(element => {
-        document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
-        let h1 = document.createElement("h1");
-        let h1_i = document.createTextNode(element.title.rendered);
-        let main_ = document.querySelector("main");
-        h1.appendChild(h1_i);
-        main_.insertBefore(h1, main_.childNodes[1]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
       });
     }
