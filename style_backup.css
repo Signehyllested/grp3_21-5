@@ -6,6 +6,13 @@ body {
   color: #272C33;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body::-webkit-scrollbar {
@@ -46,25 +53,25 @@ h1 {
 
 h2 {
   font-family: ivyjournal, sans-serif;
-  font-weight: 300;
-  font-style: normal;
+  font-weight: 400;
+  font-style: italic;
   font-size: 2.5rem;
   margin: 20px 0 10px 0;
 }
 
 h3 {
   font-family: ivyjournal, sans-serif;
-  font-weight: 200;
-  font-style: italic;
-  font-size: 1.7rem;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
   margin: 20px 0 5px 0;
 }
 
 h4 {
   font-family: mr-eaves-xl-modern, sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   font-style: normal;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin: 20px 0 5px 0;
 }
 
@@ -77,7 +84,6 @@ input {
   font-weight: 300;
   font-style: normal;
   font-size: 1.2rem;
-  line-height: 1.45rem;
   letter-spacing: .02rem;
   padding: 0 0 10px 0;
   color: #353B44;
@@ -88,30 +94,8 @@ a {
   text-decoration: none;
 }
 
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-p::selection,
-a::selection,
-li::selection,
-button::selection,
-input::selection,
-a::selection {
-  background: #CEAD89;
-  color: #272C33;
-}
-
 strong {
-  font-weight: 600;
-}
-
-h3 strong {
-  font-weight: 200;
-}
-
-h2 strong {
-  font-weight: 300;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 800px) {
@@ -141,9 +125,13 @@ h2 strong {
 
 header {
   position: fixed;
+  max-width: 1200px;
   width: 100vw;
+  padding: 0 20px;
   top: calc(-100vh + 60px);
   left: 0;
+  right: 0;
+  margin: 0 auto;
   height: 100vh;
   transition: .6s cubic-bezier(.5, .3, .25, 1);
   background: #272C33;
@@ -159,12 +147,6 @@ video {
 }
 
 nav {
-  max-width: 1200px;
-  width: 100vw;
-  padding: 0 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   width: 100%;
   height: 100%;
 }
@@ -181,6 +163,7 @@ li {
   align-items: flex-end;
   z-index: 5;
   visibility: hidden;
+  padding: 0 20px;
 }
 
 #logo {
@@ -234,19 +217,13 @@ li {
 }
 
 nav div:nth-child(2) {
-  width: 100vw;
-  max-width: 1200px;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   position: absolute;
-  top: 0;
   left: 0;
   padding: 0 20px;
   z-index: 2;
@@ -283,25 +260,22 @@ nav h3:active {
 }
 
 nav div:nth-child(3) {
-  width: 100vw;
-  max-width: 1200px;
-  top: 0;
-  left: 0;
-  right: 0;
-  margin: 10px auto;
+  width: 100%;
+  padding: 20px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: absolute;
-  padding: 0 20px;
+  top: 0;
+  left: 0;
   z-index: 3;
   visibility: hidden;
 }
 
 nav div:nth-child(3) p {
   line-height: 2rem;
-  color: #CEAD89;
+  color: #fff;
   visibility: visible;
   font-family: ivyjournal, sans-serif;
   font-weight: 400;
@@ -309,33 +283,31 @@ nav div:nth-child(3) p {
 }
 
 .underkategori {
-  width: 100vw;
-  max-width: 1200px;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+  width: 100%;
   height: 80%;
   position: absolute;
-  padding: 0 30px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  padding: 0 20px;
   z-index: 2;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: center;
+  justify-items: flex-end;
   visibility: hidden;
   overflow: hidden;
 }
 
 .underkategori div {
-  height: 80%;
-  transform: translateX(300px);
+  transform: translateX(100vw);
   transition: .7s cubic-bezier(.5, .3, .25, 1);
+  position: relative;
   visibility: visible;
   background-color: #353B44;
-  padding: 0 20px;
-  width: 270px;
+  padding: 20px;
+  right: 0;
+  width: 300px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -343,8 +315,11 @@ nav div:nth-child(3) p {
 }
 
 .underkategori p {
+  font-family: ivyjournal, sans-serif;
+  font-weight: 200;
+  font-style: normal;
   line-height: 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: #fff;
   padding: 6px 0 0 0;
   transition: .6s cubic-bezier(.25, 1, .5, 1);
@@ -442,8 +417,7 @@ footer {
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 0 20px;
-  padding-top: 50px;
+  padding: 50px;
 }
 
 footer p {
@@ -467,6 +441,11 @@ button {
   border: none;
   box-shadow: none;
   text-align: left;
+}
+
+input {
+  padding: 10px 20px 10px 20px;
+  font-size: 1rem;
 }
 
 #input_wrap {
@@ -697,18 +676,12 @@ vp-center {
   cursor: auto;
 }
 
-#anim svg path {
-  color: #CEAD89;
-  background: #CEAD89;
-}
-
 @media screen and (min-width: 800px) {
   #fill > p {
     width: 50%;
   }
 
-  nav,
-  nav div:nth-child(3) {
+  header {
     padding: 0 50px;
   }
 

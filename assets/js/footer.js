@@ -1,4 +1,6 @@
 let footer = document.createElement("footer");
+let footer_wrap = document.createElement("div");
+footer_wrap.id = "footer_wrap";
 let kontakt = document.createElement("h3");
 kontakt.textContent = "Kontakt os";
 let mail = document.createElement("p");
@@ -42,4 +44,5 @@ footer.appendChild(input_wrap);
 footer.appendChild(AS_21_5);
 footer.appendChild(CVR);
 footer.appendChild(copyright);
-document.querySelector("main").appendChild(footer);
+footer_wrap.appendChild(footer);
+document.querySelector("main").appendChild(footer_wrap);

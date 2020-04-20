@@ -49,11 +49,11 @@ function visRetter_kob_din_andel() {
     if (slug_menu == kobpkt.slug && slug_menu != "forside") {
       menuExpand();
       om_up.classList.add("on_this");
-      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
-        article.style.opacity = ".5";
+      document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
+        article.style.color = "#fff";
       })
       document.querySelector("#kob_din_andel").style.zIndex = zIndex;
-      document.querySelector("#kob_click").parentElement.style.opacity = "1";
+      document.querySelector("#kob_click").style.color = "#CEAD89";
     }
   });
   let back_om = document.createElement("p");
@@ -94,11 +94,11 @@ function visRetter_om_21_5() {
     if (slug_menu == ompkt.slug && slug_menu != "forside") {
       menuExpand();
       om_up.classList.add("on_this");
-      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
-        article.style.opacity = ".5";
+      document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
+        article.style.color = "#fff";
       })
       document.querySelector("#om_21-5").style.zIndex = zIndex;
-      document.querySelector("#om_click").parentElement.style.opacity = "1";
+      document.querySelector("#om_click").style.color = "#CEAD89";
     }
   });
   let back_om = document.createElement("p");
@@ -139,11 +139,11 @@ function visRetter_destinationerne() {
     if (slug_menu == destpkt.slug && slug_menu != "forside") {
       menuExpand();
       om_up.classList.add("on_this");
-      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
-        article.style.opacity = ".5";
+      document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
+        article.style.color = "#fff";
       })
       document.querySelector("#destinationerne").style.zIndex = zIndex;
-      document.querySelector("#dest_click").parentElement.style.opacity = "1";
+      document.querySelector("#dest_click").style.color = "#CEAD89";
     }
   });
   let back_om = document.createElement("p");
@@ -184,11 +184,11 @@ function visRetter_boligerne() {
     if (slug_menu == boligpkt.slug && slug_menu != "forside") {
       menuExpand();
       om_up.classList.add("on_this");
-      document.querySelectorAll("nav div:nth-child(2) article").forEach((article) => {
-        article.style.opacity = ".5";
+      document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
+        article.style.color = "#fff";
       })
       document.querySelector("#boligerne").style.zIndex = zIndex;
-      document.querySelector("#bolig_click").parentElement.style.opacity = "1";
+      document.querySelector("#bolig_click").style.color = "#CEAD89";
     }
   });
   let back_om = document.createElement("p");
@@ -221,7 +221,7 @@ logo.addEventListener("click", () => {
   }, 500)
 })
 let burger = document.createElement("img");
-burger.src = "assets/img/burger2.svg";
+burger.src = "assets/img/burger3.svg";
 burger.alt = "burger menu";
 burger.id = "burger";
 logoContainer.appendChild(logo);
@@ -251,7 +251,7 @@ h3_1.appendChild(page1);
 let article2 = document.createElement("article");
 let h3_2 = document.createElement("h3");
 h3_2.id = "kob_click"
-let page2 = document.createTextNode("Køb din andel");
+let page2 = document.createTextNode("Køb af andel");
 nav_wrap.appendChild(article2);
 article2.appendChild(h3_2);
 h3_2.appendChild(page2);
@@ -363,7 +363,7 @@ function menuExpand() {
   console.log(zIndex);
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(880px)";
+      div.style.transform = "translateX(0)";
       nav_wrap.style.transform = "translateX(-300px)";
     })
   } else {
@@ -378,17 +378,17 @@ function menuCollapse() {
   console.log("collapse");
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(1200px)";
+      div.style.transform = "translateX(300px)";
       nav_wrap.style.transform = "translateX(0)";
     })
   } else {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(100vw)";
+      div.style.transform = "translateX(100%)";
     })
     nav_wrap.style.transform = "translateX(0)";
   }
-  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
-    div.style.opacity = "1";
+  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+    div.style.color = "#fff";
   })
 }
 
@@ -398,38 +398,38 @@ function kobClick() {
   console.log("kob click");
   zIndex++;
   document.querySelector("#kob_din_andel").style.zIndex = zIndex;
-  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
-    div.style.opacity = ".5";
+  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+    div.style.color = "#fff";
   })
-  article2.style.opacity = "1";
+  article2.querySelector("h3").style.color = "#CEAD89";
 }
 
 function omClick() {
   console.log("om click")
   zIndex++;
   document.querySelector("#om_21-5").style.zIndex = zIndex;
-  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
-    div.style.opacity = ".5";
+  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+    div.style.color = "#fff";
   })
-  article3.style.opacity = "1";
+  article3.querySelector("h3").style.color = "#CEAD89";
 }
 
 function destClick() {
   console.log("dest click")
   zIndex++;
   document.querySelector("#destinationerne").style.zIndex = zIndex;
-  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
-    div.style.opacity = ".5";
+  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+    div.style.color = "#fff";
   })
-  article4.style.opacity = "1";
+  article4.querySelector("h3").style.color = "#CEAD89";
 }
 
 function boligClick() {
   console.log("bolig click")
   zIndex++;
   document.querySelector("#boligerne").style.zIndex = zIndex;
-  document.querySelectorAll("nav div:nth-child(2) article").forEach((div) => {
-    div.style.opacity = ".5";
+  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+    div.style.color = "#fff";
   })
-  article5.style.opacity = "1";
+  article5.querySelector("h3").style.color = "#CEAD89";
 }
