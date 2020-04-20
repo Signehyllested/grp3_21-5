@@ -42,7 +42,7 @@ h1 {
   font-style: normal;
   font-size: 4rem;
   margin: 25px 0 25px 0;
-  line-height: 4rem;
+  line-height: 4.3rem;
 }
 
 h2 {
@@ -51,7 +51,7 @@ h2 {
   font-style: normal;
   font-size: 2.5rem;
   margin: 15px 0 15px 0;
-  line-height: 2.5rem;
+  line-height: 2.8rem;
 }
 
 h3 {
@@ -60,7 +60,7 @@ h3 {
   font-style: italic;
   font-size: 1.7rem;
   margin: 15px 0 10px 0;
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 
 h4 {
@@ -69,7 +69,7 @@ h4 {
   font-style: normal;
   font-size: 1.3rem;
   margin: 15px 0 10px 0;
-  line-height: 1.3rem;
+  line-height: 1.6rem;
 }
 
 p,
@@ -121,25 +121,30 @@ h2 strong {
 @media screen and (max-width: 800px) {
   h1 {
     font-size: 2.2rem;
+    line-height: 2.4rem;
   }
 
   h2 {
     font-size: 1.8rem;
+    line-height: 2rem;
   }
 
   h3 {
     font-size: 1.5rem;
+    line-height: 1.7rem;
   }
 
   h4 {
     font-size: 1.2rem;
+    line-height: 1.43rem;
   }
 
   p,
   a,
   li,
   button {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
   }
 }
 
@@ -347,10 +352,10 @@ nav div:nth-child(3) p {
 }
 
 .underkategori p {
-  line-height: 1.5rem;
+  line-height: 1.2rem;
   font-size: 1.3rem;
   color: #fff;
-  padding: 6px 0 0 0;
+  padding: 10px 0 10px 0;
   text-align: end;
   white-space: nowrap;
   transition: .5s cubic-bezier(.25, 1, .5, 1));
@@ -367,9 +372,10 @@ nav div:nth-child(3) p {
 
 .underkategori p:active {
   transform: scale(.95);
-  color: #CEAD89;
-  filter: brightness(.7);
-  transition: .2s cubic-bezier(.25, 1, .5, 1);
+  background: #fff;
+  color: #fff;
+  transition: 0s cubic-bezier(.25, 1, .5, 1);
+  padding: 10px 0 10px 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -383,6 +389,16 @@ nav div:nth-child(3) p {
   }
 }
 
+.underkategori .back {
+  height: 65px;
+  padding: 0px 20px 5px 10px;
+  margin: 0 0 -20px 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: .7s cubic-bezier(.25, 1, .5, 1);
+}
+
 .back:after {
   content: "Tilbage";
   color: #CEAD89;
@@ -392,19 +408,31 @@ nav div:nth-child(3) p {
   padding: 5px 20px 5px 10px;
   margin-right: -20px;
   overflow: visible;
+  transition: .7s cubic-bezier(.5, .3, .25, 1);
+  border: 0px solid #CEAD89;
+  border-left: 600px solid #CEAD89;
 }
 
-.underkategori p .underline {
-  width: 100%;
-  height: 1px;
-  background-color: #CEAD89;
-  transition: .6s cubic-bezier(.25, 1, .5, 1);
-  position: relative;
-  left: 101%;
+.underkategori .back:hover:after {
+  border-bottom: 5px solid #CEAD89;
+  border-top: 5px solid #CEAD89;
+  cursor: pointer;
 }
 
-.underkategori p:hover .underline {
-  left: 0;
+@media screen and (min-width: 800px) {
+  .underkategori p .underline {
+    width: 100%;
+    height: 1px;
+    background-color: #CEAD89;
+    transition: .6s cubic-bezier(.25, 1, .5, 1);
+    position: relative;
+    left: 101%;
+    top: 0;
+  }
+
+  .underkategori p:hover .underline {
+    left: 0;
+  }
 }
 
 .col_wrap {
@@ -745,10 +773,6 @@ vp-center {
 
   footer {
     padding: 50px;
-  }
-
-  .underkategori p {
-    padding: 20px 0 0 0;
   }
 
   .review_img {

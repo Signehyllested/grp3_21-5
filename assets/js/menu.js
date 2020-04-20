@@ -64,6 +64,7 @@ function visRetter_kob_din_andel() {
   }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
+  back_om.style.overflow = "visible";
   kob_din_andel_wrap.appendChild(back_om);
 }
 
@@ -114,6 +115,7 @@ function visRetter_om_21_5() {
   }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
+  back_om.style.overflow = "visible";
   om_21_5_wrap.appendChild(back_om);
 }
 
@@ -164,6 +166,7 @@ function visRetter_destinationerne() {
   }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
+  back_om.style.overflow = "visible";
   destinationerne_wrap.appendChild(back_om);
 }
 
@@ -214,6 +217,7 @@ function visRetter_boligerne() {
   }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
+  back_om.style.overflow = "visible";
   boligerne_wrap.appendChild(back_om);
 }
 
@@ -389,9 +393,15 @@ function menuExpand() {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
         delay = delay + 0.04;
         ptag.style.transform = "translateX(0)";
-        console.log(delay);
       })
     })
+    setTimeout(function () {
+      document.querySelectorAll(".underkategori div").forEach((div) => {
+        div.querySelectorAll("p").forEach((ptag) => {
+          ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
+        })
+      })
+    }, 1000)
     nav_wrap.style.transform = "translateX(-330px)";
   } else {
     document.querySelectorAll(".underkategori div").forEach((div) => {
@@ -401,9 +411,15 @@ function menuExpand() {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
         delay = delay + 0.04;
         ptag.style.transform = "translateX(0)";
-        console.log(delay);
       })
     })
+    setTimeout(function () {
+      document.querySelectorAll(".underkategori div").forEach((div) => {
+        div.querySelectorAll("p").forEach((ptag) => {
+          ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
+        })
+      })
+    }, 1000)
     nav_wrap.style.transform = "translateX(-100px)";
   }
 }
