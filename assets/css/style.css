@@ -41,7 +41,8 @@ h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 4rem;
-  margin: 20px 0 10px 0;
+  margin: 25px 0 25px 0;
+  line-height: 4rem;
 }
 
 h2 {
@@ -49,7 +50,8 @@ h2 {
   font-weight: 300;
   font-style: normal;
   font-size: 2.5rem;
-  margin: 20px 0 10px 0;
+  margin: 15px 0 15px 0;
+  line-height: 2.5rem;
 }
 
 h3 {
@@ -57,7 +59,8 @@ h3 {
   font-weight: 200;
   font-style: italic;
   font-size: 1.7rem;
-  margin: 20px 0 5px 0;
+  margin: 15px 0 10px 0;
+  line-height: 1.7rem;
 }
 
 h4 {
@@ -65,7 +68,8 @@ h4 {
   font-weight: 600;
   font-style: normal;
   font-size: 1.3rem;
-  margin: 20px 0 5px 0;
+  margin: 15px 0 10px 0;
+  line-height: 1.3rem;
 }
 
 p,
@@ -151,11 +155,10 @@ header {
 }
 
 img,
-figure,
 iframe,
 video {
   width: 100%;
-  margin: 0 0 30px 0;
+  margin: 10px 0 30px 0;
 }
 
 nav {
@@ -250,7 +253,7 @@ nav div:nth-child(2) {
   left: 0;
   padding: 0 20px;
   z-index: 2;
-  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  transition: .7s cubic-bezier(.5, .3, .25, 1);
 }
 
 nav article {
@@ -331,7 +334,7 @@ nav div:nth-child(3) p {
 .underkategori div {
   height: 80%;
   transform: translateX(300px);
-  transition: .7s cubic-bezier(.5, .3, .25, 1);
+  transition: .8s cubic-bezier(.5, .3, .25, 1);
   visibility: visible;
   background-color: #353B44;
   padding: 0 20px;
@@ -374,11 +377,12 @@ nav div:nth-child(3) p {
     background: #272C33;
     margin: 0 -60px 0 0;
   }
+}
 
-  .back:after {
-    content: "⬅";
-    font-size: 2rem;
-  }
+.back:after {
+  content: "Tilbage";
+  color: #CEAD89;
+  font-weight: 700;
 }
 
 .col_wrap {
@@ -422,7 +426,8 @@ nav div:nth-child(3) p {
   left: 0;
   right: 0;
   margin: auto;
-  background: #272C33;
+  background: rgb(53, 59, 68);
+  background: radial-gradient(circle, rgba(53, 59, 68, 1) 0%, rgba(39, 44, 51, 1) 50%);
   z-index: 999;
   transition: .5s cubic-bezier(.5, .3, .25, 1);
 }
@@ -703,9 +708,6 @@ vp-center {
 }
 
 @media screen and (min-width: 800px) {
-  #fill > p {
-    width: 50%;
-  }
 
   nav,
   nav div:nth-child(3) {
