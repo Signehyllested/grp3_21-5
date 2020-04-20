@@ -46,6 +46,9 @@ function visRetter_kob_din_andel() {
     kob_din_andel_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    let underline = document.createElement("div");
+    underline.classList.add("underline");
+    om_up.appendChild(underline);
     if (slug_menu == kobpkt.slug && slug_menu != "forside") {
       menuExpand();
       om_up.classList.add("on_this");
@@ -94,6 +97,9 @@ function visRetter_om_21_5() {
     om_21_5_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    let underline = document.createElement("div");
+    underline.classList.add("underline");
+    om_up.appendChild(underline);
     if (slug_menu == ompkt.slug && slug_menu != "forside") {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
@@ -141,6 +147,9 @@ function visRetter_destinationerne() {
     destinationerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    let underline = document.createElement("div");
+    underline.classList.add("underline");
+    om_up.appendChild(underline);
     if (slug_menu == destpkt.slug && slug_menu != "forside") {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
@@ -188,6 +197,9 @@ function visRetter_boligerne() {
     boligerne_wrap.appendChild(om_ua);
     om_ua.appendChild(om_up);
     om_up.appendChild(om_up_i);
+    let underline = document.createElement("div");
+    underline.classList.add("underline");
+    om_up.appendChild(underline);
     if (slug_menu == boligpkt.slug && slug_menu != "forside") {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
