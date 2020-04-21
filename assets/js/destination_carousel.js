@@ -71,47 +71,51 @@ async function hentJSON_dest_pic() {
 
     theJSON = await response.json();
     console.log(theJSON);
+    buildSkeletonCaro();
+}
+
+function buildSkeletonCaro() {
+    let caroTemp = document.createElement("template");
+    caroTemp.classList.add("caro_temp");
+    let caroSection = document.createElement("div");
+    let caroImg = document.createElement("img");
+    //caroImg.classList.add("caro_imgs");
+    caroTemp.appendChild(caroSection);
+    caroSection.appendChild(caroImg);
+
+    let caroMain = document.createElement("template");
+    let carousel = document.createElement("div");
+    carousel.classList.add("carousel");
+    let carouselInner = document.createElement("div");
+    carouselInner.classList.add("carousel_inner");
+    let bwdBtn = document.createElement("div");
+    bwdBtn.classList.add("bwd");
+    let pilBwd = document.createElement("p");
+    pilBwd.textContent = "<";
+    let caroContainer = document.createElement("div");
+    caroContainer.classList.add("the_container");
+    let fwdBtn = document.createElement("div");
+    bwdBtn.classList.add("fwd");
+    let pilFwd = document.createElement("p");
+    pilFwd.textContent = ">";
+    let legendPicContainer = document.createElement("div");
+    legendPicContainer.classList.add("legend_pic_container");
+
+    caroMain.appendChild(carousel);
+    carousel.appendChild(carouselInner);
+    carouselInner.appendChild(bwdBtn);
+    bwdBtn.appendChild(pilBwd);
+    carouselInner.appendChild(caroContainer);
+    carouselInner.appendChild(fwdBtn);
+    fwdBtn.appendChild(pilFwd);
+    carousel.appendChild(legendPicContainer);
+
     buildCarousel();
 }
 
 function buildCarousel() {
     numberOfPicsInCarousel = theJSON.billede.length;
     theJSON.billede.forEach((billede, index) => {
-
-        let caroTemp = document.createElement("template");
-        caroTemp.classList.add("caro_temp");
-        let caroSection = document.createElement("div");
-        let caroImg = document.createElement("img");
-        //caroImg.classList.add("caro_imgs");
-        caroTemp.appendChild(caroSection);
-        caroSection.appendChild(caroImg);
-
-        let caroMain = document.createElement("template");
-        let carousel = document.createElement("div");
-        carousel.classList.add("carousel");
-        let carouselInner = document.createElement("div");
-        carouselInner.classList.add("carousel_inner");
-        let bwdBtn = document.createElement("div");
-        bwdBtn.classList.add("bwd");
-        let pilBwd = document.createElement("p");
-        pilBwd.textContent = "<";
-        let caroContainer = document.createElement("div");
-        caroContainer.classList.add("the_container");
-        let fwdBtn = document.createElement("div");
-        bwdBtn.classList.add("fwd");
-        let pilFwd = document.createElement("p");
-        pilFwd.textContent = ">";
-        let legendPicContainer = document.createElement("div");
-        legendPicContainer.classList.add("legend_pic_container");
-
-        caroMain.appendChild(carousel);
-        carousel.appendChild(carouselInner);
-        carouselInner.appendChild(bwdBtn);
-        bwdBtn.appendChild(pilBwd);
-        carouselInner.appendChild(caroContainer);
-        carouselInner.appendChild(fwdBtn);
-        fwdBtn.appendChild(pilFwd);
-        carousel.appendChild(legendPicContainer);
 
         const theClone = document.querySelector("template").cloneNode(true).content;
         const secondClone = document.querySelector("template").cloneNode(true).content;
@@ -124,8 +128,6 @@ function buildCarousel() {
 
     })
 
-    //document.querySelector(".legend_pic_container section").classList.add("legend_border");
-
-
+    document.querySelector(".legend_pic_container section").classList.add("legend_border");
 
 }
