@@ -43,10 +43,8 @@
             const response = await fetch(endpoint);
             retter = await response.json();
             visRetter();
-            document.querySelector("#anim").style.width = "0";
-            document.querySelector("#pre").style.width = "0";
-            document.querySelector("#pre").style.height = "0";
-            document.querySelector("#pre").style.transform = "scale(1)";
+            document.querySelector("#pre").style.transform = "scale(0)";
+            document.querySelector("#anim").style.transform = "scale(0)";
         }
 
         function visRetter() {

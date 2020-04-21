@@ -463,6 +463,7 @@ nav div:nth-child(3) p {
   margin: auto;
   z-index: 1000;
   transition: .45s cubic-bezier(.5, .3, .25, 1);
+  transform: scale(1);
 }
 
 #pre {
@@ -754,11 +755,6 @@ vp-center {
   filter: grayscale(1);
   transform: scale(1) rotate(180deg);
   cursor: auto;
-}
-
-#anim svg path {
-  color: #CEAD89;
-  background: #CEAD89;
 }
 
 /***** CAROUSEL *****/

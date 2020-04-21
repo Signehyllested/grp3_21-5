@@ -46,10 +46,8 @@ function visRetter_kob_din_andel() {
   retter_kob_din_andel.forEach(kobpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "50vw";
-      document.querySelector("#pre").style.width = "100vh";
-      document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
+      document.querySelector("#anim").style.transform = "scale(1)";
 
       setTimeout(function () {
         location.href = `21-5.html?slug=${kobpkt.slug}`
@@ -100,10 +98,8 @@ function visRetter_om_21_5() {
   retter_om_21_5.forEach(ompkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "50vw";
-      document.querySelector("#pre").style.width = "100vh";
-      document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
+      document.querySelector("#anim").style.transform = "scale(1)";
 
       setTimeout(function () {
         location.href = `21-5.html?slug=${ompkt.slug}`
@@ -154,10 +150,8 @@ function visRetter_destinationerne() {
   retter_destinationerne.forEach(destpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "50vw";
-      document.querySelector("#pre").style.width = "100vh";
-      document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
+      document.querySelector("#anim").style.transform = "scale(1)";
       setTimeout(function () {
         location.href = `21-5.html?slug=${destpkt.slug}`
       }, 500)
@@ -207,10 +201,8 @@ function visRetter_boligerne() {
   retter_boligerne.forEach(boligpkt => {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "50vw";
-      document.querySelector("#pre").style.width = "100vh";
-      document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
+      document.querySelector("#anim").style.transform = "scale(1)";
       setTimeout(function () {
         location.href = `21-5.html?slug=${boligpkt.slug}`
       }, 500)
@@ -259,10 +251,8 @@ logo.src = "assets/img/21-5_logo.svg";
 logo.alt = "21-5 logo";
 logo.id = "logo";
 logo.addEventListener("click", () => {
-  document.querySelector("#anim").style.width = "50vw";
-  document.querySelector("#pre").style.width = "100vh";
-  document.querySelector("#pre").style.height = "100vh";
   document.querySelector("#pre").style.transform = "scale(2.5)";
+  document.querySelector("#anim").style.transform = "scale(1)";
   setTimeout(function () {
     location.href = `index.html`;
   }, 500)
@@ -280,10 +270,8 @@ nav.appendChild(nav_wrap);
 let article1 = document.createElement("article");
 let a1 = document.createElement("a");
 a1.addEventListener("click", () => {
-  document.querySelector("#anim").style.width = "50vw";
-  document.querySelector("#pre").style.width = "100vh";
-  document.querySelector("#pre").style.height = "100vh";
   document.querySelector("#pre").style.transform = "scale(2.5)";
+  document.querySelector("#anim").style.transform = "scale(1)";
   setTimeout(function () {
     location.href = `index.html`;
   }, 500)

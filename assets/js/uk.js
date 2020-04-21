@@ -63,10 +63,8 @@ function visRetter_showuk() {
     let om_ua = document.createElement("button");
     om_ua.textContent = uk.title.rendered;
     om_ua.addEventListener("click", () => {
-      document.querySelector("#anim").style.width = "50vw";
-      document.querySelector("#pre").style.width = "100vh";
-      document.querySelector("#pre").style.height = "100vh";
       document.querySelector("#pre").style.transform = "scale(2.5)";
+      document.querySelector("#anim").style.transform = "scale(1)";
       setTimeout(function () {
         location.href = `21-5.html?slug=${uk.slug}`
       }, 500)
