@@ -113,8 +113,8 @@ function buildCarousel() {
         fwdBtn.appendChild(pilFwd);
         carousel.appendChild(legendPicContainer);
 
-        const theClone = document.querySelector(caroTemp).cloneNode(true).content;
-        const secondClone = document.querySelector(caroTemp).cloneNode(true).content;
+        const theClone = document.querySelector("template").cloneNode(true).content;
+        const secondClone = document.querySelector("template").cloneNode(true).content;
 
         theClone.querySelector("img").src = billede.guid;
         secondClone.querySelector("img").src = billede.guid;
