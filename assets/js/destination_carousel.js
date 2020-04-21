@@ -13,65 +13,65 @@ let caroCurrentNum = 0;
 //document.addEventListener("DOMContentLoaded", tjekDestination);
 
 function tjekDestination() {
-    console.log("tjek dest");
-    if (slug_carousel == "toscana") {
-        console.log("tjek tosc");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/707";
-        startCaro();
-    }
-    if (slug_carousel == "paris") {
-        console.log("tjek paris");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/709";
-        startCaro();
-    }
-    if (slug_carousel == "sydspanien") {
-        console.log("tjek s s");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/722";
-        startCaro();
-    }
-    if (slug_carousel == "chamonix") {
-        console.log("tjek cha");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/723";
-        startCaro();
-    }
-    if (slug_carousel == "mallorca") {
-        console.log("tjek mall");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/724";
-        startCaro();
-    }
-    if (slug_carousel == "sydfrankrig") {
-        console.log("tjek s f");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/725";
-        startCaro();
-    }
-    if (slug_carousel == "barcelona") {
-        console.log("tjek barce");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/726";
-        startCaro();
-    }
-    if (slug_carousel == "rom") {
-        console.log("tjek rom");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/727";
-        startCaro();
-    }
-    if (slug_carousel == "new-york") {
-        console.log("tjek ny");
-        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/72";
-        startCaro();
-    }
+  console.log("tjek dest");
+  if (slug_carousel == "toscana") {
+    console.log("tjek tosc");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/707";
+    startCaro();
+  }
+  if (slug_carousel == "paris") {
+    console.log("tjek paris");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/709";
+    startCaro();
+  }
+  if (slug_carousel == "sydspanien") {
+    console.log("tjek s s");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/722";
+    startCaro();
+  }
+  if (slug_carousel == "chamonix") {
+    console.log("tjek cha");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/723";
+    startCaro();
+  }
+  if (slug_carousel == "mallorca") {
+    console.log("tjek mall");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/724";
+    startCaro();
+  }
+  if (slug_carousel == "sydfrankrig") {
+    console.log("tjek s f");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/725";
+    startCaro();
+  }
+  if (slug_carousel == "barcelona") {
+    console.log("tjek barce");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/726";
+    startCaro();
+  }
+  if (slug_carousel == "rom") {
+    console.log("tjek rom");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/727";
+    startCaro();
+  }
+  if (slug_carousel == "new-york") {
+    console.log("tjek ny");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/72";
+    startCaro();
+  }
 }
 
 function startCaro() {
-    hentJSON_dest_pic();
+  hentJSON_dest_pic();
 
 }
 
 async function hentJSON_dest_pic() {
-    const response = await fetch(url_dest_pic);
+  const response = await fetch(url_dest_pic);
 
-    theJSON = await response.json();
-    console.log(theJSON);
-    buildCarousel();
+  theJSON = await response.json();
+  console.log(theJSON);
+  buildCarousel();
 }
 
 
@@ -84,120 +84,136 @@ let carousel = document.createElement("div");
 carousel.classList.add("carousel");
 let carouselInner = document.createElement("div");
 carouselInner.classList.add("carousel_inner");
-let bwdBtn = document.createElement("div");
-bwdBtn.classList.add("bwd");
-let pilBwd = document.createElement("p");
-pilBwd.textContent = "<";
 let caroContainer = document.createElement("div");
-caroContainer.classList.add("the_container");
-let fwdBtn = document.createElement("div");
-bwdBtn.classList.add("fwd");
-let pilFwd = document.createElement("p");
-pilFwd.textContent = ">";
+caroContainer.id = "the_container";
+let pilBwd = document.createElement("img");
+pilBwd.src = "assets/img/arrow.svg";
+pilBwd.classList.add("bwd");
+let pilFwd = document.createElement("img");
+pilFwd.src = "assets/img/arrow.svg";
+pilFwd.classList.add("fwd");
 let legendPicContainer = document.createElement("div");
 legendPicContainer.classList.add("legend_pic_container");
 
 caroMain.appendChild(carousel);
 carousel.appendChild(carouselInner);
-carouselInner.appendChild(bwdBtn);
-bwdBtn.appendChild(pilBwd);
+carouselInner.appendChild(pilBwd);
 carouselInner.appendChild(caroContainer);
-carouselInner.appendChild(fwdBtn);
-fwdBtn.appendChild(pilFwd);
+carouselInner.appendChild(pilFwd);
 carousel.appendChild(legendPicContainer);
 
 document.querySelector("main").appendChild(caroMain);
 
 
 function buildCarousel() {
-    numberOfPicsInCarousel = theJSON.billede.length;
-    theJSON.billede.forEach((billede, index) => {
+  numberOfPicsInCarousel = theJSON.billede.length;
+  theJSON.billede.forEach((billede, index) => {
 
-        let caroSection = document.createElement("section");
-        let caroImg = document.createElement("img");
-        caroImg.classList.add("caro_imgs");
-        caroImg.src = billede.guid;
-        caroContainer.appendChild(caroSection);
-        caroSection.appendChild(caroImg);
-        caroSection.dataset.myIndex = index;
+    let caroSection = document.createElement("section");
+    let caroImg = document.createElement("img");
+    caroImg.classList.add("caro_imgs");
+    caroImg.src = billede.guid;
+    caroContainer.appendChild(caroSection);
+    caroSection.appendChild(caroImg);
+    caroSection.dataset.myIndex = index;
 
 
-        let caroSection2 = document.createElement("section");
-        let caroImg2 = document.createElement("img");
-        caroImg2.classList.add("caro_imgs");
-        caroImg2.src = billede.guid;
-        legendPicContainer.appendChild(caroSection2);
-        caroSection2.appendChild(caroImg2);
-        caroSection2.dataset.myIndex = index;
-        document.querySelector("#carousel_fill").appendChild(caroMain);
+    let caroSection2 = document.createElement("section");
+    let caroImg2 = document.createElement("img");
+    caroImg2.classList.add("caro_imgs");
+    caroImg2.src = billede.guid;
+    legendPicContainer.appendChild(caroSection2);
+    caroSection2.appendChild(caroImg2);
+    caroSection2.dataset.myIndex = index;
+    document.querySelector("#carousel_fill").appendChild(caroMain);
 
+  })
+  document.querySelector(".legend_pic_container section").classList.add("legend_border");
+  document.querySelector("#the_container").addEventListener("scroll", scrollFunction);
+
+  document.querySelectorAll(".legend_pic_container section").forEach((sec) => {
+    sec.addEventListener("click", () => {
+      caroCurrentNum = sec.dataset.myIndex;
+      navigate();
     })
-    document.querySelector(".legend_pic_container section").classList.add("legend_border");
-    document.querySelector(".the_container").addEventListener("scroll", scrollFunction);
-
-    //document.querySelectorAll(".legend_pic_container section").forEach((sec) => {
-    //    sec.classList.add("legend_border");
-    //})
+  })
+  setBtns();
 }
 
 function scrollFunction() {
-    document.querySelectorAll(".legend_pic_container section").forEach(each => {
-        each.classList.remove("legend_border");
-    })
-    console.log("scrolling");
-    console.log(caroCurrentNum);
+  document.querySelectorAll(".legend_pic_container section").forEach(each => {
+    each.classList.remove("legend_border");
+  })
+  console.log("scrolling");
+  console.log(caroCurrentNum);
 
-    caroCurrentNum = Math.round(document.querySelector(".the_container").scrollLeft / document.querySelector(".caro_imgs").width);
-    console.log(caroCurrentNum);
+  caroCurrentNum = Math.round(document.querySelector("#the_container").scrollLeft / document.querySelector(".caro_imgs").width);
+  console.log(caroCurrentNum);
 
-    document.querySelector(`.legend_pic_container section:nth-child(${caroCurrentNum+1})`).classList.add("legend_border");
+  document.querySelector(`.legend_pic_container section:nth-child(${caroCurrentNum+1})`).classList.add("legend_border");
 
-    setBtns();
+  setBtns();
 }
 
 function legendClick(evt) {
-    console.log("legend click", evt.currentTarget);
-    caroCurrentNum = evt.currentTarget.dataset.myIndex;
-    navigate();
+  console.log("legend click", evt.currentTarget);
+  caroCurrentNum = evt.currentTarget.dataset.myIndex;
+  navigate();
 
 }
 
 function fwd() {
-    if (caroCurrentNum < numberOfPicsInCarousel - 1) {
-        caroCurrentNum++;
-        navigate();
-    }
+  if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+    caroCurrentNum++;
+    navigate();
+  }
 }
 
 function bwd() {
-    if (caroCurrentNum > 0) {
+  if (caroCurrentNum > 0) {
 
-        caroCurrentNum--;
-        navigate();
-    }
+    caroCurrentNum--;
+    navigate();
+  }
 }
 
 function navigate() {
-    document.querySelector(".the_container").scrollTo({
-        left: caroCurrentNum * document.querySelector(".caro_imgs").width,
-        behavior: "smooth"
-    })
-    setBtns();
+  document.querySelector("#the_container").scrollTo({
+    left: caroCurrentNum * document.querySelector(".caro_imgs").width,
+    behavior: "smooth"
+  })
 }
 
 function setBtns() {
-    if (caroCurrentNum < numberOfPicsInCarousel - 1) {
-        document.querySelector(".fwd").style.opacity = 1;
-        document.querySelector(".fwd").style.cursor = "pointer";
-    } else {
-        document.querySelector(".fwd").style.opacity = 0.2;
-        document.querySelector(".fwd").style.cursor = "default";
-    }
-    if (caroCurrentNum > 0) {
-        document.querySelector(".bwd").style.opacity = 1;
-        document.querySelector(".bwd").style.cursor = "pointer";
-    } else {
-        document.querySelector(".bwd").style.opacity = 0.2;
-        document.querySelector(".bwd").style.cursor = "default";
-    }
+  detectswipe("the_container", swiped_car);
+
+  document.querySelector(".fwd").addEventListener("click", fwd);
+  document.querySelector(".bwd").addEventListener("click", bwd);
+
+  if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+    document.querySelector(".fwd").classList.remove("grayscale_f");
+    document.querySelector(".fwd").style.cursor = "pointer";
+  } else {
+    document.querySelector(".fwd").classList.add("grayscale_f");
+    document.querySelector(".fwd").style.cursor = "default";
+  }
+  if (caroCurrentNum > 0) {
+    document.querySelector(".bwd").classList.remove("grayscale_b");
+    document.querySelector(".bwd").style.cursor = "pointer";
+  } else {
+    document.querySelector(".bwd").classList.add("grayscale_b");
+    document.querySelector(".bwd").style.cursor = "default";
+  }
+}
+
+
+
+function swiped_car(el, d) {
+  console.log("you swiped on element with id '" + el + "' to " + d + " direction");
+
+  if (d == "l") {
+    fwd();
+  } else if (d == "r") {
+    bwd();
+  }
 }
