@@ -71,10 +71,10 @@ async function hentJSON_dest_pic() {
 
     theJSON = await response.json();
     console.log(theJSON);
-    buildSkeletonCaro();
+    buildSkeleCaro();
 }
 
-function buildSkeletonCaro() {
+function buildSkeleCaro() {
     let caroTemp = document.createElement("template");
     let caroSection = document.createElement("section");
     let caroImg = document.createElement("img");
