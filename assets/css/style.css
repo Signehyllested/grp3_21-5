@@ -761,6 +761,71 @@ vp-center {
   background: #CEAD89;
 }
 
+/***** CAROUSEL *****/
+.main_caro {
+  width: 50vw;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+}
+
+.the_container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.the_container section {
+  scroll-snap-align: start;
+  min-width: 100%;
+
+}
+
+.the_container img {
+  width: 100%;
+
+}
+
+.carousel_inner {
+  display: flex;
+}
+
+.legend_pic_container section {
+  height: 5vh;
+  display: inline-block;
+}
+
+.legend_pic_container img {
+  height: 100%;
+  width: auto;
+
+  cursor: pointer;
+}
+
+.legend_border {
+  outline: 0.25px solid black;
+  outline-offset: -1px;
+}
+
+.bwd,
+.fwd {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bwd p,
+.fwd p {
+  z-index: 10;
+  position: absolute;
+}
+
+.fwd p {
+  margin-left: -10px;
+}
+
 @media screen and (min-width: 800px) {
 
   nav,
