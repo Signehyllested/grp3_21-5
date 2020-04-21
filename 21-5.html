@@ -2,26 +2,25 @@
 <html lang="da">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 </head>
 
 <body>
-  <div id="pre"></div>
-  <div id="anim"></div>
+    <div id="pre"></div>
+    <div id="anim"></div>
 
-  <main>
-    <div id="fill"></div>
-    <div id="carousel_fill"></div>
+    <main>
+        <div id="fill"></div>
 
-    <!--
+        <!--
     <div class="main_caro">
       <div class="carousel">
         <div class="carousel_inner">
@@ -42,57 +41,62 @@
 
 
 
-  </main>
+    </main>
 
-  <script src="assets/img/lottie.js"></script>
-  <script src="assets/js/menu.js"></script>
-  <script src="assets/js/review.js"></script>
-  <script src="assets/js/destination_carousel.js"></script>
-  <script src="assets/js/footer.js"></script>
-  <script src="assets/js/uk.js"></script>
+    <script src="assets/img/lottie.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/review.js"></script>
+    <script src="assets/js/destination_carousel.js"></script>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/uk.js"></script>
 
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const slug = urlParams.get("slug");
-    let URLend = `posts?slug=${slug}`;
-    let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
-    let retter = [];
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get("slug");
+        let URLend = `posts?slug=${slug}`;
+        let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
+        let retter = [];
 
-    document.addEventListener("DOMContentLoaded", start);
+        document.addEventListener("DOMContentLoaded", start);
 
-    function start() {
-      hentJSON();
-    }
+        function start() {
+            hentJSON();
+        }
 
-    async function hentJSON() {
-      console.log("page loaded");
-      const response = await fetch(endpoint);
-      retter = await response.json();
-      visRetter();
-      document.querySelector("#pre").style.transform = "scale(0)";
-      document.querySelector("#anim").style.transform = "scale(0)";
-    }
+        async function hentJSON() {
+            console.log("page loaded");
+            const response = await fetch(endpoint);
+            retter = await response.json();
+            visRetter();
+            document.querySelector("#pre").style.transform = "scale(0)";
+            document.querySelector("#anim").style.transform = "scale(0)";
+        }
 
-    function visRetter() {
+        function visRetter() {
+            console.log("vis retter");
 
-      retter.forEach(element => {
-        document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
-        let h1 = document.createElement("h1");
-        let h1_i = document.createTextNode(element.title.rendered);
-        let main_ = document.querySelector("main");
-        h1.appendChild(h1_i);
-        main_.insertBefore(h1, main_.childNodes[1]);
-        document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
-      });
-    }
+            retter.forEach(element => {
+                document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
+                let h1 = document.createElement("h1");
+                let h1_i = document.createTextNode(element.title.rendered);
+                let main_ = document.querySelector("main");
+                h1.appendChild(h1_i);
+                main_.insertBefore(h1, main_.childNodes[1]);
+                document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
+                tjekDestination();
+            });
+        }
 
 
-    var animation = bodymovin.loadAnimation({
-      container: document.querySelector("#anim"),
-      rederer: "svg",
-      loop: true,
-      autoplay: true,
-      path: "assets/img/preload_ani_sand.json"
-    })
-  </script>
-</body></html>
+        var animation = bodymovin.loadAnimation({
+            container: document.querySelector("#anim"),
+            rederer: "svg",
+            loop: true,
+            autoplay: true,
+            path: "assets/img/preload_ani_sand.json"
+        })
+
+    </script>
+</body>
+
+</html>
