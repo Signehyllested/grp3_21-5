@@ -134,32 +134,33 @@ function buildCarousel() {
   document.querySelectorAll(".legend_pic_container section").forEach((sec) => {
     sec.addEventListener("click", () => {
       caroCurrentNum = sec.dataset.myIndex;
+      autoplay_car = false;
       navigate();
     })
   })
   setBtns();
+
+  document.querySelector(".fwd").addEventListener("click", () => {
+    fwd();
+    autoplay_car = false;
+  });
+  document.querySelector(".bwd").addEventListener("click", () => {
+    bwd();
+    autoplay_car = false;
+  });
+  autoplayCarouselForward();
 }
 
 function scrollFunction() {
   document.querySelectorAll(".legend_pic_container section").forEach(each => {
     each.classList.remove("legend_border");
   })
-  console.log("scrolling");
-  console.log(caroCurrentNum);
 
   caroCurrentNum = Math.round(document.querySelector("#the_container").scrollLeft / document.querySelector(".caro_imgs").width);
-  console.log(caroCurrentNum);
 
   document.querySelector(`.legend_pic_container section:nth-child(${caroCurrentNum+1})`).classList.add("legend_border");
 
   setBtns();
-}
-
-function legendClick(evt) {
-  console.log("legend click", evt.currentTarget);
-  caroCurrentNum = evt.currentTarget.dataset.myIndex;
-  navigate();
-
 }
 
 function fwd() {
@@ -187,33 +188,74 @@ function navigate() {
 function setBtns() {
   detectswipe("the_container", swiped_car);
 
-  document.querySelector(".fwd").addEventListener("click", fwd);
-  document.querySelector(".bwd").addEventListener("click", bwd);
 
   if (caroCurrentNum < numberOfPicsInCarousel - 1) {
     document.querySelector(".fwd").classList.remove("grayscale_f");
-    document.querySelector(".fwd").style.cursor = "pointer";
   } else {
     document.querySelector(".fwd").classList.add("grayscale_f");
-    document.querySelector(".fwd").style.cursor = "default";
   }
   if (caroCurrentNum > 0) {
     document.querySelector(".bwd").classList.remove("grayscale_b");
-    document.querySelector(".bwd").style.cursor = "pointer";
   } else {
     document.querySelector(".bwd").classList.add("grayscale_b");
-    document.querySelector(".bwd").style.cursor = "default";
   }
 }
 
-
-
 function swiped_car(el, d) {
-  console.log("you swiped on element with id '" + el + "' to " + d + " direction");
 
+  autoplay_car = false;
   if (d == "l") {
     fwd();
   } else if (d == "r") {
     bwd();
   }
+}
+
+
+let autoplay_car = true;
+
+function autoplayCarouselForward() {
+  setTimeout(function () {
+    if (autoplay_car == true) {
+      if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+        fwd();
+        autoplayCarouselForward();
+      } else {
+        autoplayCarouselBackward();
+      }
+      if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+        document.querySelector(".fwd").classList.remove("grayscale_f");
+      } else {
+        document.querySelector(".fwd").classList.add("grayscale_f");
+      }
+      if (caroCurrentNum > 0) {
+        document.querySelector(".bwd").classList.remove("grayscale_b");
+      } else {
+        document.querySelector(".bwd").classList.add("grayscale_b");
+      }
+    }
+  }, 4000)
+}
+
+function autoplayCarouselBackward() {
+  setTimeout(function () {
+    if (autoplay == true) {
+      if (caroCurrentNum > 0) {
+        bwd();
+        autoplayCarouselBackward();
+      } else {
+        autoplayCarouselForward();
+      }
+      if (caroCurrentNum < numberOfPicsInCarousel - 1) {
+        document.querySelector(".fwd").classList.remove("grayscale_f");
+      } else {
+        document.querySelector(".fwd").classList.add("grayscale_f");
+      }
+      if (caroCurrentNum > 0) {
+        document.querySelector(".bwd").classList.remove("grayscale_b");
+      } else {
+        document.querySelector(".bwd").classList.add("grayscale_b");
+      }
+    }
+  }, 4000)
 }

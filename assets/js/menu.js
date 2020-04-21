@@ -13,6 +13,7 @@ function start_menu() {
 
 var locations;
 let thisLocation;
+let collapsed = true;
 
 function getLocation() {
   locations = location.href.split('/');
@@ -61,7 +62,7 @@ function visRetter_kob_din_andel() {
     let underline = document.createElement("div");
     underline.classList.add("underline");
     om_up.appendChild(underline);
-    if (slug_menu == kobpkt.slug && thisLocation != "index.html") {
+    if (slug_menu == kobpkt.slug) {
       menuExpand();
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
@@ -69,11 +70,13 @@ function visRetter_kob_din_andel() {
       })
       document.querySelector("#kob_din_andel").style.zIndex = zIndex;
       document.querySelector("#kob_click").style.color = "#CEAD89";
+      collapsed = false;
+      menuExpand();
+    } else if (collapsed == true) {
+      menuCollapse();
     }
   });
-  if (thisLocation != "index.html") {
-    menuExpand();
-  } else {
+  if (thisLocation == "index.html") {
     menuCollapse();
   }
   let back_om = document.createElement("p");
@@ -113,18 +116,20 @@ function visRetter_om_21_5() {
     let underline = document.createElement("div");
     underline.classList.add("underline");
     om_up.appendChild(underline);
-    if (slug_menu == ompkt.slug && thisLocation != "index.html") {
+    if (slug_menu == ompkt.slug) {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
         article.style.color = "#fff";
       })
       document.querySelector("#om_21-5").style.zIndex = zIndex;
       document.querySelector("#om_click").style.color = "#CEAD89";
+      collapsed = false;
+      menuExpand();
+    } else if (collapsed == true) {
+      menuCollapse();
     }
   });
-  if (thisLocation != "index.html") {
-    menuExpand();
-  } else {
+  if (thisLocation == "index.html") {
     menuCollapse();
   }
   let back_om = document.createElement("p");
@@ -164,18 +169,20 @@ function visRetter_destinationerne() {
     let underline = document.createElement("div");
     underline.classList.add("underline");
     om_up.appendChild(underline);
-    if (slug_menu == destpkt.slug && thisLocation != "index.html") {
+    if (slug_menu == destpkt.slug) {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
         article.style.color = "#fff";
       })
       document.querySelector("#destinationerne").style.zIndex = zIndex;
       document.querySelector("#dest_click").style.color = "#CEAD89";
+      collapsed = false;
+      menuExpand();
+    } else if (collapsed == true) {
+      menuCollapse();
     }
   });
-  if (thisLocation != "index.html") {
-    menuExpand();
-  } else {
+  if (thisLocation == "index.html") {
     menuCollapse();
   }
   let back_om = document.createElement("p");
@@ -215,18 +222,20 @@ function visRetter_boligerne() {
     let underline = document.createElement("div");
     underline.classList.add("underline");
     om_up.appendChild(underline);
-    if (slug_menu == boligpkt.slug && thisLocation != "index.html") {
+    if (slug_menu == boligpkt.slug) {
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
         article.style.color = "#fff";
       })
       document.querySelector("#boligerne").style.zIndex = zIndex;
       document.querySelector("#bolig_click").style.color = "#CEAD89";
+      collapsed = false;
+      menuExpand();
+    } else if (collapsed == true) {
+      menuCollapse();
     }
   });
-  if (thisLocation != "index.html") {
-    menuExpand();
-  } else {
+  if (thisLocation == "index.html") {
     menuCollapse();
   }
   let back_om = document.createElement("p");
@@ -370,7 +379,6 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function menuDown() {
-  console.log("menu down");
   burger.removeEventListener("click", menuDown);
   header.style.transform = "translateY(calc(100vh - 60px)";
   burger.addEventListener("click", menuUp);
@@ -382,7 +390,6 @@ function menuDown() {
 }
 
 function menuUp() {
-  console.log("menu up");
   burger.removeEventListener("click", menuUp);
   header.style.transform = "translateY(0)";
   burger.addEventListener("click", menuDown);
@@ -393,8 +400,6 @@ let expanded = false;
 
 function menuExpand() {
   expanded = true;
-  console.log("expand");
-  console.log(zIndex);
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(0)";
@@ -435,8 +440,8 @@ function menuExpand() {
 }
 
 function menuCollapse() {
-  expanded = false;
   console.log("collapse");
+  expanded = false;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(330px)";
