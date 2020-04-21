@@ -71,70 +71,72 @@ async function hentJSON_dest_pic() {
 
   theJSON = await response.json();
   console.log(theJSON);
-  buildCarousel();
+  buildSkeleCaro();
 }
 
+function buildSkeleCaro() {
+  console.log("build skeleton");
+  let caroTemp = document.createElement("template");
+  let caroSection = document.createElement("section");
+  let caroImg = document.createElement("img");
+  caroImg.classList.add("caro_imgs");
 
-console.log("build skeleton");
-let caroTemp = document.createElement("div");
+  caroTemp.appendChild(caroSection);
+  caroSection.appendChild(caroImg);
 
 
-let caroMain = document.createElement("div");
-let carousel = document.createElement("div");
-carousel.classList.add("carousel");
-let carouselInner = document.createElement("div");
-carouselInner.classList.add("carousel_inner");
-let bwdBtn = document.createElement("div");
-bwdBtn.classList.add("bwd");
-let pilBwd = document.createElement("p");
-pilBwd.textContent = "<";
-let caroContainer = document.createElement("div");
-caroContainer.classList.add("the_container");
-let fwdBtn = document.createElement("div");
-bwdBtn.classList.add("fwd");
-let pilFwd = document.createElement("p");
-pilFwd.textContent = ">";
-let legendPicContainer = document.createElement("div");
-legendPicContainer.classList.add("legend_pic_container");
+  let caroMain = document.createElement("template");
+  let carousel = document.createElement("div");
+  carousel.classList.add("carousel");
+  let carouselInner = document.createElement("div");
+  carouselInner.classList.add("carousel_inner");
+  let bwdBtn = document.createElement("div");
+  bwdBtn.classList.add("bwd");
+  let pilBwd = document.createElement("p");
+  pilBwd.textContent = "<";
+  let caroContainer = document.createElement("div");
+  caroContainer.classList.add("the_container");
+  let fwdBtn = document.createElement("div");
+  bwdBtn.classList.add("fwd");
+  let pilFwd = document.createElement("p");
+  pilFwd.textContent = ">";
+  let legendPicContainer = document.createElement("div");
+  legendPicContainer.classList.add("legend_pic_container");
 
-caroMain.appendChild(carousel);
-carousel.appendChild(carouselInner);
-carouselInner.appendChild(bwdBtn);
-bwdBtn.appendChild(pilBwd);
-carouselInner.appendChild(caroContainer);
-carouselInner.appendChild(fwdBtn);
-fwdBtn.appendChild(pilFwd);
-carousel.appendChild(legendPicContainer);
+  caroMain.appendChild(carousel);
+  carousel.appendChild(carouselInner);
+  carouselInner.appendChild(bwdBtn);
+  bwdBtn.appendChild(pilBwd);
+  carouselInner.appendChild(caroContainer);
+  carouselInner.appendChild(fwdBtn);
+  fwdBtn.appendChild(pilFwd);
+  carousel.appendChild(legendPicContainer);
 
-document.querySelector("main").appendChild(caroMain);
+  document.querySelector("main").appendChild(caroTemp);
+  document.querySelector("main").appendChild(caroMain);
 
+  buildCarousel();
+}
 
 function buildCarousel() {
   numberOfPicsInCarousel = theJSON.billede.length;
   theJSON.billede.forEach((billede, index) => {
 
-    let caroSection = document.createElement("section");
-    let caroImg = document.createElement("img");
-    caroImg.classList.add("caro_imgs");
-    caroImg.src = billede.guid;
-    caroContainer.appendChild(caroSection);
-    caroSection.appendChild(caroImg);
-    caroSection.dataset.myIndex = index;
+    const theClone = document.querySelector("template").cloneNode(true).content;
+    const secondClone = document.querySelector("template").cloneNode(true).content;
+
+    theClone.querySelector("img").src = billede.guid;
+    secondClone.querySelector("img").src = billede.guid;
+    secondClone.querySelector("section").dataset.myIndex = index;
+    document.querySelector(".the_container").appendChild(theClone);
+    document.querySelector(".legend_pic_container").appendChild(secondClone);
 
 
-    let caroSection2 = document.createElement("section");
-    let caroImg2 = document.createElement("img");
-    caroImg2.classList.add("caro_imgs");
-    caroImg2.src = billede.guid;
-    legendPicContainer.appendChild(caroSection2);
-    caroSection2.appendChild(caroImg2);
-    caroSection2.dataset.myIndex = index;
+    document.querySelector("main").appendChild(theClone);
+    document.querySelector("main").appendChild(secondClone);
+
   })
 
-  document.querySelectorAll(".legend_pic_container section").forEach((sec) => {
-    sec.classList.add("legend_border");
-  })
-
-  document.querySelector("#carousel_fill").appendChild(caroMain);
+  document.querySelector(".legend_pic_container section").classList.add("legend_border");
 
 }

@@ -101,7 +101,8 @@ a::selection,
 li::selection,
 button::selection,
 input::selection,
-a::selection {
+a::selection,
+strong::selection {
   background: #CEAD89;
   color: #272C33;
 }
