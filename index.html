@@ -17,7 +17,7 @@
   <div id="pre"></div>
   <div id="anim"></div>
   <main>
-    <div id="fill"></div>
+    <div id="fill_forside"></div>
   </main>
   <script src="assets/img/lottie.js"></script>
   <script src="assets/js/menu.js"></script>
@@ -49,7 +49,7 @@
     function visRetter() {
 
       retter.forEach(element => {
-        document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
+        document.querySelector("#fill_forside").innerHTML = `${element.content.rendered}`;
       });
     }
 

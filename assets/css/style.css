@@ -908,6 +908,35 @@ section {
   margin: 0;
 }
 
+
+
+#container_personer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#container_personer .container_person {
+  flex-basis: 300px;
+  flex-grow: 1;
+  margin-bottom: 100px;
+}
+
+.container_person:nth-child(3n + 1) {
+  margin: 0 10px 0 0;
+}
+
+.container_person:nth-child(3n + 2) {
+  margin: 0 10px 0 10px;
+}
+
+.container_person:nth-child(3n + 0) {
+  margin: 0 0 0 10px;
+}
+
+
+#fill_forside {}
+
 @media screen and (min-width: 800px) {
 
   nav,
