@@ -69,10 +69,14 @@ function tjekDestination() {
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1023";
     startCaro();
   }
-  if (slug_carousel == "gensalg") {
-    console.log("tjek gensalg");
+  if (slug_carousel == "21-5-dk10-family") {
+    console.log("tjek gensalg fam");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1055";
-    url_dest_pic2 = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
+    startCaro();
+  }
+  if (slug_carousel == "21-5-dk21-large") {
+    console.log("tjek gensalg large");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
     startCaro();
   }
 }
