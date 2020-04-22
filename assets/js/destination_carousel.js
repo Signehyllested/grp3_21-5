@@ -59,6 +59,28 @@ function tjekDestination() {
         url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/728";
         startCaro();
     }
+    if (slug_carousel == "vi-skaber-hjem") {
+        console.log("tjek vi skaber hjem");
+        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1016";
+        startCaro();
+    }
+    if (slug_carousel == "indretning") {
+        console.log("tjek indretning");
+        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1023";
+        startCaro();
+    }
+    if (slug_carousel == "fra-skrot-til-slot") {
+        console.log("tjek skrot til slot");
+        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1031";
+        startCaro();
+    }
+    if (slug_carousel == "gensalg") {
+        console.log("tjek gensalg");
+        url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1055";
+        url_dest_pic2 = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
+        startCaro();
+    }
+
 }
 
 function startCaro() {
