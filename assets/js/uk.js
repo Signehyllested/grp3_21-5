@@ -27,11 +27,29 @@ function visRetter_getcat() {
       return array.slice(Math.max(array.length - n, 0));
     }
     category = last(cat.categories);
-    if (category < 8) {
-      category = 0;
+  });
+  hentJSON_showcat();
+}
+
+let URLend_showcat = `categories`;
+let endpoint_showcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_showcat}`;
+
+async function hentJSON_showcat() {
+  const response_showcat = await fetch(endpoint_showcat);
+  retter_showcat = await response_showcat.json();
+  visRetter_showcat();
+}
+
+let running = true;
+
+function visRetter_showcat() {
+  retter_showcat.forEach(cat => {
+    if (cat.parent != 0) {
+      if (category == cat.id) {
+        hentJSON_showuk();
+      }
     }
   });
-  hentJSON_showuk();
 }
 
 

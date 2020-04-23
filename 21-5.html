@@ -41,6 +41,7 @@
     let URLend = `posts?slug=${slug}`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
+    let onSite;
 
     document.addEventListener("DOMContentLoaded", start);
 
@@ -57,7 +58,6 @@
     }
 
     function visRetter() {
-
       retter.forEach(element => {
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
         let h1 = document.createElement("h1");
