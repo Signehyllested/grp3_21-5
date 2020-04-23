@@ -13,69 +13,69 @@ let caroCurrentNum = 0;
 //document.addEventListener("DOMContentLoaded", tjekDestination);
 
 function tjekDestination() {
-  console.log("tjek dest");
+  //console.log("tjek dest");
   if (slug_carousel == "toscana") {
-    console.log("tjek tosc");
+    //console.log("tjek tosc");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/707";
     startCaro();
   }
   if (slug_carousel == "paris") {
-    console.log("tjek paris");
+    //console.log("tjek paris");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/709";
     startCaro();
   }
   if (slug_carousel == "sydspanien") {
-    console.log("tjek s s");
+    //console.log("tjek s s");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/722";
     startCaro();
   }
   if (slug_carousel == "chamonix") {
-    console.log("tjek cha");
+    //console.log("tjek cha");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/723";
     startCaro();
   }
   if (slug_carousel == "mallorca") {
-    console.log("tjek mall");
+    //console.log("tjek mall");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/724";
     startCaro();
   }
   if (slug_carousel == "sydfrankrig") {
-    console.log("tjek s f");
+    //console.log("tjek s f");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/725";
     startCaro();
   }
   if (slug_carousel == "barcelona") {
-    console.log("tjek barce");
+    //console.log("tjek barce");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/726";
     startCaro();
   }
   if (slug_carousel == "rom") {
-    console.log("tjek rom");
+    //console.log("tjek rom");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/727";
     startCaro();
   }
   if (slug_carousel == "new-york") {
-    console.log("tjek ny");
+    //console.log("tjek ny");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/destination_billede/728";
     startCaro();
   }
   if (slug_carousel == "vi-skaber-hjem") {
-    console.log("tjek vi skaber hjem");
+    //console.log("tjek vi skaber hjem");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1016";
     startCaro();
   }
   if (slug_carousel == "indretning") {
-    console.log("tjek indretning");
+    //console.log("tjek indretning");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1023";
     startCaro();
   }
   if (slug_carousel == "21-5-dk10-family") {
-    console.log("tjek gensalg fam");
+    //console.log("tjek gensalg fam");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1055";
     startCaro();
   }
   if (slug_carousel == "21-5-dk21-large") {
-    console.log("tjek gensalg large");
+    //console.log("tjek gensalg large");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
     startCaro();
   }
@@ -90,13 +90,13 @@ async function hentJSON_dest_pic() {
   const response = await fetch(url_dest_pic);
 
   theJSON = await response.json();
-  console.log(theJSON);
+  //console.log(theJSON);
   buildCarousel();
 }
 
 
 function buildCarousel() {
-  console.log("build skeleton");
+  //console.log("build skeleton");
   let caroTemp = document.createElement("div");
 
 

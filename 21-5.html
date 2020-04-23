@@ -25,7 +25,7 @@
   </main>
 
   <script src="assets/img/lottie.js"></script>
-  <script src="assets/js/menu.js"></script>
+  <script src="assets/js/new_menu.js"></script>
   <script src="assets/js/personer.js"></script>
   <script src="assets/js/spg.js"></script>
   <script src="assets/js/review.js"></script>
@@ -49,7 +49,6 @@
     }
 
     async function hentJSON() {
-      console.log("page loaded");
       const response = await fetch(endpoint);
       retter = await response.json();
       visRetter();
@@ -58,7 +57,6 @@
     }
 
     function visRetter() {
-      console.log("vis retter");
 
       retter.forEach(element => {
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
