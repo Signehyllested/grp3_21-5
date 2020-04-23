@@ -41,7 +41,7 @@ h1 {
   font-weight: 500;
   font-style: normal;
   font-size: 4rem;
-  margin: 15px 0 20px 0;
+  margin: 15px 0 30px 0;
   line-height: 4.3rem;
 }
 
@@ -92,17 +92,7 @@ a {
   text-decoration: none;
 }
 
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-p::selection,
-a::selection,
-li::selection,
-button::selection,
-input::selection,
-a::selection,
-strong::selection {
+*::selection {
   background: #CEAD89;
   color: #272C33;
 }
@@ -908,18 +898,25 @@ section {
   margin: 0;
 }
 
-
-
-#container_personer {
+#container_personer,
+#container_foreninger,
+#container_skrot_slot_fill {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#container_personer .container_person {
+#container_personer .container_person,
+#container_foreninger .container_forening,
+#container_skrot_slot_fill .container_skrot_slot {
   flex-basis: 300px;
   flex-grow: 1;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
+
+}
+
+#container_personer img {
+  margin-bottom: 0;
 }
 
 .container_person:nth-child(3n + 1) {
@@ -934,6 +931,126 @@ section {
   margin: 0 0 0 10px;
 }
 
+
+.container_forening:nth-child(3n + 1) {
+  margin: 0 10px 0 0;
+}
+
+.container_forening:nth-child(3n + 2) {
+  margin: 0 10px 0 10px;
+}
+
+.container_forening:nth-child(3n + 0),
+  {
+  margin: 0 0 0 10px;
+}
+
+.container_skrot_slot:nth-child(3n + 1) {
+  margin: 0 10px 0 0;
+}
+
+.container_skrot_slot:nth-child(3n + 2) {
+  margin: 0 10px 0 10px;
+}
+
+.container_skrot_slot:nth-child(3n + 0),
+  {
+  margin: 0 0 0 10px;
+}
+
+.container_forening h2,
+.img_wrap_skrot h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.img_wrap {
+  position: relative;
+  height: 200px;
+  width: 353px;
+  margin-top: 20px;
+}
+
+.img_wrap img,
+.img_wrap_skrot img {
+  margin: 0;
+  padding: 0;
+  max-height: 200px;
+}
+
+.img_wrap_skrot img {
+  opacity: 0.25;
+}
+
+.img_text {
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0px;
+  right: 0;
+  background: rgba(255, 255, 255, 0.74);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
+}
+
+.tekstwrap_skrot_slot {
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: #CEAD89;
+}
+
+.tekstwrap_skrot_slot h2 {
+  font-weight: 600;
+  margin-left: 10px;
+  color: #fff;
+}
+
+.tekstwrap_skrot_slot p {
+  margin-bottom: 0;
+  margin-left: 10px;
+
+}
+
+.img_wrap_skrot {
+  position: relative;
+}
+
+.img_text p {
+  margin-top: 20px;
+  margin-left: 15px;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.img_wrap:hover .img_text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.wp-block-buttons {
+  display: inline-block;
+  color: #444;
+  border: 1px solid #CCC;
+  background: #CEAD89;
+  box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  vertical-align: middle;
+  padding: 5px;
+  text-align: center;
+}
+
+.wp-block-buttons:hover {
+  background: rgba(0, 93, 219, 0.48);
+
+}
+
+.wp-block-buttons a {
+  color: white;
+}
 
 
 
