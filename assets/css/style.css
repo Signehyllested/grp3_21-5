@@ -1030,8 +1030,6 @@ section {
     position: relative;
 }
 
-
-
 .img_text strong {
     color: black;
 }
@@ -1047,6 +1045,27 @@ section {
 .img_wrap:hover .img_text {
     visibility: visible;
     opacity: 1;
+}
+
+.wp-block-buttons {
+    display: inline-block;
+    color: #444;
+    border: 1px solid #CCC;
+    background: #005ddb;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 5px;
+    text-align: center;
+}
+
+.wp-block-buttons:hover {
+    background: rgba(0, 93, 219, 0.48);
+
+}
+
+.wp-block-buttons a {
+    color: white;
 }
 
 #fill_forside {}
