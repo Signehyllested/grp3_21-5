@@ -33,7 +33,7 @@ const slug_menu = urlParams_menu.get("slug");
 
 
 
-let URLend_ocat = "categories?per_page=4";
+let URLend_ocat = "categories";
 let endpoint_ocat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_ocat}`;
 let retter_ocat = [];
 
@@ -46,29 +46,31 @@ async function hentJSON_ocat() {
 
 function visRetter_ocat() {
   retter_ocat.forEach(cat => {
-    let article = document.createElement("article");
-    let h3 = document.createElement("h3");
-    let catName = last(cat.name.split("!"));
-    h3.textContent = `${catName}`;
-    h3.addEventListener("click", clickCat)
-    h3.dataset.catId = `${cat.id}`;
-    nav_wrap.appendChild(article);
-    article.appendChild(h3);
+    if (cat.parent == 0) {
+      let article = document.createElement("article");
+      let h3 = document.createElement("h3");
+      let catName = last(cat.name.split("!"));
+      h3.textContent = `${catName}`;
+      h3.addEventListener("click", clickCat)
+      h3.dataset.catId = `${cat.id}`;
+      nav_wrap.appendChild(article);
+      article.appendChild(h3);
 
 
-    let ucat = document.createElement("div");
-    ucat.classList.add("underkategori");
-    ucat.dataset.ucatId = `${cat.id}`;
-    nav.appendChild(ucat);
-    let ucat_wrap = document.createElement("div");
-    ucat_wrap.dataset.uwcatId = `${cat.id}`;
-    ucat.appendChild(ucat_wrap);
+      let ucat = document.createElement("div");
+      ucat.classList.add("underkategori");
+      ucat.dataset.ucatId = `${cat.id}`;
+      nav.appendChild(ucat);
+      let ucat_wrap = document.createElement("div");
+      ucat_wrap.dataset.uwcatId = `${cat.id}`;
+      ucat.appendChild(ucat_wrap);
 
 
-    let back = document.createElement("p");
-    back.classList.add("back");
-    back.style.overflow = "visible";
-    ucat_wrap.appendChild(back);
+      let back = document.createElement("p");
+      back.classList.add("back");
+      back.style.overflow = "visible";
+      ucat_wrap.appendChild(back);
+    }
   });
 }
 

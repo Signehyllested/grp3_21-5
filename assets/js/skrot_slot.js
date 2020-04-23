@@ -1,5 +1,4 @@
-let perPage4 = 50;
-let URLend_skrot_slot = `skrot_slot?per_page=${perPage4}`;
+let URLend_skrot_slot = `skrot_slot?per_page=100`;
 let endpoint_skrot_slot = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_skrot_slot}`;
 let retter_skrot_slot = [];
 let container_skrot_slot_fill = document.createElement("div");

@@ -1,12 +1,9 @@
-let perPage_faq = 100;
-
-
 let container_faq = document.createElement("div");
 container_faq.id = "faq";
 
 
 
-let URLend_faq_cat = `spg-kategori?per_page=${perPage_faq}`;
+let URLend_faq_cat = `spg-kategori?per_page=100`;
 let endpoint_faq_cat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_faq_cat}`;
 let retter_faq_cat = [];
 
@@ -40,7 +37,7 @@ function visRetter_faq_cat() {
 
 
 
-let URLend_faq_spg = `spg?per_page=${perPage_faq}`;
+let URLend_faq_spg = `spg?per_page=100`;
 let endpoint_faq_spg = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_faq_spg}`;
 let retter_faq_spg = [];
 

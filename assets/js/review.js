@@ -1,4 +1,4 @@
-let perPage = 50;
+let perPage = 30;
 let URLend_review = `review?per_page=${perPage}`;
 let endpoint_review = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_review}`;
 let retter_review = [];
