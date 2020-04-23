@@ -1,4 +1,4 @@
-let perPage_faq = 50;
+let perPage_faq = 100;
 
 
 let container_faq = document.createElement("div");
@@ -77,6 +77,7 @@ function visRetter_faq_spg() {
 }
 
 function clickUnder() {
+  let parent = this.parentElement;
   document.querySelectorAll(".faq_p").forEach((p) => {
     p.style.height = `0`;
     if (window.innerWidth > 800) {
@@ -85,31 +86,26 @@ function clickUnder() {
       p.style.padding = "0 10px";
     }
   })
-  console.log("click under");
   if (this.parentElement.querySelector("p").clientHeight == "0") {
     this.classList.add("valgt_spg");
-    let parent = this.parentElement;
     parent.querySelector("p").style.height = "auto";
     let parentHeight = parent.querySelector("p").clientHeight;
     parent.querySelector("p").style.height = "0px";
     console.log(parent.querySelector("p").clientHeight);
     if (window.innerWidth > 800) {
       parent.querySelector("p").style.height = `${parentHeight + 40}px`;
-    } else {
-      parent.querySelector("p").style.height = `${parentHeight + 20}px`;
-    }
-    if (window.innerWidth > 800) {
       parent.querySelector("p").style.padding = "20px";
     } else {
+      parent.querySelector("p").style.height = `${parentHeight + 20}px`;
       parent.querySelector("p").style.padding = "10px";
     }
   } else {
     parent.querySelector("p").style.height = `0`;
+    if (window.innerWidth > 800) {
+      parent.querySelector("p").style.padding = "0 20px";
+    } else {
+      parent.querySelector("p").style.padding = "0 10px";
+    }
+    this.classList.remove("valgt_spg");
   }
-  if (window.innerWidth > 800) {
-    parent.querySelector("p").style.padding = "0 20px";
-  } else {
-    parent.querySelector("p").style.padding = "0 10px";
-  }
-  this.classList.remove("valgt_spg");
 }
