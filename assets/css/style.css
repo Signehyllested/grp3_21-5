@@ -457,6 +457,12 @@ nav div:nth-child(3) p {
   transform: scale(1);
 }
 
+#spinner {
+  width: 100%;
+  height: 100%;
+  background-image: url(../../assets/img/ring_spinner.svg);
+}
+
 #pre {
   border-radius: 100vw;
   width: 100vh;
