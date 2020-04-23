@@ -69,7 +69,6 @@ function visRetter_kob_din_andel() {
       })
       document.querySelector("#kob_din_andel").style.zIndex = zIndex;
       document.querySelector("#kob_click").style.color = "#CEAD89";
-      menuCollapse();
       collapsed = true;
     }
   });
@@ -118,7 +117,6 @@ function visRetter_om_21_5() {
       })
       document.querySelector("#om_21-5").style.zIndex = zIndex;
       document.querySelector("#om_click").style.color = "#CEAD89";
-      menuCollapse();
       collapsed = true;
     }
   });
@@ -167,7 +165,6 @@ function visRetter_destinationerne() {
       })
       document.querySelector("#destinationerne").style.zIndex = zIndex;
       document.querySelector("#dest_click").style.color = "#CEAD89";
-      menuCollapse();
       collapsed = true;
     }
   });
@@ -216,7 +213,6 @@ function visRetter_boligerne() {
       })
       document.querySelector("#boligerne").style.zIndex = zIndex;
       document.querySelector("#bolig_click").style.color = "#CEAD89";
-      menuCollapse();
       collapsed = true;
     }
   });
@@ -374,7 +370,10 @@ function menuDown() {
 
 
   document.querySelectorAll(".back").forEach((back) => {
-    back.addEventListener("click", menuCollapse);
+    back.addEventListener("click", () => {
+      collapsed = false;
+      menuCollapse();
+    });
   })
 }
 
