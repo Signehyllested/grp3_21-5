@@ -909,17 +909,20 @@ section {
 }
 
 #container_personer,
-#container_foreninger {
+#container_foreninger,
+#container_skrot_slot_fill {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
 #container_personer .container_person,
-#container_foreninger .container_forening {
+#container_foreninger .container_forening,
+#container_skrot_slot_fill .container_skrot_slot {
     flex-basis: 300px;
     flex-grow: 1;
-    margin-bottom: 10px;
+    margin-bottom: 50px;
+
 }
 
 #container_personer img {
@@ -947,11 +950,26 @@ section {
     margin: 0 10px 0 10px;
 }
 
-.container_forening:nth-child(3n + 0) {
+.container_forening:nth-child(3n + 0),
+    {
     margin: 0 0 0 10px;
 }
 
-.container_forening h2 {
+.container_skrot_slot:nth-child(3n + 1) {
+    margin: 0 10px 0 0;
+}
+
+.container_skrot_slot:nth-child(3n + 2) {
+    margin: 0 10px 0 10px;
+}
+
+.container_skrot_slot:nth-child(3n + 0),
+    {
+    margin: 0 0 0 10px;
+}
+
+.container_forening h2,
+.img_wrap_skrot h2 {
     font-size: 1.25rem;
     font-weight: 400;
     margin-bottom: 0;
@@ -964,25 +982,55 @@ section {
     margin-top: 20px;
 }
 
-.img_wrap img {
+.img_wrap img,
+.img_wrap_skrot img {
     margin: 0;
     padding: 0;
     max-height: 200px;
 }
 
+.img_wrap_skrot img {
+    opacity: 0.25;
+}
+
 .img_text {
     position: absolute;
-    top: 0;
+    top: 0px;
     bottom: 0;
-    left: 0;
+    left: 0px;
     right: 0;
     background: rgba(255, 255, 255, 0.74);
     color: #fff;
     visibility: hidden;
     opacity: 0;
     transition: opacity .2s, visibility .2s;
+}
+
+.tekstwrap_skrot_slot {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background-color: rgba(0, 110, 204, 0.78)
+}
+
+.tekstwrap_skrot_slot h2 {
+    color: black;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.tekstwrap_skrot_slot p {
+    color: black;
+    margin-bottom: 0;
+    margin-left: 10px;
 
 }
+
+.img_wrap_skrot {
+    position: relative;
+}
+
+
 
 .img_text strong {
     color: black;
