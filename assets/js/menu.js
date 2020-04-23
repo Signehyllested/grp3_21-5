@@ -13,7 +13,7 @@ function start_menu() {
 
 var locations;
 let thisLocation;
-let collapsed = true;
+let collapsed = false;
 
 function getLocation() {
   locations = location.href.split('/');
@@ -63,26 +63,21 @@ function visRetter_kob_din_andel() {
     underline.classList.add("underline");
     om_up.appendChild(underline);
     if (slug_menu == kobpkt.slug) {
-      menuExpand();
       om_up.classList.add("on_this");
       document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
         article.style.color = "#fff";
       })
       document.querySelector("#kob_din_andel").style.zIndex = zIndex;
       document.querySelector("#kob_click").style.color = "#CEAD89";
-      collapsed = false;
-      menuExpand();
-    } else if (collapsed == true) {
       menuCollapse();
+      collapsed = true;
     }
   });
-  if (thisLocation == "index.html") {
-    menuCollapse();
-  }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
   back_om.style.overflow = "visible";
   kob_din_andel_wrap.appendChild(back_om);
+  menuCollapse();
 }
 
 //hent alle posts med categorien om 21 5
@@ -123,19 +118,15 @@ function visRetter_om_21_5() {
       })
       document.querySelector("#om_21-5").style.zIndex = zIndex;
       document.querySelector("#om_click").style.color = "#CEAD89";
-      collapsed = false;
-      menuExpand();
-    } else if (collapsed == true) {
       menuCollapse();
+      collapsed = true;
     }
   });
-  if (thisLocation == "index.html") {
-    menuCollapse();
-  }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
   back_om.style.overflow = "visible";
   om_21_5_wrap.appendChild(back_om);
+  menuCollapse();
 }
 
 //hent alle posts med categorien destinationerne
@@ -176,19 +167,15 @@ function visRetter_destinationerne() {
       })
       document.querySelector("#destinationerne").style.zIndex = zIndex;
       document.querySelector("#dest_click").style.color = "#CEAD89";
-      collapsed = false;
-      menuExpand();
-    } else if (collapsed == true) {
       menuCollapse();
+      collapsed = true;
     }
   });
-  if (thisLocation == "index.html") {
-    menuCollapse();
-  }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
   back_om.style.overflow = "visible";
   destinationerne_wrap.appendChild(back_om);
+  menuCollapse();
 }
 
 //hent alle posts med categorien boligerne
@@ -229,19 +216,15 @@ function visRetter_boligerne() {
       })
       document.querySelector("#boligerne").style.zIndex = zIndex;
       document.querySelector("#bolig_click").style.color = "#CEAD89";
-      collapsed = false;
-      menuExpand();
-    } else if (collapsed == true) {
       menuCollapse();
+      collapsed = true;
     }
   });
-  if (thisLocation == "index.html") {
-    menuCollapse();
-  }
   let back_om = document.createElement("p");
   back_om.classList.add("back");
   back_om.style.overflow = "visible";
   boligerne_wrap.appendChild(back_om);
+  menuCollapse();
 }
 
 let header = document.createElement("header");
@@ -379,6 +362,12 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function menuDown() {
+  if (collapsed == true) {
+    menuExpand();
+  } else if (collapsed == true) {
+    menuCollapse();
+  }
+
   burger.removeEventListener("click", menuDown);
   header.style.transform = "translateY(calc(100vh - 60px)";
   burger.addEventListener("click", menuUp);
@@ -399,6 +388,7 @@ let delay = 0.5;
 let expanded = false;
 
 function menuExpand() {
+  console.log("menu expand");
   expanded = true;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
@@ -440,32 +430,34 @@ function menuExpand() {
 }
 
 function menuCollapse() {
-  console.log("collapse");
+  console.log("menu collapse");
   expanded = false;
-  if (window.innerWidth > 1200) {
-    document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(330px)";
-      delay = .5;
-      div.querySelectorAll("p").forEach((ptag) => {
-        ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
-        ptag.style.transform = "translateX(330px)";
+  if (collapsed == false) {
+    if (window.innerWidth > 1200) {
+      document.querySelectorAll(".underkategori div").forEach((div) => {
+        div.style.transform = "translateX(330px)";
+        delay = .5;
+        div.querySelectorAll("p").forEach((ptag) => {
+          ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
+          ptag.style.transform = "translateX(330px)";
+        })
       })
-    })
-    nav_wrap.style.transform = "translateX(0)";
-  } else {
-    document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(100%)";
-      delay = .5;
-      div.querySelectorAll("p").forEach((ptag) => {
-        ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
-        ptag.style.transform = "translateX(330px)";
+      nav_wrap.style.transform = "translateX(0)";
+    } else {
+      document.querySelectorAll(".underkategori div").forEach((div) => {
+        div.style.transform = "translateX(100%)";
+        delay = .5;
+        div.querySelectorAll("p").forEach((ptag) => {
+          ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
+          ptag.style.transform = "translateX(330px)";
+        })
       })
+      nav_wrap.style.transform = "translateX(0)";
+    }
+    document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+      div.style.color = "#fff";
     })
-    nav_wrap.style.transform = "translateX(0)";
   }
-  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
-    div.style.color = "#fff";
-  })
 }
 
 let zIndex = 5;
@@ -473,6 +465,7 @@ let zIndex = 5;
 function kobClick() {
   console.log("kob click");
   if (expanded == true) {
+    collapsed = false;
     menuCollapse();
     setTimeout(function () {
       zIndex++;
@@ -493,6 +486,7 @@ function kobClick() {
 function omClick() {
   console.log("om click")
   if (expanded == true) {
+    collapsed = false;
     menuCollapse();
     setTimeout(function () {
       zIndex++;
@@ -513,6 +507,7 @@ function omClick() {
 function destClick() {
   console.log("dest click")
   if (expanded == true) {
+    collapsed = false;
     menuCollapse();
     setTimeout(function () {
       zIndex++;
@@ -533,6 +528,7 @@ function destClick() {
 function boligClick() {
   console.log("bolig click")
   if (expanded == true) {
+    collapsed = false;
     menuCollapse();
     setTimeout(function () {
       zIndex++;

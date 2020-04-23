@@ -282,7 +282,7 @@ nav h3 {
   nav h3:hover {
     transform: scale(1.05);
     color: #CEAD89;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -367,7 +367,7 @@ nav div:nth-child(3) p {
   .underkategori p:hover {
     transform: scale(1.05);
     color: #CEAD89;
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -567,7 +567,7 @@ button {
 @media screen and (min-width: 800px) {
   button:hover {
     transform: scale(1.05);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -719,7 +719,7 @@ vp-center {
 @media screen and (min-width: 800px) {
   .arrow_f:hover {
     transform: scale(1.1);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -732,7 +732,7 @@ vp-center {
 @media screen and (min-width: 800px) {
   .arrow_b:hover {
     transform: scale(1.1) rotate(180deg);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -830,7 +830,7 @@ vp-center {
 @media screen and (min-width: 800px) {
   .fwd:hover {
     transform: translateX(25px) scale(1.1);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -843,7 +843,7 @@ vp-center {
 @media screen and (min-width: 800px) {
   .bwd:hover {
     transform: translateX(-25px) scale(1.1) rotate(180deg);
-    filter: brightness(1.2);
+    filter: brightness(1.1);
   }
 }
 
@@ -935,7 +935,80 @@ section {
 }
 
 
-#fill_forside {}
+
+
+
+
+
+#faq .faq_over {
+  width: 100%;
+  font-family: ivyjournal, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2.5rem;
+  margin: 50px 0 5px 0;
+  padding: 15px 20px 18px 20px;
+  line-height: 2.8rem;
+  background: rgb(53, 59, 68);
+  background: radial-gradient(circle at top left, rgba(53, 59, 68, 1) 0%, rgba(39, 44, 51, 1) 80%);
+  cursor: default;
+}
+
+#faq .faq_over:hover,
+#faq .faq_over:active {
+  filter: brightness(1);
+  transform: scale(1);
+}
+
+#faq .faq_under {
+  font-family: ivyjournal, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: 1.5rem;
+  margin: 5px 0 0 0;
+  padding: 10px 20px 13px 20px;
+  background: #CEAD89;
+}
+
+#faq .faq_spg_wrap p {
+  margin: 0 0 5px 0;
+  padding: 20px 20px 20px 20px;
+  background: #EAEAEA;
+  overflow: hidden;
+  transition: .6s cubic-bezier(.25, 1, .5, 1);
+}
+
+#faq .faq_spg_wrap {
+  transition: .6s cubic-bezier(.25, 1, .5, 1);
+}
+
+#faq .faq_spg_wrap .valgt_spg {
+  background: #bec6cc;
+}
+
+@media screen and (max-width: 800px) {
+  #faq .faq_over {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin: 50px 0 5px 0;
+    padding: 15px 10px 18px 10px;
+  }
+
+  #faq .faq_under {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    margin: 5px 0 0 0;
+    padding: 10px 10px 13px 10px;
+    width: 100%;
+  }
+
+  #faq .faq_spg_wrap p {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+}
 
 @media screen and (min-width: 800px) {
 
