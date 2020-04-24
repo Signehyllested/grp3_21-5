@@ -159,12 +159,32 @@ logo.addEventListener("click", () => {
     location.href = `index.html`;
   }, 500)
 })
-let burger = document.createElement("img");
+logoContainer.appendChild(logo);
+
+let burger_wrap = document.createElement("main");
+burger_wrap.id = "burger_wrap";
+let burger1 = document.createElement("article");
+burger1.id = "burger1";
+let burger2 = document.createElement("article");
+burger2.id = "burger2";
+let burger3 = document.createElement("article");
+burger3.id = "burger3";
+let burger4 = document.createElement("article");
+burger4.id = "burger4";
+let burger5 = document.createElement("article");
+burger5.id = "burger5";
+burger_wrap.appendChild(burger1);
+burger_wrap.appendChild(burger2);
+burger_wrap.appendChild(burger3);
+burger_wrap.appendChild(burger4);
+burger_wrap.appendChild(burger5);
+logoContainer.appendChild(burger_wrap);
+
+/*let burger = document.createElement("img");
 burger.src = "assets/img/burger3.svg";
 burger.alt = "burger menu";
 burger.id = "burger";
-logoContainer.appendChild(logo);
-logoContainer.appendChild(burger);
+logoContainer.appendChild(burger);*/
 
 let nav_wrap = document.createElement("div");
 nav.appendChild(nav_wrap);
@@ -206,7 +226,7 @@ login.appendChild(login_i);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  burger.addEventListener("click", menuDown);
+  burger_wrap.addEventListener("click", menuDown);
 })
 
 function menuDown() {
@@ -216,9 +236,9 @@ function menuDown() {
     menuCollapse();
   }
 
-  burger.removeEventListener("click", menuDown);
+  burger_wrap.removeEventListener("click", menuDown);
   header.style.transform = "translateY(calc(100vh - 60px)";
-  burger.addEventListener("click", menuUp);
+  burger_wrap.addEventListener("click", menuUp);
 
 
   document.querySelectorAll(".back").forEach((back) => {
@@ -230,9 +250,9 @@ function menuDown() {
 }
 
 function menuUp() {
-  burger.removeEventListener("click", menuUp);
+  burger_wrap.removeEventListener("click", menuUp);
   header.style.transform = "translateY(0)";
-  burger.addEventListener("click", menuDown);
+  burger_wrap.addEventListener("click", menuDown);
 }
 
 let delay = 0.5;

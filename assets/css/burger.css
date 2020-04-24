@@ -1,0 +1,83 @@
+#burger_wrap {
+  visibility: visible;
+  height: 40px;
+  width: 45px;
+  margin: 0 -10px 10px 0;
+  padding: 10px;
+  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  background: none;
+}
+
+#burger1,
+#burger2,
+#burger3,
+#burger4,
+#burger5 {
+  position: absolute;
+  background: #CEAD89;
+}
+
+#burger1 {
+  width: 22px;
+  height: 2px;
+  transform: translate(3px, 0);
+}
+
+#burger2 {
+  width: 20px;
+  height: 2px;
+  transform: translate(5px, 8px);
+}
+
+#burger3 {
+  width: 24px;
+  height: 2px;
+  transform: translate(1px, 16px);
+}
+
+#burger4 {
+  width: 24px;
+  height: 2px;
+  transform: translate(2px, 8px) rotate(45deg) scaleX(0);
+}
+
+#burger5 {
+  width: 24px;
+  height: 2px;
+  transform: translate(2px, 8px) rotate(-45deg) scaleX(0);
+}
+
+#burger_wrap:hover #burger1 {
+  width: 22px;
+  height: 2px;
+  transform: translate(3px, 1px) scaleX(1.2);
+}
+
+#burger_wrap:hover #burger2 {
+  width: 20px;
+  height: 2px;
+  transform: translate(5px, 8px) scaleX(1.2);
+}
+
+#burger_wrap:hover #burger3 {
+  width: 24px;
+  height: 2px;
+  transform: translate(1px, 15px) scaleX(1.2);
+}
+
+.burger1_ani {
+  animation: burger1_ani-kf 1s cubic-bezier(.5, .3, .25, 1) infinite paused;
+}
+
+@keyframes burger1_ani-kf {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(calc(360deg / 5.25));
+  }
+}
