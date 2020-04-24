@@ -47,6 +47,7 @@ function createInput() {
   container_faq.insertBefore(searchIcon, container_faq.childNodes[0]);
 }
 
+
 function searchSpg() {
   var input, filter, faq, li, button, p, i, txtValue;
   input = document.querySelector("#input_spg");
@@ -55,21 +56,18 @@ function searchSpg() {
   li = faq.querySelectorAll(".faq_spg_wrap");
   for (i = 0; i < li.length; i++) {
     button = li[i].querySelectorAll("button")[0];
-    txtValue = button.textContent || button.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-  for (i = 0; i < li.length; i++) {
     p = li[i].querySelectorAll("p")[0];
-    txtValue = p.textContent || p.innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-      clickUnder(button);
+    txtValueButton = button.textContent || button.innerText;
+    txtValueP = p.textContent || p.innerText;
+    if (txtValueButton.toUpperCase().indexOf(filter) > -1) {
+      li[i].querySelectorAll("button")[0].style.display = "";
     } else {
-      li[i].style.display = "none";
+      li[i].querySelectorAll("button")[0].style.display = "none";
+    }
+    if (txtValueP.toUpperCase().indexOf(filter) > -1) {
+      li[i].querySelectorAll("button")[0].style.display = "";
+    } else {
+      li[i].querySelectorAll("button")[0].style.display = "none";
     }
   }
 }
@@ -93,9 +91,7 @@ function visRetter_faq_spg() {
     let faq_under = document.createElement("button");
     faq_under.classList.add("faq_under");
     faq_under.textContent = `${spg.title.rendered}`;
-    faq_under.addEventListener("click", (bsp) => {
-      clickUnder(bsp);
-    });
+    faq_under.addEventListener("click", clickUnder);
     let faq_p = document.createElement("p");
     faq_p.classList.add("faq_p");
     faq_p.textContent = `${spg.forklaring}`;
@@ -113,8 +109,8 @@ function visRetter_faq_spg() {
   });
 }
 
-function clickUnder(bsp) {
-  let parent = bsp.parentElement;
+function clickUnder() {
+  let parent = this.parentElement;
   console.log(parent);
   document.querySelectorAll(".faq_p").forEach((p) => {
     p.style.height = `0`;
@@ -124,8 +120,8 @@ function clickUnder(bsp) {
       p.style.padding = "0 10px";
     }
   })
-  if (bsp.parentElement.querySelector("p").clientHeight == "0") {
-    bsp.classList.add("valgt_spg");
+  if (parent.querySelector("p").clientHeight == "0") {
+    this.classList.add("valgt_spg");
     parent.querySelector("p").style.height = "auto";
     let parentHeight = parent.querySelector("p").clientHeight;
     parent.querySelector("p").style.height = "0px";
@@ -144,6 +140,6 @@ function clickUnder(bsp) {
     } else {
       parent.querySelector("p").style.padding = "0 10px";
     }
-    bsp.classList.remove("valgt_spg");
+    this.classList.remove("valgt_spg");
   }
 }
