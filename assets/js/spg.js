@@ -72,6 +72,20 @@ function searchSpg() {
   }
 }
 
+function search_animal() {
+  let input = document.querySelector("#input_spg").value;
+  input = input.toLowerCase();
+  let x = document.querySelectorAll(".faq_spg_wrap button");
+  let p = document.querySelectorAll(".faq_spg_wrap p");
+
+  for (i = 0; i < x.length; i++) {
+    if (x[i].innerHTML.toLowerCase().includes(input) || p[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].style.display = "";
+    } else {
+      x[i].style.display = "none";
+    }
+  }
+}
 
 let URLend_faq_spg = `spg?per_page=100`;
 let endpoint_faq_spg = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_faq_spg}`;
