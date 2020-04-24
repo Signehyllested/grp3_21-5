@@ -48,7 +48,8 @@ function visRetter_kob_din_andel() {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
       document.querySelector("#pre").style.transform = "scale(2.5)";
-      document.querySelector("#anim").style.transform = "scale(1)";
+      document.querySelector("#spinner").style.transform = "scale(1)";
+      document.querySelector("#spinner_base").style.transform = "scale(1)";
 
       setTimeout(function () {
         location.href = `21-5.html?slug=${kobpkt.slug}`
@@ -96,7 +97,8 @@ function visRetter_om_21_5() {
     let om_ua = document.createElement("a");
     om_ua.addEventListener("click", () => {
       document.querySelector("#pre").style.transform = "scale(2.5)";
-      document.querySelector("#anim").style.transform = "scale(1)";
+      document.querySelector("#spinner").style.transform = "scale(1)";
+      document.querySelector("#spinner_base").style.transform = "scale(1)";
 
       setTimeout(function () {
         location.href = `21-5.html?slug=${ompkt.slug}`

@@ -451,17 +451,55 @@ nav div:nth-child(3) p {
 }
 
 #anim {
-  width: 50vw;
-  max-width: 300px;
+  width: 100%;
+  height: 100%;
   position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  transition: .5s cubic-bezier(.5, .3, .25, 1);
+}
+
+#spinner {
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
+  width: 28vh;
+  max-width: 55vw;
+  height: 28vh;
+  max-height: 55vw;
   z-index: 1000;
-  transition: .45s cubic-bezier(.5, .3, .25, 1);
-  transform: scale(1);
+  background: url(../../assets/img/ring_spinner.svg) no-repeat;
+  animation: spinner_ani-kf .25s linear infinite;
+}
+
+#spinner_base {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 20vh;
+  max-width: 40vw;
+  height: 20vh;
+  max-height: 40vw;
+  z-index: 1000;
+  background: url(../../assets/img/middle_spinner.svg) no-repeat;
+}
+
+@keyframes spinner_ani-kf {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(calc(360deg / 21));
+  }
 }
 
 #pre {
