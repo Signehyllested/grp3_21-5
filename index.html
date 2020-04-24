@@ -36,6 +36,10 @@
 
     function start() {
       hentJSON();
+      document.querySelector("#spinner").style.animationPlayState = "running";
+      setTimeout(function() {
+        document.querySelector("#spinner").style.animationPlayState = "paused";
+      }, 2000);
     }
 
     async function hentJSON() {
@@ -52,6 +56,14 @@
       retter.forEach(element => {
         document.querySelector("#fill_forside").innerHTML = `${element.content.rendered}`;
       });
+
+      let figure = document.querySelector("figure");
+      let video = document.querySelector("video");
+      let playing = true;
+      figure.addEventListener("click", () => {
+        video.pause();
+        video.play();
+      })
     }
   </script>
 </body></html>

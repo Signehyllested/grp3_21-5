@@ -91,6 +91,7 @@ function visRetter_ucat() {
     a.addEventListener("click", () => {
       document.querySelector("#pre").style.transform = "scale(2.5)";
       document.querySelector("#anim").style.transform = "scale(1)";
+      document.querySelector("#spinner").style.animationPlayState = "running";
       setTimeout(function () {
         location.href = `21-5.html?slug=${post.slug}`
       }, 500)
@@ -153,6 +154,7 @@ logo.id = "logo";
 logo.addEventListener("click", () => {
   document.querySelector("#pre").style.transform = "scale(2.5)";
   document.querySelector("#anim").style.transform = "scale(1)";
+  document.querySelector("#spinner").style.animationPlayState = "running";
   setTimeout(function () {
     location.href = `index.html`;
   }, 500)
@@ -172,6 +174,7 @@ let a1 = document.createElement("a");
 a1.addEventListener("click", () => {
   document.querySelector("#pre").style.transform = "scale(2.5)";
   document.querySelector("#anim").style.transform = "scale(1)";
+  document.querySelector("#spinner").style.animationPlayState = "running";
   setTimeout(function () {
     location.href = `index.html`;
   }, 500)

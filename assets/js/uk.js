@@ -83,6 +83,7 @@ function visRetter_showuk() {
     om_ua.addEventListener("click", () => {
       document.querySelector("#pre").style.transform = "scale(2.5)";
       document.querySelector("#anim").style.transform = "scale(1)";
+      document.querySelector("#spinner").style.animationPlayState = "running";
       setTimeout(function () {
         location.href = `21-5.html?slug=${uk.slug}`
       }, 500)
