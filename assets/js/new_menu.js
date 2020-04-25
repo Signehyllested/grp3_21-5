@@ -163,19 +163,21 @@ logoContainer.appendChild(logo);
 
 let burger_wrap = document.createElement("main");
 burger_wrap.id = "burger_wrap";
-burger_wrap.addEventListener("mouseover", () => {
-  document.querySelector("#burger1").classList.remove("burger1_ani_out");
-  document.querySelector("#burger2").classList.remove("burger2_ani_out");
-  document.querySelector("#burger3").classList.remove("burger3_ani_out");
-  document.querySelector("#burger1").classList.add("burger1_hover");
-  document.querySelector("#burger2").classList.add("burger2_hover");
-  document.querySelector("#burger3").classList.add("burger3_hover");
-})
-burger_wrap.addEventListener("mouseout", () => {
-  document.querySelector("#burger1").classList.remove("burger1_hover");
-  document.querySelector("#burger2").classList.remove("burger2_hover");
-  document.querySelector("#burger3").classList.remove("burger3_hover");
-})
+if (window.innerWidth > 800) {
+  burger_wrap.addEventListener("mouseover", () => {
+    document.querySelector("#burger1").classList.remove("burger1_ani_out");
+    document.querySelector("#burger2").classList.remove("burger2_ani_out");
+    document.querySelector("#burger3").classList.remove("burger3_ani_out");
+    document.querySelector("#burger1").classList.add("burger1_hover");
+    document.querySelector("#burger2").classList.add("burger2_hover");
+    document.querySelector("#burger3").classList.add("burger3_hover");
+  })
+  burger_wrap.addEventListener("mouseout", () => {
+    document.querySelector("#burger1").classList.remove("burger1_hover");
+    document.querySelector("#burger2").classList.remove("burger2_hover");
+    document.querySelector("#burger3").classList.remove("burger3_hover");
+  })
+}
 let burger1 = document.createElement("article");
 burger1.id = "burger1";
 let burger2 = document.createElement("article");
@@ -275,9 +277,10 @@ function menuDown() {
   document.querySelector("#burger4").classList.add("burger4_ani_in");
   document.querySelector("#burger5").classList.add("burger5_ani_in");
 
-
-  burger_wrap.addEventListener("mouseover", burgerHoverOver);
-  burger_wrap.addEventListener("mouseout", burgerHoverOut);
+  if (window.innerWidth > 800) {
+    burger_wrap.addEventListener("mouseover", burgerHoverOver);
+    burger_wrap.addEventListener("mouseout", burgerHoverOut);
+  }
 }
 
 function burgerHoverOver() {
