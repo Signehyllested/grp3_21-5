@@ -239,16 +239,17 @@ nav h3 {
   font-style: italic;
   text-align: end;
   margin: 20px 0;
-  color: #fff;
+  color: #CEAD89;
   line-height: 2rem;
   font-size: 2rem;
   cursor: pointer;
   transition: .5s cubic-bezier(.25, 1, .5, 1);
+  overflow: hidden;
+  padding: 0 0 5px 0;
 }
 
 @media screen and (min-width: 800px) {
   nav h3:hover {
-    transform: scale(1.05);
     color: #CEAD89;
     filter: brightness(1.1);
   }
@@ -312,8 +313,7 @@ nav div:nth-child(3) p {
   visibility: visible;
   background-color: #353b44;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23404751' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
-  padding: 0 20px;
-  margin: 0 20px 0 0;
+  right: 20px;
   width: 330px;
   display: flex;
   flex-direction: column;
@@ -327,6 +327,7 @@ nav div:nth-child(3) p {
   font-size: 1.3rem;
   color: #fff;
   padding: 10px 0 10px 0;
+  margin: 0 20px;
   text-align: end;
   white-space: nowrap;
   transition: .5s cubic-bezier(.25, 1, .5, 1));
@@ -375,26 +376,23 @@ nav div:nth-child(3) p {
   background: #CEAD89;
   color: #fff;
   padding: 5px 20px 5px 10px;
+  margin: 0 -20px 0 0;
   overflow: hidden;
-  transition: .5s cubic-bezier(.5, .3, .25, 1);
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
   border: 0px solid #CEAD89;
   border-left: 2000px solid #CEAD89;
+  cursor: pointer;
 }
 
 .underkategori .back:hover:after {
-  border-bottom: 5px solid #CEAD89;
-  border-top: 5px solid #CEAD89;
+  filter: brightness(1.1);
   cursor: pointer;
 }
 
 .underkategori .back:active:after {
   color: #fff;
-  padding: 5px 20px 5px 10px;
-  margin-right: 0px;
   filter: brightness(.7);
   transition: .2s cubic-bezier(.5, .3, .25, 1);
-  border: 0px solid #CEAD89;
-  border-left: 2000px solid #CEAD89;
 }
 
 @media screen and (min-width: 800px) {
@@ -410,6 +408,20 @@ nav div:nth-child(3) p {
 
   .underkategori p:hover .underline {
     left: 0;
+  }
+
+  h3 .underline {
+    width: 100%;
+    height: 1px;
+    background-color: #CEAD89;
+    transition: .6s cubic-bezier(.25, 1, .5, 1);
+    position: relative;
+    left: 101%;
+    top: 2px;
+  }
+
+  h3:hover .underline {
+    left: 0%;
   }
 }
 

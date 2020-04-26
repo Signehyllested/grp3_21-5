@@ -55,6 +55,9 @@ function visRetter_ocat() {
       h3.dataset.catId = `${cat.id}`;
       nav_wrap.appendChild(article);
       article.appendChild(h3);
+      let underline = document.createElement("article");
+      underline.classList.add("underline");
+      h3.appendChild(underline);
 
 
       let ucat = document.createElement("div");
@@ -104,7 +107,7 @@ function visRetter_ucat() {
       }
     })
     a.appendChild(p);
-    let underline = document.createElement("div");
+    let underline = document.createElement("article");
     underline.classList.add("underline");
     p.appendChild(underline);
     if (slug_menu == post.slug) {
@@ -220,6 +223,9 @@ nav_wrap.appendChild(article1);
 article1.appendChild(a1);
 a1.appendChild(h3_1);
 h3_1.appendChild(page1);
+let underline = document.createElement("article");
+underline.classList.add("underline");
+h3_1.appendChild(underline);
 
 let top_wrap = document.createElement("div");
 nav.appendChild(top_wrap);
@@ -329,7 +335,7 @@ function menuExpand() {
   expanded = true;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(0px)";
+      div.style.transform = "translateX(-20px)";
       delay = .1;
       div.querySelectorAll("p").forEach((ptag) => {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
@@ -371,7 +377,7 @@ function menuCollapse() {
   if (collapsed == false) {
     if (window.innerWidth > 1200) {
       document.querySelectorAll(".underkategori div").forEach((div) => {
-        div.style.transform = "translateX(350px)";
+        div.style.transform = "translateX(330px)";
         delay = .5;
         div.querySelectorAll("p").forEach((ptag) => {
           ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
