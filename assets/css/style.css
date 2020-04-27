@@ -150,7 +150,7 @@ h2 strong {
   transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
   z-index: 100;
   overflow: hidden;
-  transform: translateY(calc(-100vh + 60px));
+  transform: translateY(calc(-100vh + 50px));
   will-change: transform;
 }
 
@@ -165,7 +165,7 @@ header {
   background-color: #272c33;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23353b44' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   z-index: 100;
-  transform: translateY(calc(100vh - 60px - 60px));
+  transform: translateY(calc(100vh - 50px));
 }
 
 img,
@@ -200,14 +200,15 @@ li {
   z-index: 106;
   visibility: hidden;
   transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
+  transform: translateY(0);
 }
 
 #logo {
   visibility: visible;
-  height: 53px;
-  width: 53px;
-  margin: 4px 0 5px -10px;
-  padding: 10px;
+  height: 40px;
+  width: 40px;
+  margin: 3px 0 5px -10px;
+  padding: 5px;
   cursor: pointer;
   transition: .4s cubic-bezier(.25, 1, .5, 1);
   position: relative;
@@ -228,7 +229,7 @@ li {
   transition: .6s cubic-bezier(.5, .3, .25, 1);
 }
 
-nav div:nth-child(2) {
+.nav_wrap {
   width: 100vw;
   max-width: 1200px;
   top: 0;
@@ -241,23 +242,16 @@ nav div:nth-child(2) {
   justify-content: center;
   align-items: flex-end;
   position: absolute;
-  top: 0;
-  left: 0;
   padding: 0 20px;
   z-index: 2;
   transition: .6s cubic-bezier(.5, .3, .25, 1);
   visibility: hidden;
 }
 
-nav article {
-  transition: .5s cubic-bezier(.25, 1, .5, 1);
-}
-
-nav h3 {
-  visibility: visible;
+.nav_wrap h3 {
   font-style: italic;
   text-align: end;
-  margin: 20px 0;
+  margin: 10px 0;
   color: #CEAD89;
   line-height: 2rem;
   font-size: 2rem;
@@ -265,6 +259,11 @@ nav h3 {
   transition: .5s cubic-bezier(.25, 1, .5, 1);
   overflow: hidden;
   padding: 0 0 5px 0;
+}
+
+.nav_wrap article {
+  visibility: visible;
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
 }
 
 @media screen and (min-width: 800px) {
@@ -315,7 +314,7 @@ nav div:nth-child(3) p {
   left: 0;
   right: 0;
   margin: auto;
-  height: 70vh;
+  height: calc(100vh - 100px);
   position: absolute;
   z-index: 2;
   display: flex;
@@ -339,18 +338,18 @@ nav div:nth-child(3) p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .underkategori p {
-  line-height: 1.2rem;
+  line-height: 0rem;
   font-size: 1.3rem;
   color: #fff;
-  padding: 5px 0 5px 0;
+  padding: 2vh 0 2vh 0;
   margin: 0 20px;
   text-align: end;
   white-space: nowrap;
-  transition: .5s cubic-bezier(.25, 1, .5, 1));
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
   overflow: hidden;
 }
 
@@ -362,7 +361,9 @@ nav div:nth-child(3) p {
   }
 
   .underkategori p {
-    padding: 8px 0 8px 0;
+    line-height: 1.2rem;
+    margin: 0 20px;
+    padding: 7px 0 7px 0;
   }
 }
 

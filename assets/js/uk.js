@@ -85,7 +85,7 @@ function visRetter_showuk() {
       document.querySelector("#anim").style.transform = "scale(1)";
       document.querySelector("#spinner").style.animationPlayState = "running";
       setTimeout(function () {
-        location.href = `21-5.html?slug=${uk.slug}`
+        location.href = `21-5.html?slug=${uk.slug}`;
       }, 500)
     })
     if (uk.slug == slug_getcat) {

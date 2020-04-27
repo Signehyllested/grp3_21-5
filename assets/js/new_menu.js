@@ -113,7 +113,7 @@ function visRetter_ucat() {
       if (slug == post.slug && uwcat.dataset.uwcatId == first(post.categories)) {
         console.log(slug + " " + post.slug);
         p.classList.add("on_this");
-        document.querySelectorAll("nav div:nth-child(2) article h3").forEach((article) => {
+        document.querySelectorAll(".nav_wrap h3").forEach((article) => {
           article.style.color = "#fff";
         })
         document.querySelectorAll(".underkategori").forEach((ucat) => {
@@ -121,7 +121,7 @@ function visRetter_ucat() {
             ucat.style.zIndex = zIndex;
           }
         })
-        document.querySelectorAll("nav div:nth-child(2) article h3").forEach((h3) => {
+        document.querySelectorAll(".nav_wrap h3").forEach((h3) => {
           if (h3.dataset.catId == first(post.categories)) {
             h3.style.color = "#CEAD89";
           }
@@ -160,7 +160,7 @@ main.insertBefore(header_wrap, main.childNodes[0])
 
 let logoContainer = document.createElement("div");
 logoContainer.id = "logo_container";
-logoContainer.style.transform = "translateY(60px)";
+logoContainer.style.transform = "translateY(0px)";
 nav.appendChild(logoContainer);
 
 let logo = document.createElement("img");
@@ -207,6 +207,7 @@ burger.id = "burger";
 logoContainer.appendChild(burger);*/
 
 let nav_wrap = document.createElement("div");
+nav_wrap.classList.add("nav_wrap");
 nav.appendChild(nav_wrap);
 
 let article1 = document.createElement("article");
@@ -306,9 +307,9 @@ function burgerHoverOut() {
 function menuUp() {
   down = false;
   burger_wrap.removeEventListener("click", menuUp);
-  header.style.transform = "translateY(calc(100vh - 60px - 60px))";
-  logoContainer.style.transform = "translateY(60px)";
-  header_wrap.style.transform = "translateY(calc(-100vh + 60px))";
+  header.style.transform = "translateY(calc(100vh - 50px))";
+  logoContainer.style.transform = "translateY(0px)";
+  header_wrap.style.transform = "translateY(calc(-100vh + 50px))";
   burger_wrap.addEventListener("click", menuDown);
 
 
@@ -400,7 +401,7 @@ function menuCollapse() {
     })
     nav_wrap.style.transform = "translateX(0)";
   }
-  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+  document.querySelectorAll(".nav_wrap h3").forEach((div) => {
     div.style.color = "#fff";
   })
 }
@@ -429,7 +430,7 @@ function clickCat() {
     })
     menuExpand();
   }
-  document.querySelectorAll("nav div:nth-child(2) article h3").forEach((div) => {
+  document.querySelectorAll(".nav_wrap h3").forEach((div) => {
     div.style.color = "#fff";
   })
   this.style.color = "#CEAD89";
