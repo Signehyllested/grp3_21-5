@@ -76,11 +76,11 @@ function tjekDestination() {
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
     startCaro();
   }
-  if (forside == true) {
+  /*if (forside == true) {
     //console.log("tjek gensalg large");
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1454";
     startCaro();
-  }
+  }*/
   console.log(forside);
 }
 
@@ -171,7 +171,7 @@ function buildCarousel() {
     autoplay_car = false;
   });
 
-    autoplayCarouselForward();
+  autoplayCarouselForward();
 
 }
 

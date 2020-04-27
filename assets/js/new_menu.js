@@ -252,8 +252,11 @@ document.addEventListener("DOMContentLoaded", () => {
   burger_wrap.addEventListener("click", menuDown);
 })
 
-function menuDown() {
+let down = false;
 
+function menuDown() {
+  down = true;
+  console.log(down);
   burger_wrap.removeEventListener("click", menuDown);
   header.style.transform = "translateY(0)";
   logoContainer.style.transform = "translateY(0px)";
@@ -301,6 +304,7 @@ function burgerHoverOut() {
 }
 
 function menuUp() {
+  down = false;
   burger_wrap.removeEventListener("click", menuUp);
   header.style.transform = "translateY(calc(100vh - 60px - 60px))";
   logoContainer.style.transform = "translateY(60px)";

@@ -8,14 +8,252 @@
 }
 
 .carousel {
-  height: 56.25vw;
+  margin-top: -40px;
 }
 
-.carousel_inner {
-  position: absolute;
+#landing_wrap {
   width: 100vw;
   height: 100vh;
-  top: 60px;
+  background-color: #fff;
+}
+
+#landing {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0 0px;
+  height: 100vh;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+}
+
+.col {
+  padding: 0 20px;
+  flex-grow: 1;
+  flex-basis: 400px;
+  height: 50%;
+  display: flex;
+}
+
+.col:nth-child(1) {
+  align-self: center;
+}
+
+.col:nth-child(2) {
+  align-self: center;
+  background-color: #272c33;
+}
+
+.col:nth-child(2) div {
+  align-self: center;
+}
+
+#title {
+  display: block;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 200;
+  color: #fff;
+  margin: 0;
+}
+
+#title span {
+  background-color: #cead89;
+  color: #fff;
+  padding: 0 5px;
+  white-space: nowrap;
+  transform: translateY(10px);
+  line-height: 3.5rem;
+}
+
+#tagline {
+  margin: 10px 0 20px 0;
+  color: #fff;
+}
+
+.col button {
+  background-color: #454d59;
+}
+
+#illustration {
+  width: 100%;
+  max-height: 100%;
+  padding: 20px 0 0px 0;
+  align-self: flex-end;
+}
+
+.scroll_pos {
+  width: 100vw;
+  height: calc(100vh - 20px);
+  position: absolute;
+  top: 0;
   left: 0;
-  margin: 0px 0 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 4;
+  visibility: hidden;
+}
+
+.scroll_wrap {
+  width: 50px;
+  height: 80px;
+  visibility: hidden;
+}
+
+.scroll1 {
+  visibility: visible;
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background-color: #bec6cc;
+}
+
+.scroll2 {
+  visibility: visible;
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: #bec6cc;
+}
+
+.scroll3 {
+  visibility: visible;
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background-color: #bec6cc;
+}
+
+@media screen and (min-width: 800px) {
+  #landing {
+    padding: 0 0px;
+  }
+
+  #title {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+
+  #tagline {
+    margin: 15px 0 50px 0;
+  }
+
+  .col {
+    height: 100%;
+    padding: 0 50px;
+  }
+
+  #illustration {
+    padding: 150px 0 50px 0;
+  }
+
+  .scroll_pos {
+    display: flex;
+    width: 50vw;
+  }
+
+  .scroll1 {
+    background-color: #fff;
+  }
+
+  .scroll2 {
+    background-color: #fff;
+  }
+
+  .scroll3 {
+    background-color: #fff;
+  }
+}
+
+#header_wrap {
+  transform: translateY(calc(-100vh));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.scroll1_ani {
+  animation: scroll1_ani-kf 1s infinite alternate both;
+}
+
+@keyframes scroll1_ani-kf {
+  100% {
+    transform: translateX(24px) translateY(35px);
+    height: 20px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  50% {
+    transform: translateX(24px) translateY(40px);
+    height: 30px;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  0% {
+    transform: translateX(24px) translateY(55px);
+    height: 20px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+}
+
+.scroll2_ani {
+  animation: scroll2_ani-kf 1s cubic-bezier(.3, 0, .2, 1) infinite alternate both;
+}
+
+@keyframes scroll2_ani-kf {
+  100% {
+    transform: translateX(27px) translateY(47px) rotate(45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  50% {
+    transform: translateX(27px) translateY(62px) rotate(45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  0% {
+    transform: translateX(27px) translateY(67px) rotate(45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+}
+
+.scroll3_ani {
+  animation: scroll3_ani-kf 1s cubic-bezier(.3, 0, .2, 1) infinite alternate both;
+}
+
+@keyframes scroll3_ani-kf {
+  100% {
+    transform: translateX(21px) translateY(47px) rotate(-45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
+
+  50% {
+    transform: translateX(21px) translateY(62px) rotate(-45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  0% {
+    transform: translateX(21px) translateY(67px) rotate(-45deg);
+    height: 10px;
+    animation-timing-function: cubic-bezier(0.5, 0, 0.75, 0);
+  }
 }

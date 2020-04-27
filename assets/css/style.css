@@ -714,7 +714,7 @@ vp-center {
 
 #review_move {
   display: grid;
-  transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: .5s cubic-bezier(.5, .3, .25, 1);
 }
 
 .review_wrap {
@@ -1195,7 +1195,6 @@ section {
 .full_width {
   position: relative;
   width: 100vw;
-  padding: 0;
 }
 
 @media screen and (max-width: 800px) {
