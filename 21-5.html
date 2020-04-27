@@ -31,6 +31,7 @@
   <script src="assets/js/personer.js"></script>
   <script src="assets/js/spg.js"></script>
   <script src="assets/js/review.js"></script>
+  <script src="assets/js/fullwidthimg.js"></script>
   <script src="assets/js/destination_carousel.js"></script>
   <script src="assets/js/foreninger.js"></script>
   <script src="assets/js/skrot_slot.js"></script>
@@ -38,6 +39,7 @@
   <script src="assets/js/uk.js"></script>
 
   <script>
+    let forside = false;
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get("slug");
     let URLend = `posts?slug=${slug}`;
@@ -73,6 +75,7 @@
         main_.insertBefore(h1, main_.childNodes[1]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
         tjekDestination();
+        fullWidth();
       });
 
 
