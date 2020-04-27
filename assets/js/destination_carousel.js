@@ -76,6 +76,12 @@ function tjekDestination() {
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/koeb_af_andel/1063";
     startCaro();
   }
+  if (forside == true) {
+    //console.log("tjek gensalg large");
+    url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1454";
+    startCaro();
+  }
+  console.log(forside);
 }
 
 function startCaro() {
@@ -120,7 +126,7 @@ function buildCarousel() {
   carouselInner.appendChild(pilFwd);
   carousel.appendChild(legendPicContainer);
 
-  document.querySelector("main").appendChild(caroMain);
+  document.querySelector("#carousel_fill").appendChild(caroMain);
 
   numberOfPicsInCarousel = theJSON.billede.length;
   theJSON.billede.forEach((billede, index) => {
@@ -164,7 +170,9 @@ function buildCarousel() {
     bwd();
     autoplay_car = false;
   });
-  autoplayCarouselForward();
+
+    autoplayCarouselForward();
+
 }
 
 function scrollFunction() {

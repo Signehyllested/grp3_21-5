@@ -147,19 +147,21 @@ h2 strong {
   top: 0;
   left: 0;
   height: 100vh;
-  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
   z-index: 100;
   overflow: hidden;
   transform: translateY(calc(-100vh + 60px));
+  will-change: transform;
 }
 
 header {
+  will-change: transform;
   position: fixed;
   width: 100vw;
   top: 0;
   left: 0;
   height: 100vh;
-  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
   background-color: #272c33;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23353b44' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   z-index: 100;
@@ -189,6 +191,7 @@ li {
 }
 
 #logo_container {
+  will-change: transform;
   width: 100%;
   height: 100%;
   display: flex;
@@ -196,7 +199,7 @@ li {
   align-items: flex-start;
   z-index: 106;
   visibility: hidden;
-  transition: .6s cubic-bezier(.5, .3, .25, 1);
+  transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 #logo {
@@ -357,6 +360,10 @@ nav div:nth-child(3) p {
     color: #CEAD89;
     filter: brightness(1.1);
   }
+
+  .underkategori p {
+    padding: 8px 0 8px 0;
+  }
 }
 
 .underkategori p:active {
@@ -471,6 +478,7 @@ nav div:nth-child(3) p {
 }
 
 #spinner_base {
+  will-change: transform;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -486,6 +494,7 @@ nav div:nth-child(3) p {
 }
 
 #spinner {
+  will-change: transform;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -519,6 +528,7 @@ nav div:nth-child(3) p {
 }
 
 #pre {
+  will-change: transform;
   border-radius: 2000px;
   width: 100vh;
   max-width: 100vw;
@@ -572,9 +582,13 @@ footer h3 {
   color: #fff;
 }
 
+.mode {
+  display: block;
+}
+
 footer img {
   width: 30px;
-  margin: 5px 10px 0 0;
+  margin: 5px 10px 40px 0;
   border-radius: 0;
 }
 
@@ -700,7 +714,7 @@ vp-center {
 
 #review_move {
   display: grid;
-  transition: .5s cubic-bezier(.5, .3, .25, 1);
+  transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 .review_wrap {
@@ -816,7 +830,6 @@ vp-center {
 #the_container section {
   scroll-snap-align: start;
   min-width: 100%;
-
 }
 
 #the_container img {
@@ -1177,6 +1190,12 @@ section {
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.full_width {
+  position: relative;
+  width: 100vw;
+  padding: 0;
 }
 
 @media screen and (max-width: 800px) {

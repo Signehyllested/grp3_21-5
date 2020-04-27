@@ -4,9 +4,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>21-5</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/burger.css">
+  <link rel="stylesheet" href="assets/css/forside.css">
   <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
@@ -26,11 +27,14 @@
     <div id="fill_forside"></div>
   </main>
   <script src="assets/js/new_menu.js"></script>
+  <script src="assets/js/fullwidthimg.js"></script>
+  <script src="assets/js/destination_carousel.js"></script>
   <script src="assets/js/review.js"></script>
   <script src="assets/js/footer.js"></script>
 
 
   <script>
+    let forside = true;
     const urlParams = new URLSearchParams(window.location.search);
     const slug = urlParams.get("slug");
     let URLend = `pages?slug=forside`;
@@ -60,6 +64,8 @@
 
       retter.forEach(element => {
         document.querySelector("#fill_forside").innerHTML = `${element.content.rendered}`;
+        tjekDestination();
+        fullWidth();
       });
 
       let figure = document.querySelector("figure");
