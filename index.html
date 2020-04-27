@@ -22,7 +22,7 @@
     <div id="spinner"></div>
     <div id="spinner_base"></div>
   </div>
-  <main>
+  <main id="main">
     <div id="fill_forside"></div>
   </main>
   <script src="assets/js/new_menu.js"></script>
@@ -31,6 +31,8 @@
 
 
   <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
     let URLend = `pages?slug=forside`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
     let retter = [];
