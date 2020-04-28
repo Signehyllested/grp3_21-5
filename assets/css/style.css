@@ -338,7 +338,7 @@ nav div:nth-child(3) p {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .underkategori p {
@@ -1241,5 +1241,48 @@ section {
     width: 100px;
     height: 100px;
     flex-basis: 100px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+    line-height: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    line-height: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    line-height: 1.43rem;
+  }
+
+  p,
+  a,
+  li,
+  button,
+  .wp-block-button {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+  }
+
+  .underkategori p {
+    font-size: 1rem;
+  }
+
+  .nav_wrap h3 {
+    margin: 5px 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    overflow: hidden;
+    padding: 0 0 5px 0;
   }
 }
