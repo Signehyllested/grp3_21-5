@@ -60,7 +60,7 @@ function visRetter_skrot_slot() {
         tekstwrap_skrot_slot.appendChild(tekst_skrot_slot);
         // document.querySelector("#img_wrap_skrot").addEventListener("click", () => visDetalje(skrot_slot));
         img_wrap_skrot.addEventListener("click", () => visDetalje(skrot_slot));
-        skrot_detalje_id = `${skrot_slot.billede.post_excerpt}`
+        //skrot_detalje_id = `${skrot_slot.billede.post_excerpt}`
         //let skrot_detalje_id = `${skrot_slot.id}`;
         //console.log(skrot_detalje_id);
 
