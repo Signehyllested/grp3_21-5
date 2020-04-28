@@ -68,6 +68,7 @@ function visRetter_ocat() {
 
       let back = document.createElement("p");
       back.classList.add("back");
+      back.textContent = "Tilbage";
       back.style.overflow = "visible";
       ucat_wrap.appendChild(back);
     }
@@ -338,7 +339,7 @@ function menuExpand() {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(-20px)";
       delay = .1;
-      div.querySelectorAll("p").forEach((ptag) => {
+      div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
         delay = delay + 0.04;
         ptag.style.transform = "translateX(0)";
@@ -346,7 +347,7 @@ function menuExpand() {
     })
     setTimeout(function () {
       document.querySelectorAll(".underkategori div").forEach((div) => {
-        div.querySelectorAll("p").forEach((ptag) => {
+        div.querySelectorAll("a p").forEach((ptag) => {
           ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
         })
       })
@@ -356,7 +357,7 @@ function menuExpand() {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(-20px)";
       delay = .1;
-      div.querySelectorAll("p").forEach((ptag) => {
+      div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
         delay = delay + 0.04;
         ptag.style.transform = "translateX(0)";
@@ -364,7 +365,7 @@ function menuExpand() {
     })
     setTimeout(function () {
       document.querySelectorAll(".underkategori div").forEach((div) => {
-        div.querySelectorAll("p").forEach((ptag) => {
+        div.querySelectorAll("a p").forEach((ptag) => {
           ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
         })
       })
@@ -379,7 +380,7 @@ function menuCollapse() {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(330px)";
       delay = .5;
-      div.querySelectorAll("p").forEach((ptag) => {
+      div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
         ptag.style.transform = "translateX(330px)";
       })
@@ -389,7 +390,7 @@ function menuCollapse() {
     document.querySelectorAll(".underkategori div").forEach((div) => {
       div.style.transform = "translateX(100%)";
       delay = .5;
-      div.querySelectorAll("p").forEach((ptag) => {
+      div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
         ptag.style.transform = "translateX(330px)";
       })
