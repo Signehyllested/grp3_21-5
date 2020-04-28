@@ -192,7 +192,7 @@ function buildSkrotDetalje() {
         sec.addEventListener("click", () => {
             detaljeCurrentNum = sec.dataset.myIndex;
             autoplay_detalje = false;
-            navigate();
+            navigateDetalje();
         })
     })
     setBtnsDetalje();

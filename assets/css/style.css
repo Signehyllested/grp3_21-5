@@ -1139,7 +1139,7 @@ section {
 }
 
 #container_personer {
-    cursor: pointer;
+    /*cursor: pointer;*/
 }
 
 #container_personer .container_person,
