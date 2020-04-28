@@ -876,6 +876,10 @@ vp-center {
 
 
 /***** POPUP *****/
+#detalje .legend_pic_container section {
+    opacity: 1;
+}
+
 .pers_detalje_col {
     grid-column: 1/2;
 
