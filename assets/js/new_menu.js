@@ -200,12 +200,6 @@ burger_wrap.appendChild(burger4);
 burger_wrap.appendChild(burger5);
 logoContainer.appendChild(burger_wrap);
 
-/*let burger = document.createElement("img");
-burger.src = "assets/img/burger3.svg";
-burger.alt = "burger menu";
-burger.id = "burger";
-logoContainer.appendChild(burger);*/
-
 let nav_wrap = document.createElement("div");
 nav_wrap.classList.add("nav_wrap");
 nav.appendChild(nav_wrap);
@@ -231,6 +225,7 @@ underline.classList.add("underline");
 h3_1.appendChild(underline);
 
 let top_wrap = document.createElement("div");
+top_wrap.id = "login_wrap";
 nav.appendChild(top_wrap);
 let lande = document.createElement("p");
 top_wrap.appendChild(lande);

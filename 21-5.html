@@ -72,7 +72,7 @@
         let h1_i = document.createTextNode(element.title.rendered);
         let main_ = document.querySelector("main");
         h1.appendChild(h1_i);
-        main_.insertBefore(h1, main_.childNodes[1]);
+        main_.insertBefore(h1, main_.childNodes[2]);
         document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
         tjekDestination();
         fullWidth();

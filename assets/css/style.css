@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
 #main {
   max-width: 1200px;
   width: 100vw;
-  padding: 100px 20px 0 20px;
+  padding: 70px 20px 0 20px;
   margin: 0 auto;
   background-color: #fff;
 }
@@ -63,7 +63,8 @@ h3 {
   line-height: 2rem;
 }
 
-h4 {
+h4,
+p strong {
   font-family: mr-eaves-xl-modern, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -116,19 +117,23 @@ h2 strong {
   h1 {
     font-size: 2.2rem;
     line-height: 2.4rem;
+    margin: 15px 0 15px 0;
   }
 
   h2 {
     font-size: 1.8rem;
     line-height: 2rem;
+    margin: 15px 0 10px 0;
   }
 
   h3 {
     font-size: 1.3rem;
     line-height: 1.5rem;
+    margin: 10px 0 10px 0;
   }
 
-  h4 {
+  h4,
+  p strong {
     font-size: 1.2rem;
     line-height: 1.43rem;
   }
@@ -140,6 +145,7 @@ h2 strong {
   .wp-block-button {
     font-size: 1.2rem;
     line-height: 1.4rem;
+    padding: 0 0 7px 0;
   }
 }
 
@@ -209,7 +215,7 @@ li {
   visibility: visible;
   height: 40px;
   width: 40px;
-  margin: 3px 0 5px -10px;
+  margin: 5px 0 5px -10px;
   padding: 5px;
   cursor: pointer;
   transition: .4s cubic-bezier(.25, 1, .5, 1);
@@ -281,7 +287,7 @@ nav h3:active {
   filter: brightness(.7);
 }
 
-nav div:nth-child(3) {
+#login_wrap {
   width: 100vw;
   max-width: 1200px;
   top: 0;
@@ -298,7 +304,7 @@ nav div:nth-child(3) {
   visibility: hidden;
 }
 
-nav div:nth-child(3) p {
+#login_wrap p {
   line-height: 2rem;
   color: #CEAD89;
   visibility: visible;
@@ -316,7 +322,7 @@ nav div:nth-child(3) p {
   left: 0;
   right: 0;
   margin: auto;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
   position: absolute;
   z-index: 2;
   display: flex;
@@ -347,7 +353,7 @@ nav div:nth-child(3) p {
   line-height: 0rem;
   font-size: 1.3rem;
   color: #fff;
-  padding: 2vh 0 2vh 0;
+  padding: 2.5vh 0 2.5vh 0;
   margin: 0 20px;
   text-align: end;
   white-space: nowrap;
@@ -390,7 +396,7 @@ nav div:nth-child(3) p {
 
 .underkategori .back {
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   right: 0;
   background: rgba(0, 0, 0, 0);
   color: rgba(0, 0, 0, 0);
@@ -1365,34 +1371,6 @@ section {
 }
 
 @media screen and (max-width: 600px) {
-  h1 {
-    font-size: 2.2rem;
-    line-height: 2.4rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-    line-height: 2rem;
-  }
-
-  h3 {
-    font-size: 1.3rem;
-    line-height: 1.5rem;
-  }
-
-  h4 {
-    font-size: 1.2rem;
-    line-height: 1.43rem;
-  }
-
-  p,
-  a,
-  li,
-  button,
-  .wp-block-button {
-    font-size: 1.2rem;
-    line-height: 1.4rem;
-  }
 
   .underkategori p {
     font-size: 1rem;
@@ -1405,4 +1383,18 @@ section {
     overflow: hidden;
     padding: 0 0 5px 0;
   }
+
+  .underkategori div {
+    justify-content: flex-end;
+  }
+
+  .underkategori a:last-child {
+    margin-bottom: 35px;
+  }
+
+  #login_wrap p {
+    font-size: 1rem;
+    margin: 0 0 7px 0;
+  }
+
 }
