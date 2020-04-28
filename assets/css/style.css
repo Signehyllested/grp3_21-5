@@ -835,24 +835,26 @@ vp-center {
 
 
 #pers_detalje button {
-  margin: 1.5em;
-  padding-bottom: 0;
-  margin-bottom: 0;
+  margin: 50px;
+  padding-bottom: 5px;
+  margin-top: 100px;
   font-size: 2em;
-  position: relative;
-  top: 5vw;
-  color: white;
+  position: absolute;
+  color: #fff;
 }
 
 .pers_detalje_container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   margin: auto;
   padding: 1em;
-  /*background-color: white;*/
   cursor: pointer;
-  /*justify-content: center;
-    text-align: center;*/
   height: 100vh;
-  max-width: 80%;
+  max-width: 1200px;
+  padding: 50px;
   max-height: 80%;
   background-color: white;
   display: grid;
