@@ -878,6 +878,7 @@ vp-center {
 /***** POPUP *****/
 #detalje .legend_pic_container section {
     opacity: 1;
+    z-index: 999;
 }
 
 .pers_detalje_col {
@@ -937,8 +938,8 @@ vp-center {
     width: 100%;
 }
 
-#detalje .bwd,
-#detalje .fwd {
+#detalje .bwdDetalje,
+#detalje .fwdDetalje {
     background: #CEAD89;
     height: 50px;
     width: 50px;
@@ -1023,42 +1024,52 @@ vp-center {
 @media screen and (max-width: 800px) {
 
     .bwd,
-    .fwd {
+    .fwd,
+    .bwdDetalje,
+    .fwdDetalje {
         display: none;
     }
 }
 
-.bwd {
+.bwd,
+.bwdDetalje {
     transform: translateX(-25px) rotate(180deg);
     margin: auto -50px auto 2px;
 }
 
-.fwd {
+.fwd,
+.fwdDetalje {
     transform: translateX(25px);
     margin: auto 0 auto -50px;
 }
 
 @media screen and (min-width: 800px) {
-    .fwd:hover {
+
+    .fwd:hover,
+    .fwdDetalje:hover {
         transform: translateX(25px) scale(1.1);
         filter: brightness(1.1);
     }
 }
 
-.fwd:active {
+.fwd:active,
+.fwdDetalje:active {
     transform: translateX(25px) scale(.9);
     filter: brightness(.8);
     transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
 @media screen and (min-width: 800px) {
-    .bwd:hover {
+
+    .bwd:hover,
+    .bwdDetalje:hover {
         transform: translateX(-25px) scale(1.1) rotate(180deg);
         filter: brightness(1.1);
     }
 }
 
-.bwd:active {
+.bwd:active,
+.bwdDetalje:active {
     transform: translateX(-25px) scale(.9) rotate(180deg);
     filter: brightness(.8);
     transition: .2s cubic-bezier(.25, 1, .5, 1);

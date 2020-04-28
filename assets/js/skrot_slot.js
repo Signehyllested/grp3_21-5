@@ -140,27 +140,27 @@ function buildSkrotDetalje() {
     let caroContainer = document.createElement("div");
     caroContainer.id = "the_container";
 
-    let pilBwd = document.createElement("img");
-    pilBwd.src = "assets/img/arrow.svg";
-    pilBwd.classList.add("bwd");
-    let pilFwd = document.createElement("img");
-    pilFwd.src = "assets/img/arrow.svg";
-    pilFwd.classList.add("fwd");
+    let pilBwdDetalje = document.createElement("img");
+    pilBwdDetalje.src = "assets/img/arrow.svg";
+    pilBwdDetalje.classList.add("bwdDetalje");
+    let pilFwdDetalje = document.createElement("img");
+    pilFwdDetalje.src = "assets/img/arrow.svg";
+    pilFwdDetalje.classList.add("fwdDetalje");
     let legendPicContainer = document.createElement("div");
     legendPicContainer.classList.add("legend_pic_container");
 
     caroMain.appendChild(carousel);
     carousel.appendChild(carouselInner);
-    carouselInner.appendChild(pilBwd);
+    carouselInner.appendChild(pilBwdDetalje);
     carouselInner.appendChild(caroContainer);
-    carouselInner.appendChild(pilFwd);
+    carouselInner.appendChild(pilFwdDetalje);
     carousel.appendChild(legendPicContainer);
 
     document.querySelector(".detalje_container").appendChild(caroMain);
 
     console.log(detaljeJSON);
 
-    console.log("runskrotdetalje");
+    console.log("buildskrotdetalje");
     console.log(detaljeJSON);
 
     numberOfPicsInDetalje = detaljeJSON.billede.length;
@@ -186,7 +186,7 @@ function buildSkrotDetalje() {
 
     })
     document.querySelector(".legend_pic_container section").classList.add("legend_border");
-    document.querySelector("#the_container").addEventListener("scroll", scrollFunction);
+    document.querySelector("#the_container").addEventListener("scroll", scrollFunctionDetalje);
 
     document.querySelectorAll(".legend_pic_container section").forEach((sec) => {
         sec.addEventListener("click", () => {
@@ -195,20 +195,20 @@ function buildSkrotDetalje() {
             navigate();
         })
     })
-    setBtns();
+    setBtnsDetalje();
 
-    document.querySelector(".fwd").addEventListener("click", () => {
-        fwd();
+    document.querySelector(".fwdDetalje").addEventListener("click", () => {
+        fwdDetalje();
         autoplay_detalje = false;
     });
-    document.querySelector(".bwd").addEventListener("click", () => {
-        bwd();
+    document.querySelector(".bwdDetalje").addEventListener("click", () => {
+        bwdDetalje();
         autoplay_detalje = false;
     });
-    autoplayCarouselForward();
+    autoplayCarouselForwardDetalje();
 }
 
-function scrollFunction() {
+function scrollFunctionDetalje() {
     document.querySelectorAll(".legend_pic_container section").forEach(each => {
         each.classList.remove("legend_border");
     })
@@ -217,102 +217,102 @@ function scrollFunction() {
 
     document.querySelector(`.legend_pic_container section:nth-child(${detaljeCurrentNum+1})`).classList.add("legend_border");
 
-    setBtns();
+    setBtnsDetalje();
 }
 
 
-function fwd() {
+function fwdDetalje() {
     if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
         detaljeCurrentNum++;
-        navigate();
+        navigateDetalje();
     }
 }
 
-function bwd() {
+function bwdDetalje() {
     if (detaljeCurrentNum > 0) {
 
         detaljeCurrentNum--;
-        navigate();
+        navigateDetalje();
     }
 }
 
-function navigate() {
+function navigateDetalje() {
     document.querySelector("#the_container").scrollTo({
         left: detaljeCurrentNum * document.querySelector(".caro_imgs").width,
         behavior: "smooth"
     })
 }
 
-function setBtns() {
-    detectswipe("the_container", swiped_car);
+function setBtnsDetalje() {
+    detectswipe("the_container", swiped_carDetalje);
 
 
     if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
-        document.querySelector(".fwd").classList.remove("grayscale_f");
+        document.querySelector(".fwdDetalje").classList.remove("grayscale_f");
     } else {
-        document.querySelector(".fwd").classList.add("grayscale_f");
+        document.querySelector(".fwdDetalje").classList.add("grayscale_f");
     }
     if (detaljeCurrentNum > 0) {
-        document.querySelector(".bwd").classList.remove("grayscale_b");
+        document.querySelector(".bwdDetalje").classList.remove("grayscale_b");
     } else {
-        document.querySelector(".bwd").classList.add("grayscale_b");
+        document.querySelector(".bwdDetalje").classList.add("grayscale_b");
     }
 }
 
-function swiped_car(el, d) {
+function swiped_carDetalje(el, d) {
 
     autoplay_detalje = false;
     if (d == "l") {
-        fwd();
+        fwdDetalje();
     } else if (d == "r") {
-        bwd();
+        bwdDetalje();
     }
 }
 
 
 let autoplay_detalje = true;
 
-function autoplayCarouselForward() {
+function autoplayCarouselForwardDetalje() {
     setTimeout(function () {
         if (autoplay_detalje == true) {
             if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
                 fwd();
-                autoplayCarouselForward();
+                autoplayCarouselForwardDetalje();
             } else {
-                autoplayCarouselBackward();
+                autoplayCarouselBackwardDetalje();
             }
             if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
-                document.querySelector(".fwd").classList.remove("grayscale_f");
+                document.querySelector(".fwdDetalje").classList.remove("grayscale_f");
             } else {
-                document.querySelector(".fwd").classList.add("grayscale_f");
+                document.querySelector(".fwdDetalje").classList.add("grayscale_f");
             }
             if (detaljeCurrentNum > 0) {
-                document.querySelector(".bwd").classList.remove("grayscale_b");
+                document.querySelector(".bwdDetalje").classList.remove("grayscale_b");
             } else {
-                document.querySelector(".bwd").classList.add("grayscale_b");
+                document.querySelector(".bwdDetalje").classList.add("grayscale_b");
             }
         }
     }, 4000)
 }
 
-function autoplayCarouselBackward() {
+function autoplayCarouselBackwardDetalje() {
     setTimeout(function () {
-        if (autoplay == true) {
+        if (autoplay_detalje == true) {
             if (detaljeCurrentNum > 0) {
-                bwd();
-                autoplayCarouselBackward();
+                bwdDetalje();
+                autoplayCarouselBackwardDetalje();
             } else {
-                autoplayCarouselForward();
+                autoplayCarouselForwardDetalje();
             }
             if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
-                document.querySelector(".fwd").classList.remove("grayscale_f");
+                document.querySelector(".fwdDetalje").classList.remove("grayscale_f");
             } else {
-                document.querySelector(".fwd").classList.add("grayscale_f");
+                document.querySelector(".fwdDetalje").classList.add("grayscale_f");
             }
             if (detaljeCurrentNum > 0) {
-                document.querySelector(".bwd").classList.remove("grayscale_b");
+                document.querySelector(".bwdDetalje").classList.remove("grayscale_b");
             } else {
-                document.querySelector(".bwd").classList.add("grayscale_b");
+                document.querySelector(".bwdDetalje").classList.add("grayscale_b");
             }
         }
     }, 4000)
