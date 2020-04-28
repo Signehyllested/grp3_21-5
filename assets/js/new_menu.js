@@ -337,7 +337,8 @@ function menuExpand() {
   expanded = true;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(-20px)";
+      div.style.transform = "translateX(20px)";
+      div.style.transition = `.7s cubic-bezier(.5, .3, .25, 1)`;
       delay = .1;
       div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `.5s cubic-bezier(.5, .3, .25, 1) ${delay}s`;
@@ -378,11 +379,12 @@ function menuCollapse() {
   expanded = false;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(330px)";
+      div.style.transform = "translateX(350px)";
+      div.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
       delay = .5;
       div.querySelectorAll("a p").forEach((ptag) => {
         ptag.style.transition = `${delay}s cubic-bezier(.5, .3, .25, 1)`;
-        ptag.style.transform = "translateX(330px)";
+        ptag.style.transform = "translateX(350px)";
       })
     })
     nav_wrap.style.transform = "translateX(0)";

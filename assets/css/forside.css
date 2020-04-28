@@ -170,7 +170,20 @@
 }
 
 #main {
-  padding: 50px 50px 0 50px;
+  padding: 0 50px 0 50px;
+}
+
+#fill_forside img {
+  margin: 0;
+}
+
+.wp-block-column:nth-child(2) {
+  margin: 0;
+}
+
+.text_col {
+  padding: 30px 50px 0 50px;
+  margin: 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -203,6 +216,11 @@
 
   #main {
     padding: 0 20px;
+  }
+
+  .wp-block-column:nth-child(2) {
+    padding: 10px 0 0 0;
+    margin: 0 20px;
   }
 }
 
