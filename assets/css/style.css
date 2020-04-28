@@ -72,6 +72,8 @@ h4 {
   line-height: 1.6rem;
 }
 
+
+
 p,
 a,
 li,
@@ -814,6 +816,120 @@ vp-center {
   transition: .2s cubic-bezier(.25, 1, .5, 1);
 }
 
+/***** Personer detalje *****/
+
+#pers_detalje {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.51);
+  overflow: scroll;
+}
+
+
+#pers_detalje button {
+  margin: 1.5em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 2em;
+  position: relative;
+  top: 5vw;
+  color: white;
+}
+
+.pers_detalje_container {
+  margin: auto;
+  padding: 1em;
+  /*background-color: white;*/
+  cursor: pointer;
+  /*justify-content: center;
+    text-align: center;*/
+  height: 100vh;
+  max-width: 80%;
+  max-height: 80%;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+
+/***** POPUP *****/
+.pers_detalje_col {
+  grid-column: 1/2;
+
+}
+
+.pers_detalje_img {
+  grid-column: 2/3;
+
+}
+
+#detalje {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.51);
+  overflow: scroll;
+}
+
+#detalje button {
+  margin: 1.5em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  font-size: 2em;
+  position: relative;
+  top: 5vw;
+  color: white;
+}
+
+.detalje_container {
+  margin: 0;
+  padding: 2em 10em;
+  /*background-color: white;*/
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+
+}
+
+.skjul {
+  display: none;
+}
+
+.vis {
+  display: block;
+}
+
+#detalje img {
+  width: 100%;
+}
+
+#detalje .caro_imgs {
+  width: 100%;
+}
+
+#detalje .bwd,
+#detalje .fwd {
+  background: #CEAD89;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  margin: auto;
+  transition: .5s cubic-bezier(.25, 1, .5, 1);
+}
+
+#detalje .legend_pic_container {}
+
+
 /***** CAROUSEL *****/
 .carousel {
   width: 100%;
@@ -985,6 +1101,10 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+#container_personer {
+  cursor: pointer;
 }
 
 #container_personer .container_person,
