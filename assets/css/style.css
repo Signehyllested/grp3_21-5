@@ -20,20 +20,11 @@ body::-webkit-scrollbar {
   background-color: #fff;
 }
 
-.space1 {
-  height: 20px;
-}
-
-.space2 {
-  height: 50px;
-}
-
-.space3 {
-  height: 90px;
-}
-
-.space4 {
-  height: 150px;
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 h1 {
@@ -155,11 +146,12 @@ h2 strong {
   top: 0;
   left: 0;
   height: 100vh;
-  transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
   z-index: 100;
   overflow: hidden;
   transform: translateY(calc(-100vh + 50px));
   will-change: transform;
+  transform-origin: bottom right;
 }
 
 header {
@@ -169,11 +161,12 @@ header {
   top: 0;
   left: 0;
   height: 100vh;
-  transition: .6s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: 1s cubic-bezier(0.76, 0, 0.24, 1);
   background-color: #272c33;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23353b44' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   z-index: 100;
   transform: translateY(calc(100vh - 50px));
+  transform-origin: bottom right;
 
   /*
     -ms-transform: translateY(calc(100vh - 50px));
@@ -346,6 +339,7 @@ nav h3:active {
 }
 
 .underkategori div {
+  transform-origin: top left;
   height: calc(100% - 40px);
   transform: translateX(300px);
   transition: .75s cubic-bezier(.5, .3, .25, 1);
@@ -365,7 +359,7 @@ nav h3:active {
   line-height: 0rem;
   font-size: 1.3rem;
   color: #fff;
-  padding: 3vh 0 3vh 0;
+  padding: 2vh 0 3vh 0;
   margin: 0 20px;
   text-align: end;
   white-space: nowrap;
@@ -389,9 +383,7 @@ nav h3:active {
 
 .underkategori a p:active {
   transform: scale(.95);
-  background: #fff;
-  color: #fff;
-  transition: 0s cubic-bezier(.25, 1, .5, 1);
+  transition: .2s cubic-bezier(.25, 1, .5, 1);
   padding: 10px 0 10px 0;
 }
 
@@ -404,31 +396,6 @@ nav h3:active {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23353b44' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
     margin: 0 -20px 0 0;
   }
-}
-
-.underkategori .back {
-  position: absolute;
-  display: block;
-  bottom: 0;
-  right: 0;
-  font-weight: 700;
-  background: #CEAD89;
-  color: #fff;
-  padding: 10px 20px 10px 2000px;
-  margin: 0;
-  overflow: hidden;
-  transition: .5s cubic-bezier(.25, 1, .5, 1);
-  cursor: pointer;
-}
-
-.underkategori .back:hover {
-  filter: brightness(1.2);
-}
-
-.underkategori .back:active {
-  color: #fff;
-  filter: brightness(.7);
-  transition: .2s cubic-bezier(.5, .3, .25, 1);
 }
 
 @media screen and (min-width: 800px) {
@@ -701,6 +668,7 @@ header nav .on_this {
 }
 
 .wp-block-columns {
+  margin: 50px 0;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1442,8 +1410,29 @@ section {
   .underkategori .back {
     bottom: 0;
     right: 0;
-    padding: 5px 20px 5px 2000px;
-    margin: 0;
+    padding: 3px 20px 3px 2000px;
   }
 
+}
+
+@media screen and (max-width: 1200px) {
+  .underkategori .back {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    right: 0;
+    font-weight: 700;
+    background: #CEAD89;
+    color: #fff;
+    padding: 10px 20px 10px 2000px;
+    margin: 0 0 5vh 0;
+    overflow: hidden;
+    transition: .5s cubic-bezier(.25, 1, .5, 1);
+    cursor: pointer;
+  }
+
+  .underkategori .back:active {
+    filter: brightness(.7);
+    transition: .2s cubic-bezier(.5, .3, .25, 1);
+  }
 }

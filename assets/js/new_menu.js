@@ -184,6 +184,9 @@ if (window.innerWidth > 800) {
   burger_wrap.addEventListener("mouseover", burgerHoverOver);
   burger_wrap.addEventListener("mouseout", burgerHoverOut);
 }
+let burger_title = document.createElement("p");
+burger_title.id = "burger_title";
+burger_title.textContent = "MENU";
 let burger1 = document.createElement("article");
 burger1.id = "burger1";
 let burger2 = document.createElement("article");
@@ -199,6 +202,7 @@ burger_wrap.appendChild(burger2);
 burger_wrap.appendChild(burger3);
 burger_wrap.appendChild(burger4);
 burger_wrap.appendChild(burger5);
+burger_wrap.appendChild(burger_title);
 logoContainer.appendChild(burger_wrap);
 
 let nav_wrap = document.createElement("div");
@@ -256,7 +260,7 @@ function menuDown() {
   console.log(down);
   burger_wrap.removeEventListener("click", menuDown);
   header.style.transform = "translateY(0)";
-  logoContainer.style.transform = "translateY(0px)";
+  logoContainer.style.transform = "translateY(0)";
   header_wrap.style.transform = "translateY(0)";
   burger_wrap.addEventListener("click", menuUp);
 
@@ -337,7 +341,7 @@ function menuExpand() {
   expanded = true;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(20px)";
+      div.style.transform = "translateX(0)";
       div.style.transition = `.7s cubic-bezier(.5, .3, .25, 1)`;
       delay = .1;
       div.querySelectorAll("a p").forEach((ptag) => {
@@ -379,7 +383,7 @@ function menuCollapse() {
   expanded = false;
   if (window.innerWidth > 1200) {
     document.querySelectorAll(".underkategori div").forEach((div) => {
-      div.style.transform = "translateX(350px)";
+      div.style.transform = "translateX(350px) skewX(20deg)";
       div.style.transition = `.5s cubic-bezier(.5, .3, .25, 1)`;
       delay = .5;
       div.querySelectorAll("a p").forEach((ptag) => {
