@@ -32,7 +32,7 @@ h1 {
   font-weight: 500;
   font-style: normal;
   font-size: 4rem;
-  margin: 15px 0 30px 0;
+  margin: 20px 0 30px 0;
   line-height: 4.3rem;
 }
 
@@ -41,7 +41,7 @@ h2 {
   font-weight: 300;
   font-style: normal;
   font-size: 2.5rem;
-  margin: 10px 0 15px 0;
+  margin: 40px 0 15px 0;
   line-height: 2.8rem;
 }
 
@@ -50,7 +50,7 @@ h3 {
   font-weight: 300;
   font-style: italic;
   font-size: 1.7rem;
-  margin: 10px 0 10px 0;
+  margin: 25px 0 7px 0;
   line-height: 2rem;
 }
 
@@ -64,7 +64,10 @@ p strong {
   line-height: 1.6rem;
 }
 
-
+.wp-block-columns h2:first-child,
+.wp-block-columns h3:first-child {
+  margin: 0px 0 15px 0;
+}
 
 p,
 a,
@@ -78,13 +81,24 @@ input,
   font-size: 1.2rem;
   line-height: 1.45rem;
   letter-spacing: .02rem;
-  padding: 0 0 10px 0;
+  margin: 0 0 10px 0;
   color: #353B44;
 }
 
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+.link {
+  font-weight: 700;
+  text-decoration: underline;
+  transition: .6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.link:hover {
+  background-color: #cead87;
+  padding: 5px 0;
 }
 
 img,
@@ -676,7 +690,7 @@ header nav .on_this {
 }
 
 .wp-block-columns {
-  margin: 50px 0;
+  margin: 50px 0 50px 0;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -697,6 +711,21 @@ header nav .on_this {
 
 vp-center {
   justify-content: flex-start;
+}
+
+p span {
+  background-color: #353B44;
+  color: #fff;
+  padding: 5px 3px;
+  margin: 0;
+  border-radius: 1.5px;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.standout {
+  margin: 20px 0 0 0;
+  padding: 0;
 }
 
 #review_overflow {

@@ -1,7 +1,7 @@
 #burger_wrap {
   visibility: visible;
   height: 40px;
-  width: 25px;
+  width: 100px;
   margin: 16px 0px 20px 10px;
   transition: .5s cubic-bezier(.25, 1, .5, 1);
   cursor: pointer;
@@ -9,11 +9,13 @@
   z-index: 100;
   background: none;
   transform-origin: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #burger_title {
   color: #fff;
-  transform: translate(-50px, -2px);
+  transform: translate(-40px, -2px);
   letter-spacing: 3px;
   font-size: .8rem;
 }
@@ -32,19 +34,19 @@
 #burger1 {
   width: 22px;
   height: 2px;
-  transform: translate(3px, 0);
+  transform: translate(0, 0);
 }
 
 #burger2 {
   width: 20px;
   height: 2px;
-  transform: translate(5px, 8px);
+  transform: translate(0, 8px);
 }
 
 #burger3 {
   width: 24px;
   height: 2px;
-  transform: translate(1px, 16px);
+  transform: translate(0, 16px);
 }
 
 #burger4 {
@@ -65,11 +67,11 @@
 
 @keyframes burger1_ani_in-kf {
   0% {
-    transform: translate(3px, 0) scaleX(1);
+    transform: translate(0, 0) scaleX(1);
   }
 
   100% {
-    transform: translate(3px, 0) scaleX(0);
+    transform: translate(0, 0) scaleX(0);
     visibility: hidden;
   }
 }
@@ -80,11 +82,11 @@
 
 @keyframes burger2_ani_in-kf {
   0% {
-    transform: translate(5px, 8px) scaleX(1);
+    transform: translate(0, 8px) scaleX(1);
   }
 
   100% {
-    transform: translate(5px, 8px) scaleX(0);
+    transform: translate(0, 8px) scaleX(0);
     visibility: hidden;
   }
 }
@@ -95,11 +97,11 @@
 
 @keyframes burger3_ani_in-kf {
   0% {
-    transform: translate(1px, 16px) scaleX(1);
+    transform: translate(0, 16px) scaleX(1);
   }
 
   100% {
-    transform: translate(1px, 16px) scaleX(0);
+    transform: translate(0, 16px) scaleX(0);
     visibility: hidden;
   }
 }
@@ -140,11 +142,11 @@
 
 @keyframes burger1_ani_out-kf {
   100% {
-    transform: translate(3px, 0) scaleX(1);
+    transform: translate(0, 0) scaleX(1);
   }
 
   0% {
-    transform: translate(3px, 0) scaleX(0);
+    transform: translate(0, 0) scaleX(0);
     visibility: visible;
   }
 }
@@ -155,11 +157,11 @@
 
 @keyframes burger2_ani_out-kf {
   100% {
-    transform: translate(5px, 8px) scaleX(1);
+    transform: translate(0, 8px) scaleX(1);
   }
 
   0% {
-    transform: translate(5px, 8px) scaleX(0);
+    transform: translate(0, 8px) scaleX(0);
     visibility: visible;
   }
 }
@@ -170,11 +172,11 @@
 
 @keyframes burger3_ani_out-kf {
   100% {
-    transform: translate(1px, 16px) scaleX(1);
+    transform: translate(0, 16px) scaleX(1);
   }
 
   0% {
-    transform: translate(1px, 16px) scaleX(0);
+    transform: translate(0, 16px) scaleX(0);
     visibility: visible;
   }
 }
@@ -280,5 +282,5 @@
 }*/
 
 .burger_wrap_hover {
-  transform: scaleX(1.2);
+  transform: scaleX(1.1);
 }
