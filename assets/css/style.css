@@ -87,6 +87,11 @@ a {
   text-decoration: none;
 }
 
+img,
+figure {
+  border-radius: 1.5px;
+}
+
 *::selection {
   background: #CEAD89;
   color: #272C33;
@@ -353,6 +358,7 @@ nav h3:active {
   justify-content: center;
   align-items: flex-end;
   overflow: hidden;
+  border-radius: 2.5px;
 }
 
 .underkategori a p {
@@ -578,6 +584,7 @@ button {
   border: none;
   box-shadow: none;
   text-align: left;
+  border-radius: 1.5px;
 }
 
 #input_wrap {
@@ -599,6 +606,7 @@ button,
   font-weight: 400;
   font-style: normal;
   transition: .5s cubic-bezier(.25, 1, .5, 1);
+  border-radius: 1.5px;
 }
 
 .blocks-gallery-grid {
@@ -744,6 +752,7 @@ vp-center {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.1rem;
+  border-radius: 1.5px;
 }
 
 .review_wrap h4 {
@@ -1311,6 +1320,7 @@ section {
   background-size: 30px;
   background-repeat: no-repeat;
   background-position: center;
+  border-radius: 1.5px;
 }
 
 .full_width {

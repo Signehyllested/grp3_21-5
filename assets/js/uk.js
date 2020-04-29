@@ -1,6 +1,4 @@
-const urlParams_getcat = new URLSearchParams(window.location.search);
-const slug_getcat = urlParams_getcat.get("slug");
-let URLend_getcat = `posts?slug=${slug_getcat}`;
+let URLend_getcat = `posts?slug=${slug}`;
 let endpoint_getcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_getcat}`;
 let json_getcat = [];
 let category = 0;
@@ -88,7 +86,7 @@ function visIndhold_showuk() {
         location.href = `21-5.html?slug=${uk.slug}`;
       }, 500)
     })
-    if (uk.slug == slug_getcat) {
+    if (uk.slug == slug) {
       om_ua.classList.add("this_site");
       om_ua.style.cursor = "auto";
     }

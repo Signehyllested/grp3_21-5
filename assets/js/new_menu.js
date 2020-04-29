@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", start_menu);
 
 function start_menu() {
   hentJSON_ocat();
-  hentJSON_ucat();
   getLocation();
 }
 
@@ -38,6 +37,7 @@ async function hentJSON_ocat() {
   const response_ocat = await fetch(endpoint_ocat);
   json_ocat = await response_ocat.json();
   visIndhold_ocat();
+  hentJSON_ucat();
 }
 
 function visIndhold_ocat() {
