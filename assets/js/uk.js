@@ -2,7 +2,7 @@ const urlParams_getcat = new URLSearchParams(window.location.search);
 const slug_getcat = urlParams_getcat.get("slug");
 let URLend_getcat = `posts?slug=${slug_getcat}`;
 let endpoint_getcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_getcat}`;
-let retter_getcat = [];
+let json_getcat = [];
 let category = 0;
 
 document.addEventListener("DOMContentLoaded", start);
@@ -13,12 +13,12 @@ function start() {
 
 async function hentJSON_getcat() {
   const response_getcat = await fetch(endpoint_getcat);
-  retter_getcat = await response_getcat.json();
+  json_getcat = await response_getcat.json();
   visIndhold_getcat();
 }
 
 function visIndhold_getcat() {
-  retter_getcat.forEach(cat => {
+  json_getcat.forEach(cat => {
     var last = function (array, n) {
       if (array == null)
         return void 0;
@@ -36,14 +36,14 @@ let endpoint_showcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpr
 
 async function hentJSON_showcat() {
   const response_showcat = await fetch(endpoint_showcat);
-  retter_showcat = await response_showcat.json();
+  json_showcat = await response_showcat.json();
   visIndhold_showcat();
 }
 
 let running = true;
 
 function visIndhold_showcat() {
-  retter_showcat.forEach(cat => {
+  json_showcat.forEach(cat => {
     if (cat.parent != 0) {
       if (category == cat.id) {
         hentJSON_showuk();
@@ -63,7 +63,7 @@ main_uk.insertBefore(uk_wrap, main_uk.childNodes[1]);
 
 
 
-let retter_showuk = [];
+let json_showuk = [];
 
 async function hentJSON_showuk() {
 
@@ -71,13 +71,13 @@ async function hentJSON_showuk() {
   let endpoint_showuk = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_showuk}`;
 
   const response_showuk = await fetch(endpoint_showuk);
-  retter_showuk = await response_showuk.json();
+  json_showuk = await response_showuk.json();
   visIndhold_showuk();
 }
 
 function visIndhold_showuk() {
 
-  retter_showuk.forEach(uk => {
+  json_showuk.forEach(uk => {
     let om_ua = document.createElement("button");
     om_ua.textContent = uk.title.rendered;
     om_ua.addEventListener("click", () => {

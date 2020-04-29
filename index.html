@@ -65,7 +65,7 @@
     const slug = urlParams.get("slug");
     let URLend = `pages?slug=forside`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
-    let retter = [];
+    let json = [];
 
     document.addEventListener("DOMContentLoaded", start);
 
@@ -80,7 +80,7 @@
     async function hentJSON() {
       console.log("page loaded");
       const response = await fetch(endpoint);
-      retter = await response.json();
+      json = await response.json();
       visIndhold();
       document.querySelector("#pre").style.transform = "scale(0)";
       document.querySelector("#anim").style.transform = "scale(0)";
@@ -88,7 +88,7 @@
 
     function visIndhold() {
 
-      retter.forEach(element => {
+      json.forEach(element => {
         document.querySelector("#fill_forside").innerHTML = `${element.content.rendered}`;
         tjekDestination();
         fullWidth();

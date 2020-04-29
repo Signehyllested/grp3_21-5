@@ -382,9 +382,9 @@ nav h3:active {
 }
 
 .underkategori a p:active {
+  color: #fff;
   transform: scale(.95);
   transition: .2s cubic-bezier(.25, 1, .5, 1);
-  padding: 10px 0 10px 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1412,7 +1412,6 @@ section {
     right: 0;
     padding: 3px 20px 3px 2000px;
   }
-
 }
 
 @media screen and (max-width: 1200px) {

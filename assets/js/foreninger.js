@@ -1,7 +1,7 @@
 let perPage3 = 50;
 let URLend_foreninger = `foreninger?per_page=${perPage3}`;
 let endpoint_foreninger = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_foreninger}`;
-let retter_foreninger = [];
+let json_foreninger = [];
 let container_foreninger = document.createElement("div");
 container_foreninger.id = "container_foreninger";
 
@@ -11,13 +11,13 @@ function start_foreninger() {
 
 async function hentJSON_foreninger() {
     const response_foreninger = await fetch(endpoint_foreninger);
-    retter_foreninger = await response_foreninger.json();
+    json_foreninger = await response_foreninger.json();
     visIndhold_foreninger();
 }
 
 function visIndhold_foreninger() {
     console.log("visIndhold foreninger");
-    retter_foreninger.forEach(forening => {
+    json_foreninger.forEach(forening => {
         let container_forening = document.createElement("article");
         container_forening.classList.add("container_forening");
         let h2_foreninger = document.createElement("h2");

@@ -44,7 +44,7 @@
     const slug = urlParams.get("slug");
     let URLend = `posts?slug=${slug}`;
     let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
-    let retter = [];
+    let json = [];
     let onSite;
 
     document.addEventListener("DOMContentLoaded", start);
@@ -59,14 +59,14 @@
 
     async function hentJSON() {
       const response = await fetch(endpoint);
-      retter = await response.json();
+      json = await response.json();
       visIndhold();
       document.querySelector("#pre").style.transform = "scale(0)";
       document.querySelector("#anim").style.transform = "scale(0)";
     }
 
     function visIndhold() {
-      retter.forEach(element => {
+      json.forEach(element => {
         document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
         let h1 = document.createElement("h1");
         let h1_i = document.createTextNode(element.title.rendered);

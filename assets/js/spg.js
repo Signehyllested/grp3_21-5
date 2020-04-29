@@ -5,7 +5,7 @@ container_faq.id = "faq";
 
 let URLend_faq_cat = `spg-kategori?per_page=100`;
 let endpoint_faq_cat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_faq_cat}`;
-let retter_faq_cat = [];
+let json_faq_cat = [];
 
 function start_faq() {
   hentJSON_faq_cat();
@@ -14,13 +14,13 @@ function start_faq() {
 
 async function hentJSON_faq_cat() {
   const response_faq_cat = await fetch(endpoint_faq_cat);
-  retter_faq_cat = await response_faq_cat.json();
+  json_faq_cat = await response_faq_cat.json();
   visIndhold_faq_cat();
 }
 
 function visIndhold_faq_cat() {
-  console.log(retter_faq_cat);
-  retter_faq_cat.forEach(cat => {
+  console.log(json_faq_cat);
+  json_faq_cat.forEach(cat => {
     let faq_cat = document.createElement("div");
     faq_cat.classList.add("faq_cat");
     faq_cat.dataset.catId = `${cat.id}`;
@@ -89,17 +89,17 @@ function search_animal() {
 
 let URLend_faq_spg = `spg?per_page=100`;
 let endpoint_faq_spg = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_faq_spg}`;
-let retter_faq_spg = [];
+let json_faq_spg = [];
 
 async function hentJSON_faq_spg() {
   const response_faq_spg = await fetch(endpoint_faq_spg);
-  retter_faq_spg = await response_faq_spg.json();
+  json_faq_spg = await response_faq_spg.json();
   visIndhold_faq_spg();
 }
 
 function visIndhold_faq_spg() {
-  console.log(retter_faq_spg);
-  retter_faq_spg.forEach(spg => {
+  console.log(json_faq_spg);
+  json_faq_spg.forEach(spg => {
     let faq_spg_wrap = document.createElement("div");
     faq_spg_wrap.classList.add("faq_spg_wrap");
     let faq_under = document.createElement("button");

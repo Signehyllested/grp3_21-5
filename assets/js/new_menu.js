@@ -32,17 +32,16 @@ function getLocation() {
 
 let URLend_ocat = "categories";
 let endpoint_ocat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_ocat}`;
-let retter_ocat = [];
+let json_ocat = [];
 
 async function hentJSON_ocat() {
-
   const response_ocat = await fetch(endpoint_ocat);
-  retter_ocat = await response_ocat.json();
+  json_ocat = await response_ocat.json();
   visIndhold_ocat();
 }
 
 function visIndhold_ocat() {
-  retter_ocat.forEach(cat => {
+  json_ocat.forEach(cat => {
     if (cat.parent == 0) {
       let article = document.createElement("article");
       let h3 = document.createElement("h3");
@@ -56,7 +55,6 @@ function visIndhold_ocat() {
       underline.classList.add("underline");
       h3.appendChild(underline);
 
-
       let ucat = document.createElement("div");
       ucat.classList.add("underkategori");
       ucat.dataset.ucatId = `${cat.id}`;
@@ -64,7 +62,6 @@ function visIndhold_ocat() {
       let ucat_wrap = document.createElement("div");
       ucat_wrap.dataset.uwcatId = `${cat.id}`;
       ucat.appendChild(ucat_wrap);
-
 
       let back = document.createElement("p");
       back.classList.add("back");
@@ -79,16 +76,16 @@ function visIndhold_ocat() {
 
 let URLend_ucat = `posts?per_page=100`;
 let endpoint_ucat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_ucat}`;
-let retter_ucat = [];
+let json_ucat = [];
 
 async function hentJSON_ucat() {
   const response_ucat = await fetch(endpoint_ucat);
-  retter_ucat = await response_ucat.json();
+  json_ucat = await response_ucat.json();
   visIndhold_ucat();
 }
 
 function visIndhold_ucat() {
-  retter_ucat.forEach(post => {
+  json_ucat.forEach(post => {
     console.log("1");
     let a = document.createElement("a");
     a.addEventListener("click", () => {

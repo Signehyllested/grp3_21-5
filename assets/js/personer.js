@@ -1,6 +1,6 @@
 let URLend_personer = `personer?per_page=100`;
 let endpoint_personer = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_personer}`;
-let retter_personer = [];
+let json_personer = [];
 let container_personer = document.createElement("div");
 container_personer.id = "container_personer";
 
@@ -11,14 +11,14 @@ function start_personer() {
 
 async function hentJSON_personer() {
     const response_personer = await fetch(endpoint_personer);
-    retter_personer = await response_personer.json();
+    json_personer = await response_personer.json();
     visIndhold_personer();
-    console.log(retter_personer);
+    console.log(json_personer);
 }
 
 function visIndhold_personer() {
     console.log("visIndhold personer");
-    retter_personer.forEach(person => {
+    json_personer.forEach(person => {
         let container_person = document.createElement("article");
         container_person.classList.add("container_person");
         let img_personer = document.createElement("img");

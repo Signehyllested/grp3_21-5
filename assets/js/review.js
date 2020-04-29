@@ -1,7 +1,7 @@
 let perPage = 30;
 let URLend_review = `review?per_page=${perPage}`;
 let endpoint_review = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_review}`;
-let retter_review = [];
+let json_review = [];
 
 document.addEventListener("DOMContentLoaded", start_review);
 
@@ -11,13 +11,13 @@ function start_review() {
 
 async function hentJSON_review() {
   const response_review = await fetch(endpoint_review);
-  retter_review = await response_review.json();
+  json_review = await response_review.json();
   visIndhold_review();
 }
 
 function visIndhold_review() {
-  shuffle(retter_review);
-  retter_review.forEach(review => {
+  shuffle(json_review);
+  json_review.forEach(review => {
     if (numberOfReviews <= 10) {
       let review_wrap = document.createElement("div");
       review_wrap.classList.add("review_wrap");

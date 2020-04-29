@@ -1,6 +1,6 @@
 let URLend_skrot_slot = `skrot_slot?_embed`;
 let endpoint_skrot_slot = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend_skrot_slot}`;
-let retter_skrot_slot = [];
+let json_skrot_slot = [];
 let container_skrot_slot_fill = document.createElement("div");
 container_skrot_slot_fill.id = "container_skrot_slot_fill";
 let url_skrot_detalje;
@@ -22,15 +22,15 @@ function start_skrot_slot() {
 
 async function hentJSON_skrot_slot() {
     const response_skrot_slot = await fetch(endpoint_skrot_slot);
-    retter_skrot_slot = await response_skrot_slot.json();
+    json_skrot_slot = await response_skrot_slot.json();
     visIndhold_skrot_slot();
-    console.log(retter_skrot_slot);
+    console.log(json_skrot_slot);
 }
 
 function visIndhold_skrot_slot() {
-    console.log(retter_skrot_slot);
+    console.log(json_skrot_slot);
 
-    retter_skrot_slot.forEach(skrot_slot => {
+    json_skrot_slot.forEach(skrot_slot => {
         let container_skrot_slot = document.createElement("article");
         container_skrot_slot.classList.add("container_skrot_slot");
         let h2_skrot_slot = document.createElement("h2");
