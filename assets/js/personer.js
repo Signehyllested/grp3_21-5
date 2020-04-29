@@ -12,12 +12,12 @@ function start_personer() {
 async function hentJSON_personer() {
     const response_personer = await fetch(endpoint_personer);
     retter_personer = await response_personer.json();
-    visRetter_personer();
+    visIndhold_personer();
     console.log(retter_personer);
 }
 
-function visRetter_personer() {
-    console.log("visretter personer");
+function visIndhold_personer() {
+    console.log("visIndhold personer");
     retter_personer.forEach(person => {
         let container_person = document.createElement("article");
         container_person.classList.add("container_person");

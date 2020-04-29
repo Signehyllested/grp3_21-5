@@ -12,10 +12,10 @@ function start_review() {
 async function hentJSON_review() {
   const response_review = await fetch(endpoint_review);
   retter_review = await response_review.json();
-  visRetter_review();
+  visIndhold_review();
 }
 
-function visRetter_review() {
+function visIndhold_review() {
   shuffle(retter_review);
   retter_review.forEach(review => {
     if (numberOfReviews <= 10) {

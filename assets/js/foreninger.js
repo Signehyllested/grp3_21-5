@@ -12,11 +12,11 @@ function start_foreninger() {
 async function hentJSON_foreninger() {
     const response_foreninger = await fetch(endpoint_foreninger);
     retter_foreninger = await response_foreninger.json();
-    visRetter_foreninger();
+    visIndhold_foreninger();
 }
 
-function visRetter_foreninger() {
-    console.log("visretter foreninger");
+function visIndhold_foreninger() {
+    console.log("visIndhold foreninger");
     retter_foreninger.forEach(forening => {
         let container_forening = document.createElement("article");
         container_forening.classList.add("container_forening");

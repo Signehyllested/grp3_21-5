@@ -14,10 +14,10 @@ function start() {
 async function hentJSON_getcat() {
   const response_getcat = await fetch(endpoint_getcat);
   retter_getcat = await response_getcat.json();
-  visRetter_getcat();
+  visIndhold_getcat();
 }
 
-function visRetter_getcat() {
+function visIndhold_getcat() {
   retter_getcat.forEach(cat => {
     var last = function (array, n) {
       if (array == null)
@@ -37,12 +37,12 @@ let endpoint_showcat = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpr
 async function hentJSON_showcat() {
   const response_showcat = await fetch(endpoint_showcat);
   retter_showcat = await response_showcat.json();
-  visRetter_showcat();
+  visIndhold_showcat();
 }
 
 let running = true;
 
-function visRetter_showcat() {
+function visIndhold_showcat() {
   retter_showcat.forEach(cat => {
     if (cat.parent != 0) {
       if (category == cat.id) {
@@ -72,10 +72,10 @@ async function hentJSON_showuk() {
 
   const response_showuk = await fetch(endpoint_showuk);
   retter_showuk = await response_showuk.json();
-  visRetter_showuk();
+  visIndhold_showuk();
 }
 
-function visRetter_showuk() {
+function visIndhold_showuk() {
 
   retter_showuk.forEach(uk => {
     let om_ua = document.createElement("button");

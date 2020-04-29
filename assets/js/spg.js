@@ -15,10 +15,10 @@ function start_faq() {
 async function hentJSON_faq_cat() {
   const response_faq_cat = await fetch(endpoint_faq_cat);
   retter_faq_cat = await response_faq_cat.json();
-  visRetter_faq_cat();
+  visIndhold_faq_cat();
 }
 
-function visRetter_faq_cat() {
+function visIndhold_faq_cat() {
   console.log(retter_faq_cat);
   retter_faq_cat.forEach(cat => {
     let faq_cat = document.createElement("div");
@@ -94,10 +94,10 @@ let retter_faq_spg = [];
 async function hentJSON_faq_spg() {
   const response_faq_spg = await fetch(endpoint_faq_spg);
   retter_faq_spg = await response_faq_spg.json();
-  visRetter_faq_spg();
+  visIndhold_faq_spg();
 }
 
-function visRetter_faq_spg() {
+function visIndhold_faq_spg() {
   console.log(retter_faq_spg);
   retter_faq_spg.forEach(spg => {
     let faq_spg_wrap = document.createElement("div");

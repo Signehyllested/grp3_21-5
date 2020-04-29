@@ -23,11 +23,11 @@ function start_skrot_slot() {
 async function hentJSON_skrot_slot() {
     const response_skrot_slot = await fetch(endpoint_skrot_slot);
     retter_skrot_slot = await response_skrot_slot.json();
-    visRetter_skrot_slot();
+    visIndhold_skrot_slot();
     console.log(retter_skrot_slot);
 }
 
-function visRetter_skrot_slot() {
+function visIndhold_skrot_slot() {
     console.log(retter_skrot_slot);
 
     retter_skrot_slot.forEach(skrot_slot => {

@@ -38,10 +38,10 @@ async function hentJSON_ocat() {
 
   const response_ocat = await fetch(endpoint_ocat);
   retter_ocat = await response_ocat.json();
-  visRetter_ocat();
+  visIndhold_ocat();
 }
 
-function visRetter_ocat() {
+function visIndhold_ocat() {
   retter_ocat.forEach(cat => {
     if (cat.parent == 0) {
       let article = document.createElement("article");
@@ -84,10 +84,10 @@ let retter_ucat = [];
 async function hentJSON_ucat() {
   const response_ucat = await fetch(endpoint_ucat);
   retter_ucat = await response_ucat.json();
-  visRetter_ucat();
+  visIndhold_ucat();
 }
 
-function visRetter_ucat() {
+function visIndhold_ucat() {
   retter_ucat.forEach(post => {
     console.log("1");
     let a = document.createElement("a");

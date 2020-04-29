@@ -2,95 +2,95 @@
 <html lang="da">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/burger.css">
-    <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/burger.css">
+  <link rel="stylesheet" href="https://use.typekit.net/rrr8aqj.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/img/favicon/site.webmanifest">
 </head>
 
 <body>
-    <div id="pre">
-        <div id="pre_innner"></div>
-    </div>
-    <div id="anim">
-        <div id="spinner" class="spinner_ani"></div>
-        <div id="spinner_base"></div>
-    </div>
+  <div id="pre">
+    <div id="pre_innner"></div>
+  </div>
+  <div id="anim">
+    <div id="spinner" class="spinner_ani"></div>
+    <div id="spinner_base"></div>
+  </div>
 
-    <main id="main">
-        <div id="fill"></div>
-    </main>
+  <main id="main">
+    <div id="fill"></div>
+  </main>
 
-    <script src="assets/js/new_menu.js"></script>
-    <script src="assets/js/personer.js"></script>
-    <script src="assets/js/spg.js"></script>
-    <script src="assets/js/review.js"></script>
-    <script src="assets/js/fullwidthimg.js"></script>
-    <script src="assets/js/destination_carousel.js"></script>
-    <script src="assets/js/foreninger.js"></script>
-    <script src="assets/js/skrot_slot.js"></script>
-    <script src="assets/js/footer.js"></script>
-    <script src="assets/js/uk.js"></script>
+  <script src="assets/js/new_menu.js"></script>
+  <script src="assets/js/personer.js"></script>
+  <script src="assets/js/spg.js"></script>
+  <script src="assets/js/review.js"></script>
+  <script src="assets/js/fullwidthimg.js"></script>
+  <script src="assets/js/destination_carousel.js"></script>
+  <script src="assets/js/foreninger.js"></script>
+  <script src="assets/js/skrot_slot.js"></script>
+  <script src="assets/js/footer.js"></script>
+  <script src="assets/js/uk.js"></script>
 
-    <script>
-        let forside = false;
-        const urlParams = new URLSearchParams(window.location.search);
-        const slug = urlParams.get("slug");
-        let URLend = `posts?slug=${slug}`;
-        let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
-        let retter = [];
-        let onSite;
+  <script>
+    let forside = false;
+    const urlParams = new URLSearchParams(window.location.search);
+    const slug = urlParams.get("slug");
+    let URLend = `posts?slug=${slug}`;
+    let endpoint = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/${URLend}`;
+    let retter = [];
+    let onSite;
 
-        document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", start);
 
-        function start() {
-            hentJSON();
-            document.querySelector("#spinner").style.animationPlayState = "running";
-            setTimeout(function() {
-                document.querySelector("#spinner").style.animationPlayState = "paused";
-            }, 2000);
-        }
+    function start() {
+      hentJSON();
+      document.querySelector("#spinner").style.animationPlayState = "running";
+      setTimeout(function() {
+        document.querySelector("#spinner").style.animationPlayState = "paused";
+      }, 2000);
+    }
 
-        async function hentJSON() {
-            const response = await fetch(endpoint);
-            retter = await response.json();
-            visRetter();
-            document.querySelector("#pre").style.transform = "scale(0)";
-            document.querySelector("#anim").style.transform = "scale(0)";
-        }
+    async function hentJSON() {
+      const response = await fetch(endpoint);
+      retter = await response.json();
+      visIndhold();
+      document.querySelector("#pre").style.transform = "scale(0)";
+      document.querySelector("#anim").style.transform = "scale(0)";
+    }
 
-        function visRetter() {
-            retter.forEach(element => {
-                document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
-                let h1 = document.createElement("h1");
-                let h1_i = document.createTextNode(element.title.rendered);
-                let main_ = document.querySelector("main");
-                h1.appendChild(h1_i);
-                main_.insertBefore(h1, main_.childNodes[2]);
-                document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
-                tjekDestination();
-                fullWidth();
-            });
+    function visIndhold() {
+      retter.forEach(element => {
+        document.querySelector("head title").textContent = `21-5 - ${element.title.rendered}`;
+        let h1 = document.createElement("h1");
+        let h1_i = document.createTextNode(element.title.rendered);
+        let main_ = document.querySelector("main");
+        h1.appendChild(h1_i);
+        main_.insertBefore(h1, main_.childNodes[2]);
+        document.querySelector("#fill").innerHTML = `${element.content.rendered}`;
+        tjekDestination();
+        fullWidth();
+      });
 
 
-            if (slug == "21-5-teamet") {
-                start_personer();
-            }
-            if (slug == "alle-stiftede-21-5-foreninger") {
-                start_foreninger();
-            }
-            if (slug == "fra-skrot-til-slot") {
-                start_skrot_slot();
-            }
-            if (slug == "svar-pa-dine-sporgsmal") {
-                start_faq();
-            }
-        }
-    </script>
+      if (slug == "21-5-teamet") {
+        start_personer();
+      }
+      if (slug == "alle-stiftede-21-5-foreninger") {
+        start_foreninger();
+      }
+      if (slug == "fra-skrot-til-slot") {
+        start_skrot_slot();
+      }
+      if (slug == "svar-pa-dine-sporgsmal") {
+        start_faq();
+      }
+    }
+  </script>
 </body></html>
