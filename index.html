@@ -81,12 +81,12 @@
       console.log("page loaded");
       const response = await fetch(endpoint);
       retter = await response.json();
-      visRetter();
+      visIndhold();
       document.querySelector("#pre").style.transform = "scale(0)";
       document.querySelector("#anim").style.transform = "scale(0)";
     }
 
-    function visRetter() {
+    function visIndhold() {
 
       retter.forEach(element => {
         document.querySelector("#fill_forside").innerHTML = `${element.content.rendered}`;
