@@ -715,8 +715,7 @@ vp-center {
   justify-content: flex-start;
 }
 
-p span,
-p strong {
+p span {
   background-color: #353B44;
   color: #fff;
   padding: 5px 3px;
