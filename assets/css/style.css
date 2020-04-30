@@ -846,9 +846,10 @@ p strong {
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   background-color: rgba(0, 0, 0, 0.51);
   overflow: scroll;
+  z-index: 99999;
 }
 
 
@@ -870,7 +871,7 @@ p strong {
   margin: auto;
   padding: 1em;
   cursor: pointer;
-  height: 100vh;
+  height: 1800px;
   max-width: 1200px;
   padding: 50px;
   max-height: 80%;
@@ -1471,3 +1472,9 @@ section {
     transition: .5s cubic-bezier(.25, 1, .5, 1);
     cursor: pointer;
   }
+
+  .underkategori .back:active {
+    filter: brightness(.7);
+    transition: .2s cubic-bezier(.5, .3, .25, 1);
+  }
+}
