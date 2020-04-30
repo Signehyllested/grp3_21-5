@@ -40,7 +40,7 @@ function visIndhold_personer() {
         container_personer.appendChild(container_person);
         document.querySelector("#fill").appendChild(container_personer);
 
-        /*container_person.addEventListener("click", () => visPersDetalje(person));*/
+        container_person.addEventListener("click", () => visPersDetalje(person));
 
     });
     extraSpaces();
