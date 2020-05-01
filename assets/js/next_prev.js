@@ -22,7 +22,7 @@ function visIndhold_naeste() {
       prev_container.id = "prev_container";
       next_prev_container.appendChild(prev_container);
       let forrige = document.createElement("p");
-      forrige.textContent = "FORRIGE";
+      forrige.textContent = "";
       prev_container.appendChild(forrige);
       let prev_a = document.createElement("a");
       prev_a.id = "prev_a";
@@ -41,7 +41,8 @@ function visIndhold_naeste() {
       prev_arrow.alt = "forrige side";
       prev_a.appendChild(prev_arrow);
       let prev_page = document.createElement("p");
-      prev_page.textContent = `${json_naeste[prev_obj].title.rendered}`;
+      prev_page.textContent = "";
+      prev_page.setAttribute("data-prev", title_prev);
       prev_a.appendChild(prev_page);
 
     }
@@ -54,7 +55,7 @@ function visIndhold_naeste() {
       next_container.id = "next_container";
       next_prev_container.appendChild(next_container);
       let naeste = document.createElement("p");
-      naeste.textContent = "NÆSTE";
+      naeste.textContent = "";
       next_container.appendChild(naeste);
       let next_a = document.createElement("a");
       next_a.id = "next_a";
@@ -69,7 +70,8 @@ function visIndhold_naeste() {
       next_a.classList.add("wp-block-button");
       next_container.appendChild(next_a);
       let next_page = document.createElement("p");
-      next_page.textContent = `${json_naeste[next_obj].title.rendered}`;
+      next_page.textContent = "";
+      next_page.setAttribute("data-next", title_next);
       next_a.appendChild(next_page);
       let next_arrow = document.createElement("img");
       next_arrow.src = "assets/img/arrow.svg";

@@ -1458,10 +1458,18 @@ iframe {
 }
 
 #next_prev_container div > p {
-  margin: 0 5px 0 7px;
+  margin: 0 8px 0 10px;
   padding: 0;
   font-size: .8rem;
   letter-spacing: 2px;
+}
+
+#prev_container > p:after {
+  content: "FORRIGE";
+}
+
+#next_container > p:after {
+  content: "NÆSTE";
 }
 
 #prev_a,
@@ -1494,6 +1502,16 @@ iframe {
   margin: 2px 0 6px 0;
   font-family: ivyjournal, sans-serif;
 }
+
+#prev_container a p:after {
+  content: attr(data-prev);
+}
+
+#next_container a p:after {
+  content: attr(data-next);
+}
+
+
 
 
 
@@ -1610,6 +1628,26 @@ iframe {
     bottom: 0;
     right: 0;
     padding: 3px 20px 3px 2000px;
+  }
+
+  #prev_container a p:after,
+  #next_container a p:after {
+    content: "";
+  }
+
+  #prev_container > p:after {
+    content: "FORRIGE SIDE";
+  }
+
+  #next_container > p:after {
+    content: "NÆSTE SIDE";
+  }
+
+  #prev_a img,
+  #next_a img {
+    width: 35px;
+    margin: 0;
+    padding: 0 10px 0 0;
   }
 }
 
