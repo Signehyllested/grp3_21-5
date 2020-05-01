@@ -86,7 +86,7 @@ async function hentJSON_ucat() {
 
 function visIndhold_ucat() {
   json_ucat.forEach(post => {
-    console.log("1");
+    //console.log("1");
     let a = document.createElement("a");
     a.addEventListener("click", () => {
       document.querySelector("#pre").style.transform = "scale(2.5)";
@@ -109,7 +109,7 @@ function visIndhold_ucat() {
     p.appendChild(underline);
     document.querySelectorAll(".underkategori div").forEach((uwcat) => {
       if (slug == post.slug && uwcat.dataset.uwcatId == first(post.categories)) {
-        console.log(slug + " " + post.slug);
+        //console.log(slug + " " + post.slug);
         p.classList.add("on_this");
         document.querySelectorAll(".nav_wrap h3").forEach((article) => {
           article.style.color = "#fff";
@@ -125,16 +125,16 @@ function visIndhold_ucat() {
           }
         })
         collapsed = true;
-        console.log("collapsed true");
+        //console.log("collapsed true");
       }
     })
   });
   if (collapsed == true) {
     menuExpand();
-    console.log("expand menu");
+    //console.log("expand menu");
   } else {
     menuCollapse();
-    console.log("collapse menu");
+    //console.log("collapse menu");
   }
 }
 
@@ -254,7 +254,7 @@ let down = false;
 
 function menuDown() {
   down = true;
-  console.log(down);
+  //console.log(down);
   burger_wrap.removeEventListener("click", menuDown);
   header.style.transform = "translateY(0)";
   logoContainer.style.transform = "translateY(0)";
