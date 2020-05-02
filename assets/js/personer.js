@@ -54,21 +54,6 @@ function extraSpaces() {
     container_personer.appendChild(container_person_ext);
 }
 
-function runPersDetalje() {
-    let detaljeSec = document.createElement("div");
-    detaljeSec.classList.add("skjul");
-    detaljeSec.id = "pers_detalje";
-
-    let detaljeKnap = document.createElement("button")
-    detaljeKnap.innerHTML = "X";
-
-    let detaljeContainer = document.createElement("div");
-    detaljeContainer.classList.add("pers_detalje_container");
-
-    document.querySelector("body").appendChild(detaljeSec);
-    document.querySelector("#pers_detalje").appendChild(detaljeKnap);
-    document.querySelector("#pers_detalje").appendChild(detaljeContainer);
-}
 
 function visPersDetalje(person) {
     console.log("visdetalje pers");
@@ -96,28 +81,76 @@ async function hentJSON_pers_detalje(person) {
     buildPersDetalje(person);
 }
 
-function buildPersDetalje(person) {
-    let persDetaljeH2 = document.createElement("h2");
-    persDetaljeH2.textContent = `${person.title.rendered}`;
+function runPersDetalje() {
+    let detaljeSec = document.createElement("div");
+    detaljeSec.classList.add("skjul");
+    detaljeSec.id = "pers_detalje";
 
+    let detaljeKnap = document.createElement("button")
+    detaljeKnap.innerHTML = "X";
+
+    let detaljeContainer = document.createElement("div");
+    detaljeContainer.classList.add("pers_detalje_container");
+    detaljeContainer.id = "detaljeContainerId";
+
+    document.querySelector("body").appendChild(detaljeSec);
+    document.querySelector("#pers_detalje").appendChild(detaljeKnap);
+    document.querySelector("#pers_detalje").appendChild(detaljeContainer);
+
+
+    let persDetaljeH2 = document.createElement("h2");
+    persDetaljeH2.id = "persDetaljeH2Id";
     let persMain = document.createElement("div");
     persMain.classList.add("pers");
 
     let persDetaljeCol = document.createElement("div");
     persDetaljeCol.classList.add("pers_detalje_col");
+    persDetaljeCol.id = "persDetaljeColId";
+
     let persDetaljeTekst = document.createElement("p");
-    persDetaljeTekst.innerHTML = `${person.content.rendered}`;
+    persDetaljeTekst.id = "persDetaljeTekstId";
+
     let persDetaljeCol2 = document.createElement("div");
     persDetaljeCol2.classList.add("pers_detalje_img");
+    persDetaljeCol2.id = "persDetaljeCol2Id";
     let persDetaljeImg = document.createElement("img");
-    persDetaljeImg.src = `${person.billede.guid}`;
+    persDetaljeImg.id = "persDetaljeImgId";
 
-    document.querySelector(".pers_detalje_container").appendChild(persDetaljeCol);
-    document.querySelector(".pers_detalje_container").appendChild(persDetaljeCol2);
+
+    detaljeContainer.appendChild(persDetaljeCol);
+    persDetaljeCol.appendChild(persDetaljeCol2);
+
+    //document.querySelector(".pers_detalje_col").appendChild(persDetaljeH2);
+    document.querySelector(".pers_detalje_col").appendChild(persDetaljeTekst);
+    document.querySelector(".pers_detalje_img").appendChild(persDetaljeImg);
+
+    detaljeContainer.appendChild(persDetaljeCol);
+    detaljeContainer.appendChild(persDetaljeCol2);
+    persDetaljeCol2.appendChild(persDetaljeImgId);
 
     document.querySelector(".pers_detalje_col").appendChild(persDetaljeH2);
     document.querySelector(".pers_detalje_col").appendChild(persDetaljeTekst);
     document.querySelector(".pers_detalje_img").appendChild(persDetaljeImg);
+
+}
+
+function buildPersDetalje(person) {
+    //let persDetaljeH2 = document.createElement("h2");
+    document.querySelector("#persDetaljeH2Id").textContent = `${person.title.rendered}`;
+
+    //let persMain = document.createElement("div");
+    //persMain.classList.add("pers");
+
+    //let persDetaljeCol = document.createElement("div");
+    //persDetaljeCol.classList.add("pers_detalje_col");
+    //let persDetaljeTekst = document.createElement("p");
+    document.querySelector("#persDetaljeTekstId").innerHTML = `${person.content.rendered}`;
+    //let persDetaljeCol2 = document.createElement("div");
+    //persDetaljeCol2.classList.add("pers_detalje_img");
+    //let persDetaljeImg = document.createElement("img");
+    document.querySelector("#persDetaljeImgId").src = `${person.billede.guid}`;
+
+
 
 
 
