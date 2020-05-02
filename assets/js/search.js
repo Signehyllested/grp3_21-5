@@ -35,20 +35,22 @@ async function hentJSON_search() {
   }
 }
 
+
 function visIndhold_search() {
   search_results_wrap.innerHTML = "";
 
+  //console.log(json_search);
+
   json_search.forEach(post => {
     let h3 = document.createElement("h3");
+    h3.style.opacity = "0";
     h3.classList.add("search_title");
-    /*h3.classList.add("search_title_ani_in");*/
-    h3.textContent = `${post.title}`;
-    h3.dataset.restAPI = `${post["_links"].self[0].href}`;
-    h3.addEventListener("click", () => {
-      search_link = `${post["_links"].self[0].href}`;
-      hentJSON_search_link();
-    })
+    h3.dataset.restAPI = `${post.title}`;
     search_results_wrap.appendChild(h3);
+
+
+    search_link = `${post["_links"].self[0].href}`;
+    hentJSON_search_link();
   });
 }
 
@@ -63,13 +65,33 @@ async function hentJSON_search_link() {
   const response_search_link = await fetch(endpoint_search_link);
   json_search_link = await response_search_link.json();
   visIndhold_search_link();
-
-  console.log(json_search_link);
 }
 
 function visIndhold_search_link() {
-  let link = json_search_link.slug;
-  //location.href = `21-5.html?slug=${link}`;
+  document.querySelectorAll(".search_title").forEach((title) => {
+    //console.log(title.dataset.restAPI);
+    //console.log(json_search_link.title.rendered);
+
+    if (title.dataset.restAPI == json_search_link.title.rendered) {
+      title.textContent = `${json_search_link.title.rendered}`;
+      let slug_search = json_search_link.slug;
+      let p = document.createElement("p");
+      let pContent = json_search_link.content.rendered;
+      let pSplit1 = pContent.split("<p>")[1];
+      let pSplit2 = pSplit1.split("</p>")[0];
+      let pSplit3 = pSplit2.split(".")[0];
+
+      p.innerHTML = `<p>${pSplit3}...</p>`;
+      title.insertAdjacentHTML("beforeend", p.innerHTML);
+
+      title.style.opacity = "";
+
+
+      title.addEventListener("click", () => {
+        location.href = `21-5.html?slug=${slug_search}`;
+      })
+    }
+  })
 }
 
 
