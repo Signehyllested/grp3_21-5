@@ -71,6 +71,8 @@ function visIndhold_ocat() {
     }
   });
   menuCollapse();
+
+  startSearch();
 }
 
 
@@ -174,6 +176,10 @@ logo.addEventListener("click", () => {
   }, 500)
 })
 logoContainer.appendChild(logo);
+
+let search_wrap = document.createElement("div");
+search_wrap.id = "search_wrap";
+main.appendChild(search_wrap);
 
 let burger_wrap = document.createElement("main");
 burger_wrap.id = "burger_wrap";

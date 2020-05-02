@@ -238,7 +238,7 @@ li {
   visibility: visible;
   height: 40px;
   width: 40px;
-  margin: 5px 0 5px -10px;
+  margin: 5px 0 5px -5px;
   padding: 5px;
   cursor: pointer;
   transition: .4s cubic-bezier(.25, 1, .5, 1);
@@ -1516,10 +1516,6 @@ iframe {
 
 
 
-
-
-
-
 @media screen and (max-width: 800px) {
   #faq .faq_over {
     font-size: 1.8rem;
@@ -1561,8 +1557,8 @@ iframe {
 @media screen and (min-width: 800px) {
 
   nav,
-  nav div:nth-child(3),
-  nav div:nth-child(2) {
+  #login_wrap,
+  .nav_wrap {
     padding: 0 50px;
   }
 

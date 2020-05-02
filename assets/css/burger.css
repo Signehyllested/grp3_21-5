@@ -1,8 +1,9 @@
 #burger_wrap {
   visibility: visible;
-  height: 40px;
-  width: 100px;
-  margin: 16px 0px 20px 10px;
+  height: 30px;
+  padding: 5px 0;
+  width: 90px;
+  margin: 10px 0px 20px 10px;
   transition: .5s cubic-bezier(.25, 1, .5, 1);
   cursor: pointer;
   position: relative;
@@ -210,76 +211,6 @@
     transform: translate(0px, 0px) rotate(-45deg) scaleX(1);
   }
 }
-
-/*#burger_wrap .burger1_hover {
-  transform: translate(3px, 0px) scaleX(1.2);
-}
-
-#burger_wrap .burger2_hover {
-  transform: translate(5px, 8px) scaleX(1.2);
-}
-
-#burger_wrap .burger3_hover {
-  transform: translate(1px, 16px) scaleX(1.2);
-}
-
-#burger_wrap .burger4_hover {
-  transform: translate(0px, 16.5px) rotate(45deg) scaleX(1.2);
-}
-
-#burger_wrap .burger5_hover {
-  transform: translate(0px, 0px) rotate(-45deg) scaleX(1.2);
-}*/
-
-/*#burger_wrap .burger1_hover {
-  animation: burger1_hover-kf .5s cubic-bezier(.25, 1, .5, 1) both;
-}
-
-@keyframes burger1_hover-kf {
-  100% {
-    transform: translate(3px, 0px) scaleX(1.2);
-  }
-}
-
-#burger_wrap .burger2_hover {
-  animation: burger2_hover-kf .5s cubic-bezier(.25, 1, .5, 1) both;
-}
-
-@keyframes burger2_hover-kf {
-  100% {
-    transform: translate(5px, 8px) scaleX(1.2);
-  }
-}
-
-#burger_wrap .burger3_hover {
-  animation: burger3_hover-kf .5s cubic-bezier(.25, 1, .5, 1) both;
-}
-
-@keyframes burger3_hover-kf {
-  100% {
-    transform: translate(1px, 16px) scaleX(1.2);
-  }
-}
-
-#burger_wrap .burger4_hover {
-  animation: burger4_hover-kf .5s cubic-bezier(.25, 1, .5, 1) both;
-}
-
-@keyframes burger4_hover-kf {
-  100% {
-    transform: translate(0px, 16.5px) rotate(45deg) scaleX(1.2);
-  }
-}
-
-#burger_wrap .burger5_hover {
-  animation: burger5_hover-kf .5s cubic-bezier(.25, 1, .5, 1) both;
-}
-
-@keyframes burger5_hover-kf {
-  100% {
-    transform: translate(0px, 0px) rotate(-45deg) scaleX(1.2);
-  }
-}*/
 
 .burger_wrap_hover {
   transform: scaleX(1.1);
