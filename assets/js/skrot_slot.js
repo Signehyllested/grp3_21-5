@@ -87,6 +87,16 @@ function extraSpaces() {
 function visDetalje(skrot_slot) {
     detalje.classList.remove("skjul");
     detalje.querySelector("button").addEventListener("click", () => detalje.classList.add("skjul"));
+    detalje.querySelector("button").addEventListener("click", sletCaro());
+
+    function sletCaro() {
+        while (document.querySelector("#the_container").hasChildNodes()) {
+            document.querySelector("#the_container").removeChild(document.querySelector("#the_container").lastChild);
+        }
+        while (document.querySelector("#legendPicContainerId").hasChildNodes()) {
+            document.querySelector("#legendPicContainerId").removeChild(document.querySelector("#legendPicContainerId").lastChild);
+        }
+    }
 
     skrot_detalje_id = `${skrot_slot.id}`;
 
@@ -172,64 +182,37 @@ function buildSkrotDetalje() {
 
     numberOfPicsInDetalje = detaljeJSON.billede.length;
     detaljeJSON.billede.forEach((billede, index) => {
-        console.log(tjekUnderCaro);
+        let caroSection = document.createElement("section");
+        caroSection.id = "caroSectionId";
+        let caroImg = document.createElement("img");
+        caroImg.id = "caroImgId";
 
-        if (tjekUnderCaro == 0) {
-            console.log("if");
-
-            let caroSection = document.createElement("section");
-            caroSection.id = "caroSectionId";
-            let caroImg = document.createElement("img");
-            caroImg.id = "caroImgId";
-
-            let caroSection2 = document.createElement("section");
-            caroSection2.id = "caroSection2Id";
-            let caroImg2 = document.createElement("img");
-            caroImg2.id = "caroImg2Id";
+        let caroSection2 = document.createElement("section");
+        caroSection2.id = "caroSection2Id";
+        let caroImg2 = document.createElement("img");
+        caroImg2.id = "caroImg2Id";
 
 
-            caroImg.classList.add("caro_imgs");
-            caroImg.src = billede.guid;
-            caroSection.appendChild(caroImg);
-            caroSection.dataset.myIndex = index;
-            document.querySelector("#the_container").appendChild(caroSection);
+        caroImg.classList.add("caro_imgs");
+        caroImg.src = billede.guid;
+        caroSection.appendChild(caroImg);
+        caroSection.dataset.myIndex = index;
+        document.querySelector("#the_container").appendChild(caroSection);
 
-            caroImg2.classList.add("caro_imgs");
-            caroImg2.src = billede.guid;
-            document.querySelector("#legendPicContainerId").appendChild(caroSection2);
-            caroSection2.appendChild(caroImg2);
-            caroSection2.dataset.myIndex = index;
-            document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
+        caroImg2.classList.add("caro_imgs");
+        caroImg2.src = billede.guid;
+        document.querySelector("#legendPicContainerId").appendChild(caroSection2);
+        caroSection2.appendChild(caroImg2);
+        caroSection2.dataset.myIndex = index;
+        document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
 
-            caroAddFn(buildSkrotDetalje);
+        document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
 
 
-            function caroAddFn() {
-
-            }
-            document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
-
-        } else if (tjekUnderCaro == 1) {
-            document.querySelector("#caroImgId").src = billede.guid;
-            //caroImg.src = billede.guid;
-            console.log(billede.guid);
-            document.querySelector("#caroSectionId").dataset.myIndex = index;
-            //caroSection.dataset.myIndex = index;
-
-            //caroImg2.src = billede.guid;
-            document.querySelector("#caroImg2Id").src = billede.guid;
-            document.querySelector("#caroSection2Id").dataset.myIndex = index;
-            //caroSection2.dataset.myIndex = index;
-
-        }
         console.log("efter");
 
     })
-    TjekUnderCaroAdd()
 
-    function TjekUnderCaroAdd() {
-        tjekUnderCaro = 1;
-    }
     console.log(tjekUnderCaro);
 
     document.querySelector(".legend_pic_container section").classList.add("legend_border");
