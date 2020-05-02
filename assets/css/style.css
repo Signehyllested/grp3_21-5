@@ -1678,7 +1678,7 @@ iframe {
         margin: auto;
         padding: 1em;
         cursor: pointer;
-        height: 75%;
+        height: 82.5%;
         max-width: 1050px;
         padding: 10px 50px;
         background-color: white;
@@ -1693,7 +1693,7 @@ iframe {
 
     #pers_detalje button {
         position: fixed;
-        margin: 50px;
+        margin: 20px;
 
     }
 }
