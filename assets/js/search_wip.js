@@ -43,6 +43,7 @@ function visIndhold_search() {
 
   json_search.forEach(post => {
     let h3 = document.createElement("h3");
+    h3.style.opacity = "0";
     h3.classList.add("search_title");
     h3.dataset.restAPI = `${post.title}`;
     search_results_wrap.appendChild(h3);
@@ -73,25 +74,24 @@ function visIndhold_search_link() {
 
     if (title.dataset.restAPI == json_search_link.title.rendered) {
       title.textContent = `${json_search_link.title.rendered}`;
+      let slug_search = json_search_link.slug;
       let p = document.createElement("p");
       let pContent = json_search_link.content.rendered;
       let pSplit1 = pContent.split("<p>")[1];
       let pSplit2 = pSplit1.split("</p>")[0];
-      let pSplit3;
-      if (pSplit2.length > 50) {
-        pSplit3 = pSplit2.split(".")[0];
-      } else {
-        let pSplit3array = pSplit2.split(".").slice(0, 2);
-        pSplit3 = pSplit3array[0] + " " + pSplit3array[1];
-      }
+      let pSplit3 = pSplit2.split(".")[0];
 
       p.innerHTML = `<p>${pSplit3}...</p>`;
       title.insertAdjacentHTML("beforeend", p.innerHTML);
+
+      title.style.opacity = "";
+
+
+      title.addEventListener("click", () => {
+        location.href = `21-5.html?slug=${slug_search}`;
+      })
     }
   })
-
-  let link = json_search_link.slug;
-  //location.href = `21-5.html?slug=${link}`;
 }
 
 
