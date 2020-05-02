@@ -844,7 +844,7 @@ p span {
   position: fixed;
   top: 0;
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.51);
   overflow: scroll;
   z-index: 99999;
@@ -852,32 +852,26 @@ p span {
 
 
 #pers_detalje button {
-  margin: 50px;
+  position: fixed;
+  left: 85vw;
   padding-bottom: 5px;
-  margin-top: 100px;
+  margin: 10px;
   font-size: 2em;
-  position: absolute;
   color: #fff;
+  z-index: 999;
+
+
 }
 
 .pers_detalje_container {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  padding: 1em;
-  cursor: pointer;
-  height: 1800px;
-  max-width: 1200px;
-  padding: 50px;
-  max-height: 80%;
   background-color: white;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  cursor: pointer;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
 }
+
+.pers_detalje_container h2 {}
 
 
 /***** POPUP *****/
@@ -893,6 +887,7 @@ p span {
 
 .pers_detalje_img {
   grid-column: 2/3;
+  align-items: center;
 
 }
 
@@ -1144,7 +1139,7 @@ section {
 }
 
 #container_personer {
-  /*cursor: pointer;*/
+  cursor: pointer;
 }
 
 #container_personer .container_person,
@@ -1666,5 +1661,35 @@ iframe {
   .underkategori .back:active {
     filter: brightness(.7);
     transition: .2s cubic-bezier(.5, .3, .25, 1);
+  }
+}
+
+@media screen and (min-width:950px) {
+  .pers_detalje_container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 1em;
+    cursor: pointer;
+    height: 82.5%;
+    max-width: 1050px;
+    padding: 10px 50px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0px 10px 15px 5px rgba(0, 0, 0, 0.2);
+    grid-gap: 50px;
+    overflow: scroll;
+    align-items: center;
+    cursor: default;
+  }
+
+  #pers_detalje button {
+    position: fixed;
+    margin: 20px;
+
   }
 }

@@ -9,7 +9,12 @@ let skrot_detalje_id;
 let numberOfPicsInDetalje;
 let detaljeCurrentNum = 0;
 let detaljeJSON;
-
+let caroSection;
+let caroImg;
+let caroSection2;
+let caroImg2;
+let caroContainer;
+let tjekUnderCaro = 0;
 
 
 function start_skrot_slot() {
@@ -82,6 +87,16 @@ function extraSpaces() {
 function visDetalje(skrot_slot) {
     detalje.classList.remove("skjul");
     detalje.querySelector("button").addEventListener("click", () => detalje.classList.add("skjul"));
+    detalje.querySelector("button").addEventListener("click", sletCaro());
+
+    function sletCaro() {
+        while (document.querySelector("#the_container").hasChildNodes()) {
+            document.querySelector("#the_container").removeChild(document.querySelector("#the_container").lastChild);
+        }
+        while (document.querySelector("#legendPicContainerId").hasChildNodes()) {
+            document.querySelector("#legendPicContainerId").removeChild(document.querySelector("#legendPicContainerId").lastChild);
+        }
+    }
 
     skrot_detalje_id = `${skrot_slot.id}`;
 
@@ -125,14 +140,10 @@ function runSkrotDetalje() {
     document.querySelector("body").appendChild(detaljeSec);
     document.querySelector("#detalje").appendChild(detaljeKnap);
     document.querySelector("#detalje").appendChild(detaljeContainer);
-}
-
-function buildSkrotDetalje() {
-    //console.log("build skeleton");
-
-
 
     let caroMain = document.createElement("div");
+    caroMain.id = "caroMainId";
+
     let carousel = document.createElement("div");
     carousel.classList.add("carousel");
     let carouselInner = document.createElement("div");
@@ -147,6 +158,8 @@ function buildSkrotDetalje() {
     pilFwdDetalje.src = "assets/img/arrow.svg";
     pilFwdDetalje.classList.add("fwdDetalje");
     let legendPicContainer = document.createElement("div");
+    legendPicContainer.id = "legendPicContainerId";
+
     legendPicContainer.classList.add("legend_pic_container");
 
     caroMain.appendChild(carousel);
@@ -157,34 +170,51 @@ function buildSkrotDetalje() {
     carousel.appendChild(legendPicContainer);
 
     document.querySelector(".detalje_container").appendChild(caroMain);
+}
 
-    console.log(detaljeJSON);
+function buildSkrotDetalje() {
+    //console.log("build skeleton");
+
+
 
     console.log("buildskrotdetalje");
     console.log(detaljeJSON);
 
     numberOfPicsInDetalje = detaljeJSON.billede.length;
     detaljeJSON.billede.forEach((billede, index) => {
-
         let caroSection = document.createElement("section");
+        caroSection.id = "caroSectionId";
         let caroImg = document.createElement("img");
+        caroImg.id = "caroImgId";
+
+        let caroSection2 = document.createElement("section");
+        caroSection2.id = "caroSection2Id";
+        let caroImg2 = document.createElement("img");
+        caroImg2.id = "caroImg2Id";
+
+
         caroImg.classList.add("caro_imgs");
         caroImg.src = billede.guid;
         caroSection.appendChild(caroImg);
         caroSection.dataset.myIndex = index;
-        caroContainer.appendChild(caroSection);
+        document.querySelector("#the_container").appendChild(caroSection);
 
-
-        let caroSection2 = document.createElement("section");
-        let caroImg2 = document.createElement("img");
         caroImg2.classList.add("caro_imgs");
         caroImg2.src = billede.guid;
-        legendPicContainer.appendChild(caroSection2);
+        document.querySelector("#legendPicContainerId").appendChild(caroSection2);
         caroSection2.appendChild(caroImg2);
         caroSection2.dataset.myIndex = index;
-        document.querySelector(".detalje_container").appendChild(caroMain);
+        document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
+
+        document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
+
+
+        console.log("efter");
 
     })
+
+    console.log(tjekUnderCaro);
+
     document.querySelector(".legend_pic_container section").classList.add("legend_border");
     document.querySelector("#the_container").addEventListener("scroll", scrollFunctionDetalje);
 
