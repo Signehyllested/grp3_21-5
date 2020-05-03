@@ -16,7 +16,7 @@ async function hentJSON_foreninger() {
 }
 
 function visIndhold_foreninger() {
-    console.log("visIndhold foreninger");
+    //console.log("visIndhold foreninger");
     json_foreninger.forEach(forening => {
         let container_forening = document.createElement("article");
         container_forening.classList.add("container_forening");

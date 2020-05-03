@@ -81,7 +81,7 @@ function tjekDestination() {
     url_dest_pic = "http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/boligerne/1454";
     startCaro();
   }*/
-  console.log(forside);
+  //console.log(forside);
 }
 
 function startCaro() {

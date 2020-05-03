@@ -19,7 +19,7 @@ async function hentJSON_faq_cat() {
 }
 
 function visIndhold_faq_cat() {
-  console.log(json_faq_cat);
+  //console.log(json_faq_cat);
   json_faq_cat.forEach(cat => {
     let faq_cat = document.createElement("div");
     faq_cat.classList.add("faq_cat");
@@ -98,7 +98,7 @@ async function hentJSON_faq_spg() {
 }
 
 function visIndhold_faq_spg() {
-  console.log(json_faq_spg);
+  //console.log(json_faq_spg);
   json_faq_spg.forEach(spg => {
     let faq_spg_wrap = document.createElement("div");
     faq_spg_wrap.classList.add("faq_spg_wrap");
@@ -125,7 +125,7 @@ function visIndhold_faq_spg() {
 
 function clickUnder() {
   let parent = this.parentElement;
-  console.log(parent);
+  //console.log(parent);
   document.querySelectorAll(".faq_p").forEach((p) => {
     p.style.height = `0`;
     if (window.innerWidth > 800) {
@@ -139,7 +139,7 @@ function clickUnder() {
     parent.querySelector("p").style.height = "auto";
     let parentHeight = parent.querySelector("p").clientHeight;
     parent.querySelector("p").style.height = "0px";
-    console.log(parent.querySelector("p").clientHeight);
+    //console.log(parent.querySelector("p").clientHeight);
     if (window.innerWidth > 800) {
       parent.querySelector("p").style.height = `${parentHeight + 40}px`;
       parent.querySelector("p").style.padding = "20px";

@@ -128,7 +128,7 @@ if (window.innerWidth > 800) {
 }
 
 function reviewBack() {
-  console.log("back");
+  //console.log("back");
   autoplay = false;
   if (moved != 0) {
     moved = moved + 100;
@@ -151,7 +151,7 @@ function reviewBack() {
 }
 
 function reviewForward() {
-  console.log("forward");
+  //console.log("forward");
   autoplay = false;
   if (moved != numberOfReviews * -100 + 100) {
     moved = moved - 100;

@@ -1,5 +1,5 @@
 function startSearch() {
-  console.log("start search");
+  //console.log("start search");
   let searchValue = search_input.value;
 
   search_icon.addEventListener("click", showSearch);

@@ -13,11 +13,11 @@ async function hentJSON_personer() {
     const response_personer = await fetch(endpoint_personer);
     json_personer = await response_personer.json();
     visIndhold_personer();
-    console.log(json_personer);
+    //console.log(json_personer);
 }
 
 function visIndhold_personer() {
-    console.log("visIndhold personer");
+    //console.log("visIndhold personer");
     json_personer.forEach(person => {
         let container_person = document.createElement("article");
         container_person.classList.add("container_person");
@@ -56,27 +56,27 @@ function extraSpaces() {
 
 
 function visPersDetalje(person) {
-    console.log("visdetalje pers");
+    //console.log("visdetalje pers");
     pers_detalje.classList.remove("skjul");
     pers_detalje.querySelector("button").addEventListener("click", () => {
         pers_detalje.classList.add("skjul");
     });
 
     pers_detalje_id = `${person.id}`;
-    console.log(pers_detalje_id);
+    //console.log(pers_detalje_id);
 
     hentJSON_pers_detalje(person);
 }
 
 async function hentJSON_pers_detalje(person) {
     //let skrot_detalje_id = `${skrot_slot.id}`;
-    console.log(pers_detalje_id); //
+    //console.log(pers_detalje_id); //
     url_pers_detalje = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/personer/${pers_detalje_id}`
 
     const response = await fetch(url_pers_detalje);
 
     detaljeJSON = await response.json();
-    console.log(detaljeJSON);
+    //console.log(detaljeJSON);
 
     buildPersDetalje(person);
 }

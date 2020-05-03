@@ -29,11 +29,11 @@ async function hentJSON_skrot_slot() {
     const response_skrot_slot = await fetch(endpoint_skrot_slot);
     json_skrot_slot = await response_skrot_slot.json();
     visIndhold_skrot_slot();
-    console.log(json_skrot_slot);
+    //console.log(json_skrot_slot);
 }
 
 function visIndhold_skrot_slot() {
-    console.log(json_skrot_slot);
+    //console.log(json_skrot_slot);
 
     json_skrot_slot.forEach(skrot_slot => {
         let container_skrot_slot = document.createElement("article");
@@ -101,7 +101,7 @@ function visDetalje(skrot_slot) {
     skrot_detalje_id = `${skrot_slot.id}`;
 
 
-    console.log(skrot_slot.title.rendered);
+    //console.log(skrot_slot.title.rendered);
 
     //  detalje.querySelector(".navn").textContent = skrot_slot.title.rendered;
 
@@ -115,13 +115,13 @@ function visDetalje(skrot_slot) {
 
 async function hentJSON_skrot_detalje() {
     //let skrot_detalje_id = `${skrot_slot.id}`;
-    console.log(skrot_detalje_id); //
+    //console.log(skrot_detalje_id); //
     url_skrot_detalje = `http://signehyllested.dk/kea/2_semester/grp3_21-5/wordpress/wp-json/wp/v2/skrot_slot/${skrot_detalje_id}`
 
     const response = await fetch(url_skrot_detalje);
 
     detaljeJSON = await response.json();
-    console.log(detaljeJSON);
+    //console.log(detaljeJSON);
 
     buildSkrotDetalje();
 }
@@ -177,8 +177,8 @@ function buildSkrotDetalje() {
 
 
 
-    console.log("buildskrotdetalje");
-    console.log(detaljeJSON);
+    //console.log("buildskrotdetalje");
+    //console.log(detaljeJSON);
 
     numberOfPicsInDetalje = detaljeJSON.billede.length;
     detaljeJSON.billede.forEach((billede, index) => {
@@ -210,11 +210,11 @@ function buildSkrotDetalje() {
 
         document.querySelector("#detalje").classList.remove("skjul");
 
-        console.log("efter");
+        //console.log("efter");
 
     })
 
-    console.log(tjekUnderCaro);
+    //console.log(tjekUnderCaro);
 
     document.querySelector(".legend_pic_container section").classList.add("legend_border");
     document.querySelector("#the_container").addEventListener("scroll", scrollFunctionDetalje);

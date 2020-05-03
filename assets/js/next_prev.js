@@ -16,7 +16,7 @@ function visIndhold_naeste() {
     if (post.slug == slug && arrayObj != 0) {
       let prev_obj = arrayObj - 1;
       let title_prev = json_naeste[prev_obj].title.rendered;
-      console.log(title_prev);
+      //console.log(title_prev);
 
       let prev_container = document.createElement("div");
       prev_container.id = "prev_container";
@@ -49,7 +49,7 @@ function visIndhold_naeste() {
     if (post.slug == slug && arrayObj < json_naeste.length - 1) {
       let next_obj = arrayObj + 1;
       let title_next = json_naeste[next_obj].title.rendered;
-      console.log(title_next);
+      //console.log(title_next);
 
       let next_container = document.createElement("div");
       next_container.id = "next_container";
