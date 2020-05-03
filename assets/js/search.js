@@ -88,7 +88,12 @@ function visIndhold_search_link() {
 
 
       title.addEventListener("click", () => {
-        location.href = `21-5.html?slug=${slug_search}`;
+        document.querySelector("#pre").style.transform = "scale(2.5)";
+        document.querySelector("#anim").style.transform = "scale(1)";
+        document.querySelector("#spinner").style.animationPlayState = "running";
+        setTimeout(function () {
+          location.href = `21-5.html?slug=${slug_search}`;
+        }, 500)
       })
     }
   })

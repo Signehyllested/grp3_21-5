@@ -223,8 +223,6 @@ function detectswipe(el, func) {
 }
 
 function swiped(el, d) {
-  console.log("you swiped on element with id '" + el + "' to " + d + " direction");
-
   if (d == "l") {
     reviewForward();
   } else if (d == "r") {

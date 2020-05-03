@@ -34,7 +34,7 @@ function visIndhold_naeste() {
           location.href = `21-5.html?slug=${json_naeste[prev_obj].slug}`;
         }, 500)
       })
-      prev_a.classList.add("wp-block-button");
+      prev_a.classList.add("wp-block-button", "no_after");
       prev_container.appendChild(prev_a);
       let prev_arrow = document.createElement("img");
       prev_arrow.src = "assets/img/arrow.svg";
@@ -67,7 +67,7 @@ function visIndhold_naeste() {
           location.href = `21-5.html?slug=${json_naeste[next_obj].slug}`;
         }, 500)
       })
-      next_a.classList.add("wp-block-button");
+      next_a.classList.add("wp-block-button", "no_after");
       next_container.appendChild(next_a);
       let next_page = document.createElement("p");
       next_page.textContent = "";
