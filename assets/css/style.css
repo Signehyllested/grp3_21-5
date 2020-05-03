@@ -945,6 +945,11 @@ p span {
   content: none;
 }
 
+#pers_detalje button:after {
+  content: none;
+}
+
+
 
 
 .detalje_container {
@@ -1341,6 +1346,11 @@ section {
   background-color: #272c33;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='5' viewBox='0 0 4 4'%3E%3Cpath fill='%23353b44' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
   cursor: default;
+}
+
+#faq .faq_over:after,
+#faq .faq_under:after {
+  content: none;
 }
 
 #faq .faq_over:hover,
