@@ -307,7 +307,7 @@ function autoplayCarouselForwardDetalje() {
     setTimeout(function () {
         if (autoplay_detalje == true) {
             if (detaljeCurrentNum < numberOfPicsInDetalje - 1) {
-                fwd();
+                fwdDetalje();
                 autoplayCarouselForwardDetalje();
             } else {
                 autoplayCarouselBackwardDetalje();
