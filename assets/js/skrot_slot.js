@@ -85,7 +85,7 @@ function extraSpaces() {
 }
 
 function visDetalje(skrot_slot) {
-    detalje.classList.remove("skjul");
+    //detalje.classList.remove("skjul");
     detalje.querySelector("button").addEventListener("click", () => detalje.classList.add("skjul"));
     detalje.querySelector("button").addEventListener("click", sletCaro());
 
@@ -208,6 +208,7 @@ function buildSkrotDetalje() {
 
         document.querySelector(".detalje_container").appendChild(document.querySelector("#caroMainId"));
 
+        document.querySelector("#detalje").classList.remove("skjul");
 
         console.log("efter");
 
