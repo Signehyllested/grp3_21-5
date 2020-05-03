@@ -939,7 +939,10 @@ p span {
   font-size: 2em;
   color: #fff;
   z-index: 100000000;
+}
 
+#detalje button:after {
+  content: none;
 }
 
 
